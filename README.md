@@ -52,7 +52,7 @@ Keep added redirects above the trailing-slash rule.
 
 ## Setup
 
-1. **Sanity project:** set its ID as the repository **variable** `SANITY_PROJECT_ID` (Settings > Secrets and variables > Actions > Variables), or as the default in `sanity/env.ts`. Dataset: `production`.
+1. **Sanity project:** `q30nj6mr`, dataset `production` (defaults in `sanity/env.ts`; the repository variable `SANITY_PROJECT_ID` overrides them).
 2. **CORS:** sanity.io/manage > project > API > CORS origins: add `https://waterdamageprous.com`, `https://www.waterdamageprous.com` and `http://localhost:3000`, each with "Allow credentials".
 3. **Load the content into Sanity (once), in the browser:**
    1. sanity.io/manage > project > API > Tokens > Add API token (Editor).
@@ -73,7 +73,7 @@ Keep added redirects above the trailing-slash rule.
 | `SG_FTP_USERNAME` / `SG_FTP_PASSWORD` | an FTP account whose home folder contains the site's `public_html` |
 | `GHL_WEBHOOK_URL` | the forms' GoHighLevel inbound webhook. Not set yet: **until it is, the forms accept requests but do not forward them** (the PHP error log says so). The workflow writes it to `api/lead-config.php` on SiteGround only (never served). |
 
-Repository **variables**: `SANITY_PROJECT_ID`; `GHL_CHAT_WIDGET_ID` (shows the GoHighLevel chat, loaded after the first interaction or 4 s; not set yet); `GA_ID` (defaults to the old site's GA4 tag `G-F3JQ9WQY4G`; `off` removes it); `GTM_ID` (the old site had none); `SG_FTP_DIR` (default `./public_html/`).
+Repository **variables**: `SANITY_PROJECT_ID` (optional override); `GHL_CHAT_WIDGET_ID` (shows the GoHighLevel chat, loaded after the first interaction or 4 s; not set yet); `GA_ID` (defaults to the old site's GA4 tag `G-F3JQ9WQY4G`; `off` removes it); `GTM_ID` (the old site had none); `SG_FTP_DIR` (default `./public_html/`).
 
 **Publish → live:** sanity.io/manage > API > Webhooks: URL `https://api.github.com/repos/TTRDigital/Water-Damage-Prous/dispatches`, POST, create/update/delete, projection `{"event_type": "sanity-publish"}`, headers `Authorization: Bearer <GitHub fine-grained token with Contents: read and write on this repo>` and `Accept: application/vnd.github+json`.
 

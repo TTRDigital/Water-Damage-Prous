@@ -9,7 +9,7 @@
 #   GHL_WEBHOOK_URL  the forms' GoHighLevel inbound webhook (not set yet: the forms accept
 #                    requests but do not forward them until it is added)
 # Repository variables (Settings > Secrets and variables > Actions > Variables):
-#   SANITY_PROJECT_ID  the Sanity project (until set, the site builds from its built-in content)
+#   SANITY_PROJECT_ID  optional; overrides the Sanity project in sanity/env.ts (q30nj6mr)
 #   SG_FTP_DIR         optional; folder the site goes into, default ./public_html/
 #   GHL_CHAT_WIDGET_ID optional; shows the GoHighLevel chat
 #   GA_ID, GTM_ID      optional; GA4 defaults to the old site's tag G-F3JQ9WQY4G ("off" removes it)
