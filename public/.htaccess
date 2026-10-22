@@ -1,0 +1,451 @@
+# Water Damage Pro: static Next.js export on SiteGround (Apache).
+# Does what WordPress / a Node server did: one canonical address, old-URL redirects, trailing slashes,
+# security headers, caching, compression and a real 404.
+
+Options -Indexes
+DirectoryIndex index.html index.php
+# The trailing slash is added by a rewrite below (on https), not by Apache.
+DirectorySlash Off
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # One address: https://waterdamageprous.com (no www), as the old site's canonical URLs.
+  # www and the SiteGround temporary address (*.sg-host.com) go to it; so does plain http.
+  # (SiteGround's proxy may end https before Apache: X-Forwarded-Proto says what the visitor used.)
+  RewriteCond %{HTTP_HOST} ^www\.waterdamageprous\.com$ [NC,OR]
+  RewriteCond %{HTTP_HOST} \.sg-host\.com$ [NC]
+  RewriteRule ^(.*)$ https://waterdamageprous.com/$1 [R=301,L]
+  RewriteCond %{HTTP_HOST} ^waterdamageprous\.com$ [NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^(.*)$ https://waterdamageprous.com/$1 [R=301,L]
+
+  # ---- Old WordPress URLs (generated from the old site; keep above the slash rule) ----
+  # WordPress-only paths: 410 Gone, so search engines drop them.
+  RewriteRule ^(?:wp-admin|wp-includes|wp-json|wp-content/(?:themes|plugins|cache|languages|upgrade|elementor))(?:/|$) - [G,L,NC]
+  RewriteRule ^(?:wp-login|xmlrpc|wp-cron|wp-signup|wp-trackback|wp-comments-post|wp-links-opml|wp-mail)\.php$ - [G,L,NC]
+  RewriteRule ^(?:.+/)?(?:feed|rss|rss2|atom|trackback|embed)/?$ - [G,L,NC]
+  RewriteRule ^(?:metform-form|elementskit-content|elementskit_template|tag)(?:/|$) - [G,L,NC]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:rest_route|feed|elementskit_template|metform-form|attachment_id|preview_id)= [NC]
+  RewriteRule ^(?:index\.php)?$ - [G,L]
+  # Category archives that do not exist (the two real ones are files in the export).
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^category/ - [G,L,NC]
+
+  # Old addresses of pages that moved (the live site's redirects, and links that pointed at missing pages).
+  RewriteRule ^alexandria/?$ https://%{HTTP_HOST}/water-damage-restoration-alexandria-va/ [R=301,L,NC,NE]
+  RewriteRule ^about-us/?$ https://%{HTTP_HOST}/about/ [R=301,L,NC,NE]
+  RewriteRule ^contact-us/?$ https://%{HTTP_HOST}/contact/ [R=301,L,NC,NE]
+  RewriteRule ^services/?$ https://%{HTTP_HOST}/#services [R=301,L,NC,NE]
+  RewriteRule ^reviews/?$ https://%{HTTP_HOST}/#reviews [R=301,L,NC,NE]
+  RewriteRule ^projects/?$ https://%{HTTP_HOST}/#recent-projects [R=301,L,NC,NE]
+  RewriteRule ^home/?$ https://%{HTTP_HOST}/ [R=301,L,NC,NE]
+  RewriteRule ^sample-page/?$ https://%{HTTP_HOST}/ [R=301,L,NC,NE]
+  RewriteRule ^water-damage-clean-up/?$ https://%{HTTP_HOST}/water-damage-restoration/ [R=301,L,NC,NE]
+  RewriteRule ^mold-damage-restoration/?$ https://%{HTTP_HOST}/water-damage-restoration/ [R=301,L,NC,NE]
+  RewriteRule ^flood-damage-in-basement/?$ https://%{HTTP_HOST}/water-extraction/ [R=301,L,NC,NE]
+  RewriteRule ^storm-damage-cleanup/?$ https://%{HTTP_HOST}/storm-damage-restoration/ [R=301,L,NC,NE]
+  RewriteRule ^fire-damage-cleanup/?$ https://%{HTTP_HOST}/fire-damage-restoration/ [R=301,L,NC,NE]
+  RewriteRule ^mclean-va/?$ https://%{HTTP_HOST}/mclean/ [R=301,L,NC,NE]
+  RewriteRule ^sterling-va/?$ https://%{HTTP_HOST}/ashburn/ [R=301,L,NC,NE]
+  RewriteRule ^leesburg-va/?$ https://%{HTTP_HOST}/leesburg/ [R=301,L,NC,NE]
+  RewriteRule ^ashburn-va/?$ https://%{HTTP_HOST}/ashburn/ [R=301,L,NC,NE]
+  RewriteRule ^vienna-va/?$ https://%{HTTP_HOST}/vienna/ [R=301,L,NC,NE]
+  RewriteRule ^alexandria-va/?$ https://%{HTTP_HOST}/water-damage-restoration-alexandria-va/ [R=301,L,NC,NE]
+  RewriteRule ^arlington-va/?$ https://%{HTTP_HOST}/arlington/ [R=301,L,NC,NE]
+  RewriteRule ^water-damage/?$ https://%{HTTP_HOST}/water-damage-restoration/ [R=301,L,NC,NE]
+  RewriteRule ^fire-damage/?$ https://%{HTTP_HOST}/fire-damage-restoration/ [R=301,L,NC,NE]
+  RewriteRule ^storm-damage/?$ https://%{HTTP_HOST}/storm-damage-restoration/ [R=301,L,NC,NE]
+  RewriteRule ^commercial/?$ https://%{HTTP_HOST}/commercial-water-damage/ [R=301,L,NC,NE]
+  RewriteRule ^emergency/?$ https://%{HTTP_HOST}/emergency-water-damage/ [R=301,L,NC,NE]
+  RewriteRule ^insurance/?$ https://%{HTTP_HOST}/insurance-claims/ [R=301,L,NC,NE]
+  RewriteRule ^pompano-beach-fl/?$ https://%{HTTP_HOST}/ [R=301,L,NC,NE]
+  RewriteRule ^fort-lauderdale-fl/?$ https://%{HTTP_HOST}/ [R=301,L,NC,NE]
+  RewriteRule ^hollywood-fl/?$ https://%{HTTP_HOST}/ [R=301,L,NC,NE]
+  RewriteRule ^hialeah-fl/?$ https://%{HTTP_HOST}/ [R=301,L,NC,NE]
+  RewriteRule ^miami-beach-fl/?$ https://%{HTTP_HOST}/ [R=301,L,NC,NE]
+  RewriteRule ^pembroke-pines-fl/?$ https://%{HTTP_HOST}/ [R=301,L,NC,NE]
+  RewriteRule ^kendall-fl/?$ https://%{HTTP_HOST}/ [R=301,L,NC,NE]
+  RewriteRule ^author/[^/]+/?$ https://%{HTTP_HOST}/about/ [R=301,L,NC,NE]
+
+  # WordPress short links (?page_id= / ?p=): 301 to the page, query dropped.
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=13(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=122(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/about/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=124(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/#services [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=125(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/#reviews [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=126(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/contact/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=131(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/water-damage-restoration/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=132(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/water-damage-restoration/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=133(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/water-extraction/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=134(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/storm-damage-restoration/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=136(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/fire-damage-restoration/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=141(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/mclean/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=142(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ashburn/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=143(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/leesburg/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=144(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ashburn/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=149(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/water-damage-restoration-alexandria-va/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=150(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/vienna/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=154(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/arlington/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=527(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=544(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=549(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=574(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=586(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=591(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=599(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9001(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/about/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9002(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/water-damage-restoration-alexandria-va/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9003(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/arlington/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9004(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ashburn/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9005(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/bethesda/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9006(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/commercial-water-damage/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9007(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/contact/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9008(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/emergency-water-damage/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9009(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/fairfax/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9010(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/falls-church/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9011(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/fire-damage-restoration/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9012(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/frederick/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9013(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/fredericksburg/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9014(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9015(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/insurance-claims/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9016(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/leesburg/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9017(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/martinsburg/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9018(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/mclean/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9019(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/reston/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9020(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/rockville/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9021(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/sewage-cleanup/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9022(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/silver-spring/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9023(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/storm-damage-restoration/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9024(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/tysons/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9025(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/vienna/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9026(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/washington-dc/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9028(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/water-extraction/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9029(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/winchester/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9099(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/water-damage-restoration/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9200(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/why-does-my-basement-flood-when-it-rains/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9201(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/what-to-do-when-your-basement-floods/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9202(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/does-homeowners-insurance-cover-water-damage/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9215(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/burst-pipe-what-to-do-first-hour/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9219(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/flooded-basement-cleanup-what-happens-next/ [R=301,L,QSD,NE]
+  RewriteCond %{QUERY_STRING} (?:^|&)(?:page_id|p)=9221(?:&|$)
+  RewriteRule ^(?:index\.php)?$ https://%{HTTP_HOST}/water-damage-restoration-alexandria-va/ [R=301,L,QSD,NE]
+
+  # WordPress sitemaps -> the new sitemap.
+  RewriteRule ^(?:sitemap_index|wp-sitemap|[a-z_-]+-sitemap\d*|wp-sitemap-[a-z0-9_-]+)\.xml$ https://%{HTTP_HOST}/sitemap.xml [R=301,L,NC]
+  RewriteRule ^sitemap_index\.xsl$ - [G,L,NC]
+
+  # Old uploaded photos (any WordPress size, e.g. -300x200) -> the new file showing the same photo.
+  RewriteRule ^wp-content/uploads/2025/04/Asset-13-1(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo.png [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/Asset-13-1-1(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo.png [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/Asset-13-1-removebg-preview(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo.png [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/Asset-13-1-removebg-preview-1(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo.png [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-1200(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-1200(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-1200-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-1200-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-1200-2(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-1200-2(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-800(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-800(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-800-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-800-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-arriving-dusk.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/capacity-fleet-800-2(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/team-storefront-blurred.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-fire-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-fire-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-fire-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-fire-1448-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-fire-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-fire-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-fire-960-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/fire-damaged-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-fire-960-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/fire-damaged-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-flood-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-flood-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-flood-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-flood-1448-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-moisture-meter.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-flood-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-flood-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-flood-960-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-vacuum-hardwood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-flood-960-2(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-storm-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-storm-1448(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo-icon.png [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-storm-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-storm-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-vacuum-hardwood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-storm-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-storm-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-storm-960-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/hero-storm-960-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/logo-icon(?:-\d+x\d+)?\.png$ https://%{HTTP_HOST}/images/brand/logo-icon.png [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/logo-icon(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/brand/logo-icon.png [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-about-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/team-storefront-blurred.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-about-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/team-storefront-blurred.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-about-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/team-storefront-blurred.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-about-1448-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-arriving-dusk.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-about-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/team-storefront-blurred.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-about-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/team-storefront-blurred.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-about-960-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-about-960-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-commercial-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-commercial-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-commercial-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/team-storefront.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-commercial-1448-2(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-vacuum-hardwood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-commercial-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-commercial-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-commercial-960-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-vacuum-hardwood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-commercial-960-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-emergency-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-arriving-dusk.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-emergency-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/fire-damaged-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-emergency-1448-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-emergency-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-emergency-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-extract-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-extract-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-extract-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-moisture-meter.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-extract-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-fire-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/plastic-containment-hallway.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-fire-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-fire-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-fire-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/team-storefront.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-fire-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-insurance-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-insurance-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-moisture-meter.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-insurance-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-arriving-dusk.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-insurance-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/fire-damaged-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-insurance-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/team-storefront.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-sewage-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-sewage-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-sewage-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/fire-damaged-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-sewage-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-storm-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-storm-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-storm-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-storm-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-storm-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-storm-960-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-water-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/insurance-review-kitchen-table.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-water-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-vacuum-hardwood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-water-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-water-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/phero-water-960-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-kitchen.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-1-480(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-corridor-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-1-480(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-1-480-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-1-800(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-corridor-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-1-800(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-1-800-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-2-480(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-2-480(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-2-480-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-2-800(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-2-800(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-3-480(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-3-480(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/team-storefront-blurred.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-3-800(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-comm-3-800(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/insurance-review-kitchen-table.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-fire-480(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/insurance-review-kitchen-table.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-fire-480(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-kitchen.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-fire-800(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/plastic-containment-hallway.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-fire-800(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-moisture-meter.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-storm-480(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-storm-480(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/team-storefront-blurred.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-storm-480-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-vacuum-hardwood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-storm-800(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-storm-800(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-water-480(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-moisture-meter.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-water-480(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-water-480-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-kitchen.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-water-800(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-vacuum-hardwood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-water-800(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/proj-water-800-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-commercial-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-commercial-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-commercial-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-commercial-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/insurance-review-kitchen-table.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-emergency-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-emergency-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-emergency-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/fire-damaged-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-emergency-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-kitchen.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-emergency-960-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-corridor-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-extract-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-extract-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-extract-1448-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/fire-damaged-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-extract-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-extract-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/office-corridor-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-extract-960-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-fire-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-fire-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/fire-damaged-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-fire-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-fire-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-fire-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-flood-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-flood-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-flood-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/equipment-warehouse.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-flood-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-corridor-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-flood-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-insurance-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-insurance-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-kitchen.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-insurance-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/insurance-review-kitchen-table.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-insurance-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-insurance-960-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/plastic-containment-hallway.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-sewage-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-extracting-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-sewage-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/plastic-containment-hallway.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-sewage-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/technician-arriving-dusk.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-sewage-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/fire-damaged-living-room.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-storm-1448(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/office-cubicles-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-storm-1448(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-storm-1448-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-storm-960(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/van-fallen-tree.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-storm-960(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/technician-vacuum-hardwood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/split-storm-960-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/office-corridor-drying.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/team-480(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-fire.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/team-480(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/team-storefront.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/team-480-1(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/hero-storm.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/team-760(?:-\d+x\d+)?\.jpg$ https://%{HTTP_HOST}/images/photos/team-storefront.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/team-760(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/hero-flood.jpg [R=301,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/team-760-1(?:-\d+x\d+)?\.webp$ https://%{HTTP_HOST}/images/photos/team-storefront.jpg [R=301,L,NC]
+  # Old uploads that are not used on the new site (stock photos from the old theme, placeholders, an archive).
+  RewriteRule ^wp-content/uploads/2025/04/1200x800(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/1_UmnAYxPdxV7NVIRsYgb4lQ(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/5eddfc7cb203c(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/AdobeStock_123400658(?:-\d+x\d+)?\.webp$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/AdobeStock_20903474(?:-\d+x\d+)?\.webp$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/Chapter-4-CCHA-8(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/Ecosan-Flood-Water-Damage-Restoration-01(?:-\d+x\d+)?\.webp$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/Mold-Remove(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/Water-Damage-Restoration-Services(?:-\d+x\d+)?\.webp$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/WaterDamage-1920w(?:-\d+x\d+)?\.webp$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/WhatsApp-Image-2023-10-16-at-00\.33\.53-1(?:-\d+x\d+)?\.jpeg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/XXXL(?:-\d+x\d+)?\.webp$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/bd576937894507\.574fb5f22b175-scaled-1(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/channels4_profile(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/floor(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/h1_4555(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/incendio-em-condominio-1\.38279bf\.060e83a13ae88ca67383eba9ec31df06(?:-\d+x\d+)?\.jpg$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/placeholder(?:-\d+x\d+)?\.png$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/placeholder-1(?:-\d+x\d+)?\.png$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/placeholder-2(?:-\d+x\d+)?\.png$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/placeholder-3(?:-\d+x\d+)?\.png$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/placeholder-4(?:-\d+x\d+)?\.png$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2025/04/stock-photo-burnt-out-house-with-charred-roof-trusses-and-burnt-furniture-1-1(?:-\d+x\d+)?\.webp$ - [G,L,NC]
+  RewriteRule ^wp-content/uploads/2026/07/updated-pages-html(?:-\d+x\d+)?\.zip$ - [G,L,NC]
+  RewriteRule ^wp-content/ - [G,L,NC]
+  # ---- end of old WordPress URLs ----
+
+  # Pages live at /page/ (page/index.html): add the missing slash, on https.
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.*[^/])$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+  # The Sanity Studio is one page; its inner URLs (/cms/structure/...) load it.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^cms/. /cms/index.html [L]
+</IfModule>
+
+# The form's settings file and the upload tool's file list are never served.
+<FilesMatch "^(lead-config\.php|\.ftp-deploy-sync-state\.json)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # CSP: what the pages load. Google Analytics 4 (gtag), Google Maps embeds, Sanity images, and the
+  # GoHighLevel (LeadConnector) chat widget once it is switched on. New third-party tags need their hosts here.
+  # The studio at /cms talks to many Sanity hosts and is protected by Sanity login instead.
+  <If "%{REQUEST_URI} !~ m#^/cms(/|$)#">
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.leadconnectorhq.com https://*.msgsndr.com; style-src 'self' 'unsafe-inline' https://*.leadconnectorhq.com https://*.msgsndr.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.gstatic.com https://*.leadconnectorhq.com https://*.msgsndr.com; font-src 'self' data: https://*.leadconnectorhq.com https://*.msgsndr.com; connect-src 'self' https://www.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.leadconnectorhq.com https://*.msgsndr.com wss://*.leadconnectorhq.com; frame-src 'self' https://www.google.com https://maps.google.com https://*.leadconnectorhq.com https://*.msgsndr.com; media-src 'self' https://*.leadconnectorhq.com https://*.msgsndr.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+  </If>
+
+  # Caching: hashed build files a year, photos a month, pages always revalidated.
+  <FilesMatch "\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(webp|avif|jpe?g|png|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|txt|xml)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# Compress text files. Apache serves .js as text/javascript, so both JavaScript types are listed.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/manifest+json image/svg+xml text/xml application/xml text/plain
+</IfModule>

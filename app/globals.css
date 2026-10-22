@@ -1,0 +1,13 @@
+/*
+ * Site styles. Tailwind v4 (theme + utilities, no preflight: the old site's own reset is used so
+ * the pages render the same), then the old site's layers in the order it loaded them.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@import "./styles/reset.css";
+@import "./styles/kit.css";
+@import "./styles/wdp.css";
+@import "./styles/post.css";
+@import "./styles/fixes.css";

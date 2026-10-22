@@ -1,0 +1,105 @@
+/*
+ * The old site's Elementor "kit" (global colors and typography, post-8.css), which sat on <body> and
+ * styled everything the design stylesheet did not override. Copied with the same selectors' weight
+ * (.elementor-kit-8 -> .kit on <body>) so the pages render as they did.
+ * The kit's fonts (Poppins, Roboto, Open Sans, Lato) were never loaded on the old site (http font
+ * files on an https page), so visitors saw their system sans-serif; the same names and fallbacks are
+ * kept here and the fonts are deliberately not loaded.
+ */
+.kit {
+  --e-global-color-primary: #ed1f24;
+  --e-global-color-secondary: #084c7f;
+  --e-global-color-text: #5e5e5e;
+  --e-global-color-accent: #000000;
+  --e-global-typography-primary-font-family: "Poppins";
+  --e-global-typography-primary-font-size: 24px;
+  --e-global-typography-primary-font-weight: 600;
+  --e-global-typography-primary-text-transform: capitalize;
+  --e-global-typography-primary-line-height: 35px;
+  --e-global-typography-primary-letter-spacing: 0.4px;
+  --e-global-typography-text-font-family: "Open Sans";
+  --e-global-typography-text-font-size: 18px;
+  --e-global-typography-text-font-weight: 400;
+  --e-global-typography-text-line-height: 26px;
+  font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+  font-size: var(--e-global-typography-primary-font-size);
+  font-weight: var(--e-global-typography-primary-font-weight);
+  text-transform: var(--e-global-typography-primary-text-transform);
+  line-height: var(--e-global-typography-primary-line-height);
+  letter-spacing: var(--e-global-typography-primary-letter-spacing);
+}
+.kit button,
+.kit input[type="button"],
+.kit input[type="submit"] {
+  background-color: var(--e-global-color-primary);
+  color: #182937;
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+  padding: 15px 25px 15px 25px;
+}
+.kit button:hover,
+.kit button:focus,
+.kit input[type="button"]:hover,
+.kit input[type="button"]:focus,
+.kit input[type="submit"]:hover,
+.kit input[type="submit"]:focus {
+  background-color: #182937;
+  color: #ffffff;
+  border-radius: 0px 0px 0px 0px;
+}
+.kit a {
+  color: #182937;
+}
+.kit a:hover {
+  color: #12365d;
+}
+.kit h2 {
+  color: #182937;
+  font-family: "Roboto", Sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1em;
+}
+.kit label {
+  color: #182937;
+}
+.kit input:not([type="button"]):not([type="submit"]),
+.kit textarea {
+  font-family: var(--e-global-typography-text-font-family), Sans-serif;
+  font-size: var(--e-global-typography-text-font-size);
+  font-weight: var(--e-global-typography-text-font-weight);
+  line-height: var(--e-global-typography-text-line-height);
+  color: #5e5e5e;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #eaeaea;
+  border-radius: 0px 0px 0px 0px;
+}
+.kit input:focus:not([type="button"]):not([type="submit"]),
+.kit textarea:focus {
+  color: #5e5e5e;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #cccccccc;
+}
+@media (max-width: 1024px) {
+  .kit {
+    --e-global-typography-primary-font-size: 15px;
+    --e-global-typography-text-font-size: 15px;
+    font-size: var(--e-global-typography-primary-font-size);
+  }
+  .kit h2 {
+    font-size: 31px;
+  }
+}
+@media (max-width: 767px) {
+  .kit {
+    --e-global-typography-primary-font-size: 14px;
+    --e-global-typography-text-font-size: 14px;
+    font-size: var(--e-global-typography-primary-font-size);
+  }
+  .kit h2 {
+    font-size: 30px;
+  }
+}
