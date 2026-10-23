@@ -11,7 +11,7 @@ export async function SectionPage({ page }: { page: Page }) {
   const faqs = pageFaqs(page);
   const crumbs = pageBreadcrumbs(page);
   return (
-    <SiteShell onHome={page.slug === ""}>
+    <SiteShell onHome={page.slug === ""} footerLinkLabels={page.footerLinkLabels}>
       {crumbs ? <JsonLd data={breadcrumbSchema(crumbs)} /> : null}
       {faqs.length ? <JsonLd data={faqSchema(faqs)} /> : null}
       <Sections sections={page.sections} settings={settings} trackPage={page.slug || "home"} />

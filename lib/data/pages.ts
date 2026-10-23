@@ -13,24 +13,48 @@ export const fallbackPages: Page[] = [
         "ariaLabel": "Emergency water, fire and storm damage restoration",
         "slides": [
           {
-            "src": "/images/photos/hero-flood.jpg",
+            "src": "/images/uploads/2026/07/hero-flood-1448.jpg",
             "alt": "A flooded suburban home surrounded by storm water",
             "width": 1448,
             "height": 1086,
+            "picture": {
+              "webp": "/images/uploads/2026/07/hero-flood-960.webp 960w, /images/uploads/2026/07/hero-flood-1448.webp 1448w",
+              "webpSizes": "100vw",
+              "srcset": "/images/uploads/2026/07/hero-flood-960.jpg 960w, /images/uploads/2026/07/hero-flood-1448.jpg 1448w",
+              "sizes": "100vw",
+              "fetchPriority": "high",
+              "decoding": "async"
+            },
             "label": "Flood damage"
           },
           {
-            "src": "/images/photos/hero-fire.jpg",
+            "src": "/images/uploads/2026/07/hero-fire-1448.jpg",
             "alt": "A house with fire and smoke damage",
             "width": 1448,
             "height": 1086,
+            "picture": {
+              "webp": "/images/uploads/2026/07/hero-fire-960.webp 960w, /images/uploads/2026/07/hero-fire-1448.webp 1448w",
+              "webpSizes": "100vw",
+              "srcset": "/images/uploads/2026/07/hero-fire-960.jpg 960w, /images/uploads/2026/07/hero-fire-1448.jpg 1448w",
+              "sizes": "auto, 100vw",
+              "loading": "lazy",
+              "decoding": "async"
+            },
             "label": "Fire damage"
           },
           {
-            "src": "/images/photos/hero-storm.jpg",
+            "src": "/images/uploads/2026/07/hero-storm-1448.jpg",
             "alt": "A home with a large tree fallen on the roof after a storm",
             "width": 1448,
             "height": 1086,
+            "picture": {
+              "webp": "/images/uploads/2026/07/hero-storm-960.webp 960w, /images/uploads/2026/07/hero-storm-1448.webp 1448w",
+              "webpSizes": "100vw",
+              "srcset": "/images/uploads/2026/07/hero-storm-960.jpg 960w, /images/uploads/2026/07/hero-storm-1448.jpg 1448w",
+              "sizes": "auto, 100vw",
+              "loading": "lazy",
+              "decoding": "async"
+            },
             "label": "Storm damage"
           }
         ],
@@ -211,10 +235,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "McLean, VA",
@@ -227,10 +259,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Interior of a living room with fire and smoke damage",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke Damage",
             "location": "Alexandria, VA",
@@ -243,10 +283,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Fallen Tree",
             "location": "Fairfax, VA",
@@ -260,7 +308,7 @@ export const fallbackPages: Page[] = [
         ],
         "button": {
           "label": "See all recent jobs →",
-          "href": "/#recent-projects",
+          "href": "/projects/",
           "style": "ghost"
         }
       },
@@ -402,10 +450,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/team-storefront-blurred.jpg",
-          "alt": "The Water Damage Pro team in front of their storefront, blurred as a background",
+          "src": "/images/uploads/2026/07/phero-about-1448.jpg",
+          "alt": "",
           "width": 1448,
-          "height": 966
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-about-960.webp 960w, /images/uploads/2026/07/phero-about-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-about-960.jpg 960w, /images/uploads/2026/07/phero-about-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -479,10 +535,18 @@ export const fallbackPages: Page[] = [
           "Every one of our technicians is IICRC certified and trained to handle water, fire, and storm damage the right way. We’re fully licensed and insured, we document everything for your insurance, and we’re on call 24 hours a day, 365 days a year."
         ],
         "image": {
-          "src": "/images/photos/team-storefront.jpg",
+          "src": "/images/uploads/2026/07/team-760.jpg",
           "alt": "The Water Damage Pro team in uniform in front of their branded storefront and truck in Vienna, VA",
           "width": 760,
-          "height": 760
+          "height": 760,
+          "picture": {
+            "webp": "/images/uploads/2026/07/team-480.webp 480w, /images/uploads/2026/07/team-760.webp 760w",
+            "webpSizes": "(max-width:820px) 100vw, 480px",
+            "srcset": "/images/uploads/2026/07/team-480.jpg 480w, /images/uploads/2026/07/team-760.jpg 760w",
+            "sizes": "auto, (max-width:820px) 100vw, 480px",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -627,7 +691,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Water Damage Restoration in Reston",
@@ -883,10 +947,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water Damage Pro technician extracting water from a hardwood floor",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -964,10 +1036,18 @@ export const fallbackPages: Page[] = [
           "From the first call to the final repair, we document everything for your insurance and manage the claim for you — so you can focus on your family, not the paperwork."
         ],
         "image": {
-          "src": "/images/photos/hero-flood.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "A flooded suburban home surrounded by water",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -1100,10 +1180,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "McLean, VA",
@@ -1116,10 +1204,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Interior of a living room with fire and smoke damage",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke Damage",
             "location": "Alexandria, VA",
@@ -1132,10 +1228,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Fallen Tree",
             "location": "Fairfax, VA",
@@ -1149,7 +1253,7 @@ export const fallbackPages: Page[] = [
         ],
         "button": {
           "label": "See all recent jobs →",
-          "href": "/#recent-projects",
+          "href": "/projects/",
           "style": "ghost"
         }
       },
@@ -1165,7 +1269,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Water Damage Restoration in McLean",
@@ -1291,10 +1395,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-extracting-kitchen.jpg",
+          "src": "/images/uploads/2026/07/phero-extract-1448.jpg",
           "alt": "Technician performing emergency water extraction in a flooded home",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-extract-960.webp 960w, /images/uploads/2026/07/phero-extract-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-extract-960.jpg 960w, /images/uploads/2026/07/phero-extract-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -1369,13 +1481,21 @@ export const fallbackPages: Page[] = [
         "heading": "Standing water is the emergency. We remove it fast.",
         "paragraphs": [
           "Every hour that water sits, it soaks deeper into floors, subfloor, drywall, and framing — and mold clocks start ticking. Water extraction is the critical first move, and our crews respond 24/7 with truck-mounted extractors and submersible pumps to pull the water out fast.",
-          "Once the standing water is gone, we roll straight into [full drying and restoration](/water-damage-restoration/) — one team, start to finish, and we handle your insurance claim."
+          "Once the standing water is gone, we roll straight into [full drying and restoration](/water-damage-restoration/ \"color:var(--wdp-red-ink);font-weight:700\") — one team, start to finish, and we handle your insurance claim."
         ],
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/split-extract-1448.jpg",
           "alt": "Water Damage Pro technician extracting water from a hardwood floor",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-extract-960.webp 960w, /images/uploads/2026/07/split-extract-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-extract-960.jpg 960w, /images/uploads/2026/07/split-extract-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -1508,10 +1628,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "McLean, VA",
@@ -1524,10 +1652,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Interior of a living room with fire and smoke damage",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke Damage",
             "location": "Alexandria, VA",
@@ -1540,10 +1676,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Fallen Tree",
             "location": "Fairfax, VA",
@@ -1557,7 +1701,7 @@ export const fallbackPages: Page[] = [
         ],
         "button": {
           "label": "See all recent jobs →",
-          "href": "/#recent-projects",
+          "href": "/projects/",
           "style": "ghost"
         }
       },
@@ -1573,7 +1717,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Extraction in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Water Extraction in McLean",
@@ -1699,10 +1843,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/hero-fire.jpg",
+          "src": "/images/uploads/2026/07/phero-fire-1448.jpg",
           "alt": "A suburban house with fire and smoke damage",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-fire-960.webp 960w, /images/uploads/2026/07/phero-fire-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-fire-960.jpg 960w, /images/uploads/2026/07/phero-fire-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -1780,10 +1932,18 @@ export const fallbackPages: Page[] = [
           "We start by securing your home (emergency board-up and tarping), remove the water and soot, neutralize the odor, and rebuild — documenting everything and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/fire-damaged-living-room.jpg",
+          "src": "/images/uploads/2026/07/split-fire-1448.jpg",
           "alt": "Interior of a living room with fire and smoke damage",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-fire-960.webp 960w, /images/uploads/2026/07/split-fire-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-fire-960.jpg 960w, /images/uploads/2026/07/split-fire-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -1916,10 +2076,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "McLean, VA",
@@ -1932,10 +2100,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Interior of a living room with fire and smoke damage",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke Damage",
             "location": "Alexandria, VA",
@@ -1948,10 +2124,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Fallen Tree",
             "location": "Fairfax, VA",
@@ -1965,7 +2149,7 @@ export const fallbackPages: Page[] = [
         ],
         "button": {
           "label": "See all recent jobs →",
-          "href": "/#recent-projects",
+          "href": "/projects/",
           "style": "ghost"
         }
       },
@@ -1981,7 +2165,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Fire Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Fire Damage Restoration in McLean",
@@ -2107,10 +2291,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/hero-storm.jpg",
+          "src": "/images/uploads/2026/07/phero-storm-1448.jpg",
           "alt": "A home with a large tree fallen on the roof after a storm",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-storm-960.webp 960w, /images/uploads/2026/07/phero-storm-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-storm-960.jpg 960w, /images/uploads/2026/07/phero-storm-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -2188,10 +2380,18 @@ export const fallbackPages: Page[] = [
           "Then we handle the full recovery — water extraction, drying, structural repairs, and reconstruction — documenting everything and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/van-fallen-tree.jpg",
+          "src": "/images/uploads/2026/07/split-storm-1448.jpg",
           "alt": "Water Damage Pro van on-site at a home with a fallen tree",
-          "width": 1448,
-          "height": 965
+          "width": 1536,
+          "height": 1024,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-storm-960.webp 960w, /images/uploads/2026/07/split-storm-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-storm-960.jpg 960w, /images/uploads/2026/07/split-storm-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -2324,10 +2524,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "McLean, VA",
@@ -2340,10 +2548,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Interior of a living room with fire and smoke damage",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke Damage",
             "location": "Alexandria, VA",
@@ -2356,10 +2572,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Fallen Tree",
             "location": "Fairfax, VA",
@@ -2373,7 +2597,7 @@ export const fallbackPages: Page[] = [
         ],
         "button": {
           "label": "See all recent jobs →",
-          "href": "/#recent-projects",
+          "href": "/projects/",
           "style": "ghost"
         }
       },
@@ -2389,7 +2613,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Storm Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Storm Damage Restoration in McLean",
@@ -2515,10 +2739,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "commercial",
         "image": {
-          "src": "/images/photos/office-cubicles-drying.jpg",
+          "src": "/images/uploads/2026/07/phero-commercial-1448.jpg",
           "alt": "Rows of air movers drying a corporate office floor after commercial water damage",
           "width": 1448,
-          "height": 966
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-commercial-960.webp 960w, /images/uploads/2026/07/phero-commercial-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-commercial-960.jpg 960w, /images/uploads/2026/07/phero-commercial-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -2596,10 +2828,18 @@ export const fallbackPages: Page[] = [
           "Our commercial crews respond 24/7 to extract the water, set up containment, and dry the structure with high-capacity equipment — working nights, weekends, and in phased zones so you can keep operating. We document everything and bill your commercial carrier directly."
         ],
         "image": {
-          "src": "/images/photos/plastic-containment-hallway.jpg",
+          "src": "/images/uploads/2026/07/split-commercial-1448.jpg",
           "alt": "Water Damage Pro technicians drying a commercial floor with plastic containment in place",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-commercial-960.webp 960w, /images/uploads/2026/07/split-commercial-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-commercial-960.jpg 960w, /images/uploads/2026/07/split-commercial-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -2643,10 +2883,18 @@ export const fallbackPages: Page[] = [
       {
         "_type": "capacity",
         "image": {
-          "src": "/images/photos/equipment-warehouse.jpg",
+          "src": "/images/uploads/2026/07/capacity-fleet-1200.jpg",
           "alt": "Water Damage Pro warehouse stocked with commercial air movers and dehumidifiers ready to deploy",
           "width": 1200,
-          "height": 900
+          "height": 900,
+          "picture": {
+            "webp": "/images/uploads/2026/07/capacity-fleet-800.webp 800w, /images/uploads/2026/07/capacity-fleet-1200.webp 1200w",
+            "webpSizes": "(max-width:860px) 100vw, 48vw",
+            "srcset": "/images/uploads/2026/07/capacity-fleet-800.jpg 800w, /images/uploads/2026/07/capacity-fleet-1200.jpg 1200w",
+            "sizes": "auto, (max-width:860px) 100vw, 48vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         },
         "kicker": "Built for Big Jobs",
         "heading": "Equipment and crews to dry an entire building.",
@@ -2769,10 +3017,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/office-corridor-drying.jpg",
+              "src": "/images/uploads/2026/07/proj-comm-1-800.jpg",
               "alt": "Office corridor with air movers and a dehumidifier drying the carpet after a water loss",
               "width": 800,
-              "height": 600
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-comm-1-480.webp 480w, /images/uploads/2026/07/proj-comm-1-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-comm-1-480.jpg 480w, /images/uploads/2026/07/proj-comm-1-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Office · Water Loss",
             "location": "Tysons, VA",
@@ -2785,10 +3041,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/equipment-warehouse.jpg",
+              "src": "/images/uploads/2026/07/proj-comm-2-800.jpg",
               "alt": "Commercial drying equipment fleet staged for a large-loss job",
-              "width": 1200,
-              "height": 900
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-comm-2-480.webp 480w, /images/uploads/2026/07/proj-comm-2-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-comm-2-480.jpg 480w, /images/uploads/2026/07/proj-comm-2-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Warehouse · Large Loss",
             "location": "Sterling, VA",
@@ -2801,10 +3065,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/office-cubicles-drying.jpg",
+              "src": "/images/uploads/2026/07/proj-comm-3-800.jpg",
               "alt": "Corporate office cubicles being dried with air movers after water damage",
-              "width": 1448,
-              "height": 966
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-comm-3-480.webp 480w, /images/uploads/2026/07/proj-comm-3-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-comm-3-480.jpg 480w, /images/uploads/2026/07/proj-comm-3-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Corporate Office · Reopened",
             "location": "Reston, VA",
@@ -2818,7 +3090,7 @@ export const fallbackPages: Page[] = [
         ],
         "button": {
           "label": "See all recent jobs →",
-          "href": "/#recent-projects",
+          "href": "/projects/",
           "style": "ghost"
         }
       },
@@ -2834,7 +3106,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Commercial Water Damage in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Commercial Water Damage in McLean",
@@ -2960,10 +3232,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/phero-emergency-1448.jpg",
           "alt": "Water Damage Pro technician arriving at a home at dusk and carrying drying equipment for an emergency call",
           "width": 1448,
-          "height": 966
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-emergency-960.webp 960w, /images/uploads/2026/07/phero-emergency-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-emergency-960.jpg 960w, /images/uploads/2026/07/phero-emergency-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -3041,10 +3321,18 @@ export const fallbackPages: Page[] = [
           "We answer live 24/7, walk you through what to do on the phone, and get a certified crew moving right away — then we start extracting water and drying the structure the moment we’re on-site."
         ],
         "image": {
-          "src": "/images/photos/technician-extracting-kitchen.jpg",
+          "src": "/images/uploads/2026/07/split-emergency-1448.jpg",
           "alt": "Water Damage Pro technician extracting water from a flooded hardwood floor inside a home",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-emergency-960.webp 960w, /images/uploads/2026/07/split-emergency-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-emergency-960.jpg 960w, /images/uploads/2026/07/split-emergency-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -3178,7 +3466,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Emergency Water Damage in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Emergency Water Damage in McLean",
@@ -3292,10 +3580,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-moisture-meter.jpg",
+          "src": "/images/uploads/2026/07/phero-insurance-1448.jpg",
           "alt": "Water Damage Pro technician documenting water damage with a moisture meter and tablet for an insurance claim",
           "width": 1448,
-          "height": 966
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-insurance-960.webp 960w, /images/uploads/2026/07/phero-insurance-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-insurance-960.jpg 960w, /images/uploads/2026/07/phero-insurance-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -3373,10 +3669,18 @@ export const fallbackPages: Page[] = [
           "You stay in control the whole way. In most covered claims, your only out-of-pocket cost is your deductible — and because you choose your own restoration company, you never have to settle for your insurer’s “preferred” vendor."
         ],
         "image": {
-          "src": "/images/photos/insurance-review-kitchen-table.jpg",
+          "src": "/images/uploads/2026/07/split-insurance-1448.jpg",
           "alt": "Water Damage Pro specialist reviewing an insurance claim with a homeowner at their kitchen table",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-insurance-960.webp 960w, /images/uploads/2026/07/split-insurance-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-insurance-960.jpg 960w, /images/uploads/2026/07/split-insurance-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -3514,7 +3818,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Insurance Claims Help in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Insurance Claims Help in McLean",
@@ -3628,10 +3932,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-extracting-living-room.jpg",
+          "src": "/images/uploads/2026/07/phero-sewage-1448.jpg",
           "alt": "Technician cleaning up a contaminated water spill",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-sewage-960.webp 960w, /images/uploads/2026/07/phero-sewage-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-sewage-960.jpg 960w, /images/uploads/2026/07/phero-sewage-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -3709,10 +4021,18 @@ export const fallbackPages: Page[] = [
           "We extract the sewage, remove and dispose of contaminated materials, disinfect and deodorize every affected surface, then dry and restore your home — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/plastic-containment-hallway.jpg",
+          "src": "/images/uploads/2026/07/split-sewage-1448.jpg",
           "alt": "Restoration technician performing contaminated water cleanup",
           "width": 1448,
-          "height": 1086
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-sewage-960.webp 960w, /images/uploads/2026/07/split-sewage-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-sewage-960.jpg 960w, /images/uploads/2026/07/split-sewage-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -3845,10 +4165,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "McLean, VA",
@@ -3861,10 +4189,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Interior of a living room with fire and smoke damage",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke Damage",
             "location": "Alexandria, VA",
@@ -3877,10 +4213,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Fallen Tree",
             "location": "Fairfax, VA",
@@ -3894,7 +4238,7 @@ export const fallbackPages: Page[] = [
         ],
         "button": {
           "label": "See all recent jobs →",
-          "href": "/#recent-projects",
+          "href": "/projects/",
           "style": "ghost"
         }
       },
@@ -3910,7 +4254,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Sewage Cleanup in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Sewage Cleanup in McLean",
@@ -4036,10 +4380,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Vienna, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -4117,10 +4469,18 @@ export const fallbackPages: Page[] = [
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Vienna, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -4266,10 +4626,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Vienna",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Vienna, VA",
@@ -4282,10 +4650,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Vienna, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Oakton, VA",
@@ -4298,10 +4674,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Vienna, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Dunn Loring, VA",
@@ -4438,10 +4822,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a McLean, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -4473,7 +4865,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in McLean",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -4515,14 +4907,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your McLean Neighbors",
         "heading": "Fast, certified restoration for McLean.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in McLean, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near McLean, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -4668,10 +5068,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in McLean",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "McLean, VA",
@@ -4684,10 +5092,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near McLean, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Tysons, VA",
@@ -4700,10 +5116,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near McLean, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Falls Church, VA",
@@ -4765,7 +5189,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in McLean?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22101, 22102, and 22106."
+            "answer": "We’re based right here in McLean and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22101, 22102, and 22106."
           },
           {
             "question": "Do you serve all of McLean?",
@@ -4828,7 +5252,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in McLean, VA - Water Damage Pro",
       "description": "Water damage restoration in McLean, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "McLean"
+      }
+    ]
   },
   {
     "slug": "tysons",
@@ -4840,10 +5270,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Tysons, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -4875,7 +5313,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Tysons",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -4917,14 +5355,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Tysons Neighbors",
         "heading": "Fast, certified restoration for Tysons.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Tysons, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Tysons, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -5070,10 +5516,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Tysons",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Tysons, VA",
@@ -5086,10 +5540,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Tysons, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "McLean, VA",
@@ -5102,10 +5564,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Tysons, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Vienna, VA",
@@ -5167,7 +5637,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Tysons?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22102 and 22182."
+            "answer": "We’re based right here in Tysons and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22102 and 22182."
           },
           {
             "question": "Do you serve all of Tysons?",
@@ -5230,7 +5700,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Tysons, VA - Water Damage Pro",
       "description": "Water damage restoration in Tysons, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Tysons"
+      }
+    ]
   },
   {
     "slug": "falls-church",
@@ -5242,10 +5718,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Falls Church, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -5277,7 +5761,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Falls Church",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -5319,14 +5803,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Falls Church Neighbors",
         "heading": "Fast, certified restoration for Falls Church.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Falls Church, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Falls Church, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -5472,10 +5964,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Falls Church",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Falls Church, VA",
@@ -5488,10 +5988,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Falls Church, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Annandale, VA",
@@ -5504,10 +6012,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Falls Church, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Arlington, VA",
@@ -5558,7 +6074,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           }
         ]
       },
@@ -5569,7 +6085,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Falls Church?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22041, 22042, and 22046."
+            "answer": "We’re based right here in Falls Church and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22041, 22042, and 22046."
           },
           {
             "question": "Do you serve all of Falls Church?",
@@ -5632,7 +6148,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Falls Church, VA - Water Damage Pro",
       "description": "Water damage restoration in Falls Church, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Falls Church"
+      }
+    ]
   },
   {
     "slug": "fairfax",
@@ -5644,10 +6166,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Fairfax, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -5679,7 +6209,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Fairfax",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -5721,14 +6251,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Fairfax Neighbors",
         "heading": "Fast, certified restoration for Fairfax.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Fairfax, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Fairfax, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -5874,10 +6412,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Fairfax",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Fairfax, VA",
@@ -5890,10 +6436,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Fairfax, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Oakton, VA",
@@ -5906,10 +6460,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Fairfax, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Fairfax Station, VA",
@@ -5960,7 +6522,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           }
         ]
       },
@@ -5971,7 +6533,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Fairfax?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22030, 22031, and 22032."
+            "answer": "We’re based right here in Fairfax and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22030, 22031, and 22032."
           },
           {
             "question": "Do you serve all of Fairfax?",
@@ -6034,7 +6596,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration Fairfax VA | 24/7 Emergency | Water Damage Pro",
       "description": "Water damage restoration in Fairfax, VA — burst pipes, flooded basements & storm damage. 24/7 response from our Vienna base, direct insurance billing. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Fairfax"
+      }
+    ]
   },
   {
     "slug": "reston",
@@ -6046,10 +6614,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Reston, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -6081,7 +6657,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Reston",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -6123,14 +6699,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Reston Neighbors",
         "heading": "Fast, certified restoration for Reston.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Reston, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Reston, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -6276,10 +6860,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Reston",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Reston, VA",
@@ -6292,10 +6884,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Reston, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Herndon, VA",
@@ -6308,10 +6908,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Reston, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Oakton, VA",
@@ -6373,7 +6981,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Reston?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20190, 20191, and 20194."
+            "answer": "We’re based right here in Reston and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20190, 20191, and 20194."
           },
           {
             "question": "Do you serve all of Reston?",
@@ -6436,7 +7044,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Reston, VA - Water Damage Pro",
       "description": "Water damage restoration in Reston, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Reston"
+      }
+    ]
   },
   {
     "slug": "arlington",
@@ -6448,10 +7062,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
-          "alt": "Water damage restoration in progress at an Arlington, VA home",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
+          "alt": "Water damage restoration in progress at a Arlington, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -6483,7 +7105,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Arlington",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -6525,14 +7147,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Arlington Neighbors",
         "heading": "Fast, certified restoration for Arlington.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Arlington, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Arlington, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -6678,10 +7308,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Arlington",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Arlington, VA",
@@ -6694,10 +7332,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Arlington, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Alexandria, VA",
@@ -6710,10 +7356,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Arlington, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Falls Church, VA",
@@ -6744,7 +7398,7 @@ export const fallbackPages: Page[] = [
         "links": [
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Water Damage Restoration in Falls Church",
@@ -6775,7 +7429,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Arlington?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22201, 22203, and 22207."
+            "answer": "We’re based right here in Arlington and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22201, 22203, and 22207."
           },
           {
             "question": "Do you serve all of Arlington?",
@@ -6838,7 +7492,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Arlington, VA - Water Damage Pro",
       "description": "Water damage restoration in Arlington, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Arlington"
+      }
+    ]
   },
   {
     "slug": "ashburn",
@@ -6850,10 +7510,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
-          "alt": "Water damage restoration in progress at an Ashburn, VA home",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
+          "alt": "Water damage restoration in progress at a Ashburn, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -6885,7 +7553,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Ashburn",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -6927,14 +7595,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Ashburn Neighbors",
         "heading": "Fast, certified restoration for Ashburn.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Ashburn, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Ashburn, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -7080,10 +7756,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Ashburn",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Ashburn, VA",
@@ -7096,10 +7780,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Ashburn, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Brambleton, VA",
@@ -7112,10 +7804,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Ashburn, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Sterling, VA",
@@ -7177,7 +7877,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Ashburn?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20147 and 20148."
+            "answer": "We’re based right here in Ashburn and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20147 and 20148."
           },
           {
             "question": "Do you serve all of Ashburn?",
@@ -7240,7 +7940,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Ashburn, VA - Water Damage Pro",
       "description": "Water damage restoration in Ashburn, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Ashburn"
+      }
+    ]
   },
   {
     "slug": "leesburg",
@@ -7252,10 +7958,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Leesburg, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -7287,7 +8001,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Leesburg",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -7329,14 +8043,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Leesburg Neighbors",
         "heading": "Fast, certified restoration for Leesburg.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Leesburg, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Leesburg, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -7482,10 +8204,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Leesburg",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Leesburg, VA",
@@ -7498,10 +8228,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Leesburg, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Lansdowne, VA",
@@ -7514,10 +8252,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Leesburg, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Ashburn, VA",
@@ -7579,7 +8325,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Leesburg?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20175 and 20176."
+            "answer": "We’re based right here in Leesburg and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20175 and 20176."
           },
           {
             "question": "Do you serve all of Leesburg?",
@@ -7642,7 +8388,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Leesburg, VA - Water Damage Pro",
       "description": "Water damage restoration in Leesburg, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Leesburg"
+      }
+    ]
   },
   {
     "slug": "washington-dc",
@@ -7654,10 +8406,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Washington, DC home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -7689,7 +8449,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Washington",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -7731,14 +8491,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Washington Neighbors",
         "heading": "Fast, certified restoration for Washington.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Washington, DC. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Washington, DC",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -7884,10 +8652,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Washington",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Washington, DC",
@@ -7900,10 +8676,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Washington, DC",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Capitol Hill, DC",
@@ -7916,10 +8700,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Washington, DC",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Georgetown, DC",
@@ -7954,7 +8746,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Water Damage Restoration in Bethesda",
@@ -7981,7 +8773,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Washington?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20001, 20009, and 20016."
+            "answer": "We’re based right here in Washington and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20001, 20009, and 20016."
           },
           {
             "question": "Do you serve all of Washington?",
@@ -8044,7 +8836,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration Washington DC | 24/7 Emergency | Water Damage Pro",
       "description": "Emergency water damage restoration in Washington DC — burst pipes, flooded basements, storm damage. 24/7 response, structural drying, direct insurance billing. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Washington"
+      }
+    ]
   },
   {
     "slug": "bethesda",
@@ -8056,10 +8854,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Bethesda, MD home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -8091,7 +8897,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Bethesda",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -8133,14 +8939,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Bethesda Neighbors",
         "heading": "Fast, certified restoration for Bethesda.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Bethesda, MD. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Bethesda, MD",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -8286,10 +9100,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Bethesda",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Bethesda, MD",
@@ -8302,10 +9124,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Bethesda, MD",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Chevy Chase, MD",
@@ -8318,10 +9148,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Bethesda, MD",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Potomac, MD",
@@ -8383,7 +9221,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Bethesda?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20814, 20816, and 20817."
+            "answer": "We’re based right here in Bethesda and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20814, 20816, and 20817."
           },
           {
             "question": "Do you serve all of Bethesda?",
@@ -8446,7 +9284,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration Bethesda MD | 24/7 Emergency | Water Damage Pro",
       "description": "Water damage restoration in Bethesda, MD for burst pipes, basement flooding & storm damage. 24/7 emergency response and direct insurance billing. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Bethesda"
+      }
+    ]
   },
   {
     "slug": "rockville",
@@ -8458,10 +9302,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Rockville, MD home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -8493,7 +9345,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Rockville",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -8535,14 +9387,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Rockville Neighbors",
         "heading": "Fast, certified restoration for Rockville.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Rockville, MD. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Rockville, MD",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -8688,10 +9548,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Rockville",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Rockville, MD",
@@ -8704,10 +9572,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Rockville, MD",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "North Bethesda, MD",
@@ -8720,10 +9596,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Rockville, MD",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Gaithersburg, MD",
@@ -8785,7 +9669,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Rockville?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20850, 20851, and 20852."
+            "answer": "We’re based right here in Rockville and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20850, 20851, and 20852."
           },
           {
             "question": "Do you serve all of Rockville?",
@@ -8848,7 +9732,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Rockville, MD - Water Damage Pro",
       "description": "Water damage restoration in Rockville, MD — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Rockville"
+      }
+    ]
   },
   {
     "slug": "silver-spring",
@@ -8860,10 +9750,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Silver Spring, MD home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -8895,7 +9793,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Silver Spring",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -8937,14 +9835,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Silver Spring Neighbors",
         "heading": "Fast, certified restoration for Silver Spring.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Silver Spring, MD. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Silver Spring, MD",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -9090,10 +9996,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Silver Spring",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Silver Spring, MD",
@@ -9106,10 +10020,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Silver Spring, MD",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Takoma Park, MD",
@@ -9122,10 +10044,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Silver Spring, MD",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Wheaton, MD",
@@ -9172,7 +10102,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Water Damage Restoration in Frederick",
@@ -9187,7 +10117,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Silver Spring?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20901, 20902, and 20910."
+            "answer": "We’re based right here in Silver Spring and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 20901, 20902, and 20910."
           },
           {
             "question": "Do you serve all of Silver Spring?",
@@ -9250,7 +10180,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Silver Spring, MD - Water Damage Pro",
       "description": "Water damage restoration in Silver Spring, MD — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Silver Spring"
+      }
+    ]
   },
   {
     "slug": "frederick",
@@ -9262,10 +10198,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Frederick, MD home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -9297,7 +10241,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Frederick",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -9339,14 +10283,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Frederick Neighbors",
         "heading": "Fast, certified restoration for Frederick.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Frederick, MD. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Frederick, MD",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -9492,10 +10444,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Frederick",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Frederick, MD",
@@ -9508,10 +10468,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Frederick, MD",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Urbana, MD",
@@ -9524,10 +10492,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Frederick, MD",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Walkersville, MD",
@@ -9589,7 +10565,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Frederick?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 21701, 21702, and 21703."
+            "answer": "We’re based right here in Frederick and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 21701, 21702, and 21703."
           },
           {
             "question": "Do you serve all of Frederick?",
@@ -9652,7 +10628,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Frederick, MD - Water Damage Pro",
       "description": "Water damage restoration in Frederick, MD — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Frederick"
+      }
+    ]
   },
   {
     "slug": "winchester",
@@ -9664,10 +10646,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Winchester, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -9699,7 +10689,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Winchester",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -9741,14 +10731,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Winchester Neighbors",
         "heading": "Fast, certified restoration for Winchester.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Winchester, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Winchester, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -9894,10 +10892,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Winchester",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Winchester, VA",
@@ -9910,10 +10916,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Winchester, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Stephens City, VA",
@@ -9926,10 +10940,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Winchester, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Berryville, VA",
@@ -9991,7 +11013,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Winchester?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22601, 22602, and 22603."
+            "answer": "We’re based right here in Winchester and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22601, 22602, and 22603."
           },
           {
             "question": "Do you serve all of Winchester?",
@@ -10054,7 +11076,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Winchester, VA - Water Damage Pro",
       "description": "Water damage restoration in Winchester, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Winchester"
+      }
+    ]
   },
   {
     "slug": "fredericksburg",
@@ -10066,10 +11094,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Fredericksburg, VA home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -10101,7 +11137,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Fredericksburg",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -10143,14 +11179,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Fredericksburg Neighbors",
         "heading": "Fast, certified restoration for Fredericksburg.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Fredericksburg, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Fredericksburg, VA",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -10296,10 +11340,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Fredericksburg",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Fredericksburg, VA",
@@ -10312,10 +11364,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Fredericksburg, VA",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Stafford, VA",
@@ -10328,10 +11388,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Fredericksburg, VA",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Spotsylvania, VA",
@@ -10362,7 +11430,7 @@ export const fallbackPages: Page[] = [
         "links": [
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/water-damage-restoration-alexandria-va/"
+            "href": "/alexandria/"
           },
           {
             "label": "Water Damage Restoration in Arlington",
@@ -10393,7 +11461,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Fredericksburg?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22401, 22405, and 22408."
+            "answer": "We’re based right here in Fredericksburg and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 22401, 22405, and 22408."
           },
           {
             "question": "Do you serve all of Fredericksburg?",
@@ -10456,7 +11524,13 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Fredericksburg, VA - Water Damage Pro",
       "description": "Water damage restoration in Fredericksburg, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Fredericksburg"
+      }
+    ]
   },
   {
     "slug": "martinsburg",
@@ -10468,10 +11542,18 @@ export const fallbackPages: Page[] = [
         "_type": "pageHero",
         "variant": "default",
         "image": {
-          "src": "/images/photos/technician-vacuum-hardwood.jpg",
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
           "alt": "Water damage restoration in progress at a Martinsburg, WV home",
           "width": 1448,
-          "height": 1086
+          "height": 966,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
         },
         "breadcrumb": [
           {
@@ -10503,7 +11585,7 @@ export const fallbackPages: Page[] = [
           }
         ],
         "ticks": [
-          "Based in Vienna, VA",
+          "Based in Martinsburg",
           "24/7 Response",
           "IICRC Certified"
         ]
@@ -10545,14 +11627,22 @@ export const fallbackPages: Page[] = [
         "kicker": "Your Martinsburg Neighbors",
         "heading": "Fast, certified restoration for Martinsburg.",
         "paragraphs": [
-          "Water Damage Pro is based nearby in Vienna, VA. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
+          "Water Damage Pro is based right here in Martinsburg, WV. When a pipe bursts or a storm floods your basement, you don’t want a national call center — you want a local crew that knows the area and can be at your door fast. That’s us.",
           "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration — documenting it all and billing your insurance directly."
         ],
         "image": {
-          "src": "/images/photos/technician-arriving-dusk.jpg",
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
           "alt": "Water Damage Pro crew responding to water damage at a home near Martinsburg, WV",
           "width": 1448,
-          "height": 966
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
         }
       },
       {
@@ -10698,10 +11788,18 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "image": {
-              "src": "/images/photos/technician-extracting-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
               "alt": "Technician extracting water from a hardwood floor after a ceiling leak in Martinsburg",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Water · Basement",
             "location": "Martinsburg, WV",
@@ -10714,10 +11812,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/van-fallen-tree.jpg",
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
               "alt": "Storm and water damage response at a home near Martinsburg, WV",
-              "width": 1448,
-              "height": 965
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Storm · Water",
             "location": "Inwood, WV",
@@ -10730,10 +11836,18 @@ export const fallbackPages: Page[] = [
           },
           {
             "image": {
-              "src": "/images/photos/fire-damaged-living-room.jpg",
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
               "alt": "Fire and smoke damage restoration near Martinsburg, WV",
-              "width": 1448,
-              "height": 1086
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
             },
             "badge": "Fire · Smoke",
             "location": "Hedgesville, WV",
@@ -10795,7 +11909,7 @@ export const fallbackPages: Page[] = [
         "items": [
           {
             "question": "How fast can you reach my home in Martinsburg?",
-            "answer": "We’re based nearby in Vienna, VA and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 25401, 25403, and 25404."
+            "answer": "We’re based right here in Martinsburg and treat every call as an emergency — so we dispatch fast, 24/7, to homes and businesses across 25401, 25403, and 25404."
           },
           {
             "question": "Do you serve all of Martinsburg?",
@@ -10858,6 +11972,12 @@ export const fallbackPages: Page[] = [
     "seo": {
       "title": "Water Damage Restoration in Martinsburg, WV - Water Damage Pro",
       "description": "Water damage restoration in Martinsburg, WV — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
-    }
+    },
+    "footerLinkLabels": [
+      {
+        "href": "/vienna/",
+        "label": "Martinsburg"
+      }
+    ]
   }
 ];

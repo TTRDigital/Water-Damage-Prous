@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { Link } from "@/lib/types";
 import { getSiteSettings } from "@/lib/content";
 import { businessSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -10,10 +11,10 @@ import { Analytics } from "@/components/layout/Analytics";
 import { AttributionCapture } from "@/components/forms/AttributionCapture";
 
 /**
- * Header, footer and site-wide behaviors around a page. `solid`: the page has no dark photo hero,
- * so the header starts solid and the content starts below it.
+ * Header, footer and site-wide behaviors around a page. `footerLinkLabels`: footer links this page
+ * labels differently (see Page.footerLinkLabels).
  */
-export async function SiteShell({ children, onHome = false, solid = false }: { children: ReactNode; onHome?: boolean; solid?: boolean }) {
+export async function SiteShell({ children, onHome = false, footerLinkLabels }: { children: ReactNode; onHome?: boolean; footerLinkLabels?: Link[] }) {
   const settings = await getSiteSettings();
   return (
     <>
@@ -21,11 +22,11 @@ export async function SiteShell({ children, onHome = false, solid = false }: { c
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:rounded focus:bg-white focus:px-4 focus:py-2">
         Skip to content
       </a>
-      <Header settings={settings} onHome={onHome} solid={solid} />
-      <main id="main" tabIndex={-1} className={solid ? "wdp-solid-top" : undefined} style={{ outline: "none" }}>
+      <Header settings={settings} onHome={onHome} />
+      <main id="main" tabIndex={-1} style={{ outline: "none" }}>
         {children}
       </main>
-      <Footer settings={settings} />
+      <Footer settings={settings} linkLabels={footerLinkLabels} />
       <SiteScripts />
       <ChatWidget />
       <AttributionCapture />

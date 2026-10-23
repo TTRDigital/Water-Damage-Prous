@@ -5,9 +5,9 @@ import type { Img } from "@/lib/types";
 import { Photo } from "@/components/ui/Photo";
 
 /**
- * The home hero's rotating photos. The first photo is the page's main image (loaded first, high
- * priority); the others are only added once the page has finished loading, so they never compete
- * with it. The rotation itself is in components/layout/SiteScripts.tsx.
+ * The home hero's rotating photos, with the old markup. The first photo is the page's main image;
+ * the other two (hidden until the slideshow reaches them, 3 s and 6 s in) are added once the page
+ * has loaded, so they never compete with it. The rotation is in components/layout/SiteScripts.tsx.
  */
 export function HeroSlides({ slides }: { slides: (Img & { label: string })[] }) {
   const [loaded, setLoaded] = useState(false);

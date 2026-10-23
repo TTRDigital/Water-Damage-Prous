@@ -6,20 +6,34 @@ import type { PtBlock } from "@/lib/types";
  * WordPress block markup (wp-block-paragraph, wp-block-heading, wp-block-list, wp-block-quote).
  */
 
+/** Inline text: neighbouring spans that share a mark share one element (<strong>a <a>link</a></strong>), as in the old HTML. */
 function spans(b: PtBlock): ReactNode[] {
-  return (b.children ?? []).map((c) => {
-    const text = c.text ?? "";
-    let node: ReactNode = text.includes("\n")
-      ? text.split("\n").flatMap((t, i) => (i ? [<br key={`br${i}`} />, t] : [t]))
-      : text;
-    for (const m of c.marks ?? []) {
-      const def = (b.markDefs ?? []).find((d) => d._key === m);
-      if (def) node = <a href={def.href}>{node}</a>;
-      else if (m === "strong") node = <strong>{node}</strong>;
-      else if (m === "em") node = <em>{node}</em>;
+  const text = (t: string) => (t.includes("\n") ? t.split("\n").flatMap((x, i) => (i ? [<br key={`br${i}`} />, x] : [x])) : t);
+  const wrap = (m: string, key: string, children: ReactNode[]): ReactNode => {
+    const def = (b.markDefs ?? []).find((d) => d._key === m);
+    if (def) return <a key={key} href={def.href}>{children}</a>;
+    if (m === "strong") return <strong key={key}>{children}</strong>;
+    if (m === "em") return <em key={key}>{children}</em>;
+    return <Fragment key={key}>{children}</Fragment>;
+  };
+  // Marks are listed outermost first.
+  const nest = (list: PtBlock["children"], depth: number): ReactNode[] => {
+    const out: ReactNode[] = [];
+    for (let i = 0; i < list.length; ) {
+      const m = list[i].marks?.[depth];
+      if (!m) {
+        out.push(<Fragment key={list[i]._key}>{text(list[i].text ?? "")}</Fragment>);
+        i++;
+        continue;
+      }
+      let j = i;
+      while (j < list.length && list[j].marks?.[depth] === m) j++;
+      out.push(wrap(m, list[i]._key, nest(list.slice(i, j), depth + 1)));
+      i = j;
     }
-    return <Fragment key={c._key}>{node}</Fragment>;
-  });
+    return out;
+  };
+  return nest(b.children ?? [], 0);
 }
 
 export function PortableBody({ blocks }: { blocks: PtBlock[] }) {

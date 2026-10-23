@@ -1,9 +1,10 @@
 <?php
 /*
  * Lead form handler for SiteGround (the static site has no Node server).
- * Both forms post here: "quick" (name, phone, address, what happened) and "message"
- * (name, phone, email, address, message). Validates like the form does, filters spam and posts
- * the lead as flat JSON to the GoHighLevel inbound webhook.
+ * The forms post here: "quick" (name, phone, address, what happened), "message"
+ * (name, phone, email, address, message) and "comment" (the blog posts' "Leave a Reply" form:
+ * comment, name, email, website). Validates like the form does, filters spam and posts the lead
+ * as flat JSON to the GoHighLevel inbound webhook.
  *
  * The webhook URL lives in lead-config.php (next to public_html or in this folder; blocked from
  * the web by .htaccess), returning ['webhook_url' => 'https://services.leadconnectorhq.com/hooks/...'].
@@ -11,7 +12,7 @@
  * (the visitor sees the thank-you message) but NOT forwarded anywhere, and the error log says so.
  *
  * Without JavaScript the browser posts the form fields directly; the visitor is then sent back
- * to the page (?sent=1 or ?error=1).
+ * to the page (?sent=1 or ?error=1, at the form: #help, or #respond for a comment).
  */
 
 header('Cache-Control: no-store');
@@ -23,7 +24,8 @@ function back(string $flag): void {
     $ref = $_SERVER['HTTP_REFERER'] ?? '/';
     $host = strtolower(preg_replace('/:\d+$/', '', $_SERVER['HTTP_HOST'] ?? ''));
     $path = strtolower((string) parse_url($ref, PHP_URL_HOST)) === $host ? (string) parse_url($ref, PHP_URL_PATH) : '/';
-    header('Location: ' . ($path ?: '/') . '?' . $flag . '=1#help', true, 303);
+    $anchor = isset($_POST['comment']) ? '#respond' : '#help';
+    header('Location: ' . ($path ?: '/') . '?' . $flag . '=1' . $anchor, true, 303);
     exit;
 }
 
@@ -68,7 +70,13 @@ if ($isJson) {
 } else {
     $in = $_POST;
     $in['consent'] = ($in['consent'] ?? '') === 'yes';
-    $in['form'] = isset($in['message']) || isset($in['email']) ? 'message' : 'quick';
+    $in['form'] = isset($in['comment']) ? 'comment' : (isset($in['message']) || isset($in['email']) ? 'message' : 'quick');
+    if ($in['form'] === 'comment') {
+        // The "Leave a Reply" form keeps WordPress's field names.
+        $in['name'] = $in['author'] ?? '';
+        $in['message'] = $in['comment'] ?? '';
+        $in['website'] = $in['url'] ?? '';
+    }
 }
 
 function text(array $in, string $key, int $max): string {
@@ -77,21 +85,30 @@ function text(array $in, string $key, int $max): string {
     return mb_substr(trim($v), 0, $max);
 }
 
-// Keep in sync with components/forms/LeadForm.tsx.
-$form = text($in, 'form', 20) === 'message' ? 'message' : 'quick';
+// Keep in sync with components/forms/LeadForm.tsx and components/layout/LegacyScripts.tsx.
+$form = text($in, 'form', 20);
+if (!in_array($form, ['message', 'comment'], true)) $form = 'quick';
 $lead = [
     'name' => text($in, 'name', 120),
     'phone' => text($in, 'phone', 40),
     'email' => text($in, 'email', 200),
     'address' => text($in, 'address', 300),
-    'details' => $form === 'message' ? text($in, 'message', 3000) : text($in, 'issue', 3000),
+    'details' => $form === 'quick' ? text($in, 'issue', 3000) : text($in, 'message', 3000),
+    'website' => text($in, 'website', 200),
 ];
 
 $errors = [];
-if (mb_strlen($lead['name']) < 2) $errors['name'] = 'Please enter your full name.';
-if (!preg_match('/^[0-9()#&+*\-=. ]+$/', $lead['phone']) || strlen(preg_replace('/\D/', '', $lead['phone'])) < 10) $errors['phone'] = 'Please enter a phone number with area code.';
-if ($lead['email'] !== '' && !filter_var($lead['email'], FILTER_VALIDATE_EMAIL)) $errors['email'] = 'Please enter a valid email address.';
-if (($in['consent'] ?? false) !== true) $errors['consent'] = 'Please agree so we can contact you.';
+if ($form === 'comment') {
+    // As WordPress checked a comment: comment, name and a valid email required.
+    if ($lead['details'] === '') $errors['comment'] = 'Please type your comment text.';
+    if ($lead['name'] === '') $errors['author'] = 'Please fill the required fields.';
+    if (!filter_var($lead['email'], FILTER_VALIDATE_EMAIL)) $errors['email'] = 'Please enter a valid email address.';
+} else {
+    if (mb_strlen($lead['name']) < 2) $errors['name'] = 'Please enter your full name.';
+    if (!preg_match('/^[0-9()#&+*\-=. ]+$/', $lead['phone']) || strlen(preg_replace('/\D/', '', $lead['phone'])) < 10) $errors['phone'] = 'Please enter a phone number with area code.';
+    if ($lead['email'] !== '' && !filter_var($lead['email'], FILTER_VALIDATE_EMAIL)) $errors['email'] = 'Please enter a valid email address.';
+    if (($in['consent'] ?? false) !== true) $errors['consent'] = 'Please agree so we can contact you.';
+}
 if ($errors) {
     reply(422, ['ok' => false, 'error' => 'Please check the form.', 'fields' => $errors]);
 }
@@ -132,11 +149,16 @@ elseif (strlen($digits) === 11 && $digits[0] === '1') $phone = '+' . $digits;
 else $phone = (str_starts_with($lead['phone'], '+') ? '+' : '') . $digits;
 
 $parts = preg_split('/\s+/', $lead['name']);
-$tags = ['website-lead', $form === 'message' ? 'contact-form' : 'emergency-help-form'];
+$kinds = [
+    'quick' => ['Website emergency help form', 'emergency-help-form'],
+    'message' => ['Website contact form', 'contact-form'],
+    'comment' => ['Website blog comment', 'blog-comment'],
+];
+$tags = ['website-lead', $kinds[$form][1]];
 if ($spamCheck !== 'ok') $tags[] = 'suspected-spam';
 
 $payload = [
-    'source' => $form === 'message' ? 'Website contact form' : 'Website emergency help form',
+    'source' => $kinds[$form][0],
     'submitted_at' => gmdate('c'),
     'name' => $lead['name'],
     'first_name' => $parts[0],
@@ -146,8 +168,9 @@ $payload = [
     'phone_raw' => $lead['phone'],
     'address' => $lead['address'],
     'message' => $lead['details'],
+    'website' => $lead['website'],
     'form' => $form,
-    'consent' => true,
+    'consent' => $form !== 'comment',
     'tags' => $tags,
     'spam_check' => $spamCheck,
 ];

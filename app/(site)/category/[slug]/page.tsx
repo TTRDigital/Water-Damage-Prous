@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getCategories, getPosts } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { breadcrumbSchema } from "@/lib/schema";
-import { SiteShell } from "@/components/layout/SiteShell";
-import { Article } from "@/components/pages/Article";
+import { LegacyShell } from "@/components/legacy/LegacyShell";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { Photo } from "@/components/ui/Photo";
 
-/** Category archives (/category/<slug>/), as on the old site: title, photo and excerpt of each post. */
+/** Category archives (/category/<slug>/), as on the old site (its other template): title, photo and excerpt of each post. */
 
 export const dynamicParams = false;
 
@@ -29,38 +28,35 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   if (!cat) notFound();
   const list = posts.filter((p) => p.category === slug);
   return (
-    <SiteShell solid>
+    <LegacyShell bodyClass={`archive category category-${slug}${cat.wpId ? ` category-${cat.wpId}` : ""}`}>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: cat.title, path: `/category/${slug}/` }])} />
-      <Article
-        title={
-          <>
+      <main id="content" className="site-main">
+        <div className="page-header">
+          <h1 className="entry-title">
             Category: <span>{cat.title}</span>
-          </>
-        }
-      >
-        {list.map((p, i) => (
-          <article key={p.slug} className="post">
-            <h2 className="entry-title">
-              <a href={`/${p.slug}/`}>{p.title}</a>
-            </h2>
-            {p.image ? (
-              <a href={`/${p.slug}/`} tabIndex={-1} aria-hidden="true">
-                <Image
-                  className="wp-post-image"
-                  src={p.image.src}
-                  alt={p.image.alt}
-                  width={p.image.width}
-                  height={p.image.height}
-                  sizes="(max-width: 800px) 100vw, 800px"
-                  loading={i === 0 ? "eager" : "lazy"}
-                  fetchPriority={i === 0 ? "high" : undefined}
-                />
-              </a>
-            ) : null}
-            <p>{p.excerpt}</p>
-          </article>
-        ))}
-      </Article>
-    </SiteShell>
+          </h1>
+        </div>
+        <div className="page-content">
+          {list.map((p, i) => (
+            <article key={p.slug} className="post">
+              <h2 className="entry-title">
+                <a href={`/${p.slug}/`}>{p.title}</a>
+              </h2>
+              {p.image ? (
+                <a href={`/${p.slug}/`}>
+                  <Photo
+                    img={i === 0 && p.image.picture ? { ...p.image, picture: { ...p.image.picture, fetchPriority: "high" } } : p.image}
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    hero={i === 0}
+                    className="attachment-large size-large wp-post-image"
+                  />
+                </a>
+              ) : null}
+              <p>{p.excerpt}</p>
+            </article>
+          ))}
+        </div>
+      </main>
+    </LegacyShell>
   );
 }

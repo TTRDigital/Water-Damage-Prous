@@ -3,9 +3,10 @@
 import { useEffect } from "react";
 
 /*
- * The old site's page behavior (its "Phase 1/4/5" scripts), run after React has hydrated:
- * header turns solid on scroll, phone menu toggle, hero slideshow (3 s crossfade), FAQ accordion
- * and the scroll-reveal animation. Everything degrades to visible, working content without JS.
+ * The old site's page behavior (its "Phase 1/4/5" scripts, same steps), run after React has
+ * hydrated: header turns solid on scroll, phone menu toggle, hero slideshow (3 s crossfade), FAQ
+ * accordion and the scroll-reveal animation. Everything degrades to visible, working content
+ * without JS. (The city map is components/sections/AreaMap.tsx.)
  */
 export function SiteScripts() {
   useEffect(() => {
@@ -13,7 +14,7 @@ export function SiteScripts() {
 
     /* Header: transparent over the hero, solid on scroll. */
     const header = document.querySelector<HTMLElement>(".wdp-header");
-    if (header && !header.hasAttribute("data-solid")) {
+    if (header) {
       const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 40);
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
@@ -27,21 +28,9 @@ export function SiteScripts() {
       const onToggle = () => {
         const open = nav.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      };
-      const onNavClick = (e: Event) => {
-        if ((e.target as HTMLElement).closest("a")) {
-          nav.classList.remove("is-open");
-          toggle.setAttribute("aria-expanded", "false");
-          toggle.setAttribute("aria-label", "Open menu");
-        }
       };
       toggle.addEventListener("click", onToggle);
-      nav.addEventListener("click", onNavClick);
-      cleanups.push(() => {
-        toggle.removeEventListener("click", onToggle);
-        nav.removeEventListener("click", onNavClick);
-      });
+      cleanups.push(() => toggle.removeEventListener("click", onToggle));
     }
 
     /* Hero slideshow. */
@@ -72,13 +61,9 @@ export function SiteScripts() {
           d.addEventListener("click", h);
           return () => d.removeEventListener("click", h);
         });
-        // The other photos are lazy: start rotating once the page has loaded, so the first photo stays the only early download.
-        const begin = () => start();
-        if (document.readyState === "complete") begin();
-        else window.addEventListener("load", begin, { once: true });
+        start();
         cleanups.push(() => {
           window.clearInterval(timer);
-          window.removeEventListener("load", begin);
           handlers.forEach((h) => h());
         });
       }
@@ -116,9 +101,6 @@ export function SiteScripts() {
         { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
       );
       targets.forEach((el, idx) => {
-        // Already on screen: show at once (no flash of hidden content above the fold).
-        const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) return;
         el.classList.add("wdp-reveal");
         el.style.transitionDelay = `${Math.min(idx % 4, 3) * 0.06}s`;
         io.observe(el);

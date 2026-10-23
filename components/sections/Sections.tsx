@@ -423,7 +423,7 @@ function Steps({ s, ctx }: { s: StepsSection; ctx: Ctx }) {
     <section className="wdp-section" id={s.anchor} aria-labelledby={id} style={paper(s)}>
       <div className="wdp-container">
         <Head s={s} id={id} />
-        <div className={s.columns === 4 ? "wdp-steps wdp-steps--4" : "wdp-steps"}>
+        <div className="wdp-steps" style={s.columns === 4 ? { gridTemplateColumns: "repeat(4,1fr)" } : undefined}>
           {s.items.map((it, i) => (
             <div key={i} className="wdp-step">
               <div className="wdp-step__n">{i + 1}</div>

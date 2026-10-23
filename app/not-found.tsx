@@ -1,21 +1,20 @@
-import "./globals.css";
-import Link from "next/link";
-import { SiteShell } from "@/components/layout/SiteShell";
-import { Article } from "@/components/pages/Article";
+import { LegacyShell } from "@/components/legacy/LegacyShell";
 
-export const metadata = { title: { absolute: "Page not found - Water Damage Pro" }, robots: { index: false } };
+/* The old site's "not found" page (its other template), word for word. */
+
+export const metadata = { title: { absolute: "Page Not Found - Water Damage Pro" }, robots: { index: false, follow: true } };
 
 export default function NotFound() {
   return (
-    <SiteShell solid>
-      <Article title="Page not found">
-        <p>The page you were looking for has moved or no longer exists.</p>
-        <p>
-          <Link href="/" prefetch={false}>
-            Back to the home page
-          </Link>
-        </p>
-      </Article>
-    </SiteShell>
+    <LegacyShell bodyClass="error404">
+      <main id="content" className="site-main">
+        <div className="page-header">
+          <h1 className="entry-title">The page can’t be found.</h1>
+        </div>
+        <div className="page-content">
+          <p>It looks like nothing was found at this location.</p>
+        </div>
+      </main>
+    </LegacyShell>
   );
 }

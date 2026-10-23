@@ -15,7 +15,7 @@ import { createReadStream, existsSync, readFileSync } from "node:fs";
 import { basename, join } from "node:path";
 import { createClient } from "@sanity/client";
 import type { Img, Page, Section } from "../lib/types";
-import { fallbackLegalPages, fallbackSettings } from "../lib/data/site.ts";
+import { fallbackSettings } from "../lib/data/site.ts";
 import { fallbackPages } from "../lib/data/pages.ts";
 import { fallbackCategories, fallbackPosts, fallbackTextPages } from "../lib/data/posts.ts";
 
@@ -168,11 +168,12 @@ async function build() {
       kind: p.kind,
       order: p.order,
       sections: await Promise.all(p.sections.map(section)),
+      footerLinkLabels: p.footerLinkLabels ? links(p.footerLinkLabels) : undefined,
       seo: seo(p.seo),
     });
   }
 
-  for (const c of fallbackCategories) docs.push({ _id: `category-${c.slug}`, _type: "category", title: c.title, slug: { _type: "slug", current: c.slug }, seo: seo(c.seo) });
+  for (const c of fallbackCategories) docs.push({ _id: `category-${c.slug}`, _type: "category", title: c.title, slug: { _type: "slug", current: c.slug }, wpId: c.wpId, seo: seo(c.seo) });
   for (const p of fallbackPosts)
     docs.push({
       _id: `post-${p.slug}`,
@@ -184,10 +185,13 @@ async function build() {
       excerpt: p.excerpt,
       image: await altImage(p.image),
       body: p.body,
+      css: p.css,
+      comments: !!p.comments,
+      wpId: p.wpId,
       seo: seo(p.seo),
     });
-  for (const t of [...fallbackTextPages, ...fallbackLegalPages])
-    docs.push({ _id: `textPage-${t.slug}`, _type: "textPage", title: t.title, slug: { _type: "slug", current: t.slug }, body: t.body, seo: seo(t.seo) });
+  for (const t of fallbackTextPages)
+    docs.push({ _id: `textPage-${t.slug}`, _type: "textPage", title: t.title, slug: { _type: "slug", current: t.slug }, body: t.body, wpId: t.wpId, seo: seo(t.seo) });
 
   return docs;
 }

@@ -4,14 +4,22 @@ import { Fragment, useState } from "react";
 import type { AreaMapSection } from "@/lib/types";
 import { Rich } from "@/components/ui/Rich";
 import { PinIcon } from "@/components/ui/Icon";
-import { cityHref, cityLabel, mapEmbedUrl } from "@/lib/maps";
+import { mapEmbedUrl } from "@/lib/maps";
+
+/*
+ * As the old page's script did it: every city is labelled ", VA" except Washington DC (", DC"),
+ * the city link starts as "#" and becomes /<city>/ once a chip is clicked.
+ */
+const label = (name: string) => name + (name === "Washington DC" ? ", DC" : ", VA");
+const slugify = (name: string) => name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
 
 /** Home page "Click your city": the chips move the Google map and the link to that city's page. */
 export function AreaMap({ s }: { s: AreaMapSection }) {
   const first = s.groups[0]?.cities[0] ?? "Vienna";
-  const [city, setCity] = useState(first);
-  // The first view is the wider area (zoom 10), as before; a chosen city zooms in (11).
-  const [zoom, setZoom] = useState(10);
+  // null: the first view (wider area, zoom 10); a clicked city zooms in (11).
+  const [picked, setPicked] = useState<string | null>(null);
+  const city = picked ?? first;
+  const src = picked ? `https://www.google.com/maps?q=${encodeURIComponent(label(picked))}&z=11&output=embed` : mapEmbedUrl(label(first), 10);
   return (
     <section className="wdp-area wdp-section" id={s.anchor ?? "locations"} aria-labelledby="wdp-area-heading">
       <div className="wdp-container wdp-area__grid">
@@ -37,10 +45,7 @@ export function AreaMap({ s }: { s: AreaMapSection }) {
                       className="wdp-chip"
                       data-city={c}
                       aria-pressed={c === city}
-                      onClick={() => {
-                        setCity(c);
-                        setZoom(11);
-                      }}
+                      onClick={() => setPicked(c)}
                     >
                       {c}
                     </button>
@@ -51,10 +56,10 @@ export function AreaMap({ s }: { s: AreaMapSection }) {
           </div>
         </div>
         <div>
-          <iframe className="wdp-mapframe" title={s.mapTitle} loading="lazy" referrerPolicy="no-referrer-when-downgrade" src={mapEmbedUrl(cityLabel(city), zoom)} />
+          <iframe className="wdp-mapframe" id="wdpMap" title={s.mapTitle} loading="lazy" referrerPolicy="no-referrer-when-downgrade" src={src} />
           <div className="wdp-mapdetail">
             <p className="wdp-mapdetail__city">
-              <PinIcon /> <span>{cityLabel(city)}</span>
+              <PinIcon /> <span id="wdpCityName">{label(city)}</span>
             </p>
             <div className="wdp-mapdetail__stats">
               {s.stats.map((st, i) => (
@@ -64,7 +69,7 @@ export function AreaMap({ s }: { s: AreaMapSection }) {
                 </div>
               ))}
             </div>
-            <a className="wdp-mapdetail__link" href={cityHref(city)}>
+            <a className="wdp-mapdetail__link" href={picked ? `/${slugify(picked)}/` : "#"} id="wdpCityLink">
               View {city} water damage page →
             </a>
           </div>

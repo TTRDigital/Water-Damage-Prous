@@ -9,10 +9,15 @@ export const fallbackPosts: Post[] = [
     "category": "uncategorized",
     "excerpt": "A flooded basement feels chaotic, but professional cleanup follows a set order. Knowing that order helps you judge whether a job is being done properly — and why rushing the visible part causes problems later. First, identify the water Clean water from a supply line is handled differently from storm water or sewage, which can […]",
     "image": {
-      "src": "/images/photos/technician-extracting-living-room.jpg",
-      "alt": "Water Damage Pro technician extracting standing water from a hardwood floor",
-      "width": 1448,
-      "height": 1086
+      "src": "/images/uploads/2026/07/split-extract-1448-1024x768.jpg",
+      "alt": "Water Damage Pro technician extracting standing water in Alexandria VA",
+      "width": 800,
+      "height": 600,
+      "picture": {
+        "srcset": "/images/uploads/2026/07/split-extract-1448-1024x768.jpg 1024w, /images/uploads/2026/07/split-extract-1448-300x225.jpg 300w, /images/uploads/2026/07/split-extract-1448-768x576.jpg 768w, /images/uploads/2026/07/split-extract-1448-600x450.jpg 600w, /images/uploads/2026/07/split-extract-1448.jpg 1448w",
+        "sizes": "(max-width: 800px) 100vw, 800px",
+        "decoding": "async"
+      }
     },
     "body": [
       {
@@ -296,6 +301,8 @@ export const fallbackPosts: Post[] = [
         ]
       }
     ],
+    "comments": true,
+    "wpId": 9219,
     "seo": {
       "title": "Flooded Basement Cleanup: What Happens Next | Water Damage Pro",
       "description": "Basement flooded in Northern Virginia? What cleanup involves, what to avoid, how drying prevents mold, and when to call a 24/7 restoration crew."
@@ -308,10 +315,15 @@ export const fallbackPosts: Post[] = [
     "category": "uncategorized",
     "excerpt": "A burst pipe does not leak politely. A single split supply line can pour hundreds of gallons into a home in an hour, and in Northern Virginia’s winter cold snaps and aging housing stock, it is one of the most common calls we get. What you do in the first hour decides whether you are […]",
     "image": {
-      "src": "/images/photos/technician-extracting-living-room.jpg",
-      "alt": "Technician extracting water from a living room floor after a leak",
-      "width": 1448,
-      "height": 1086
+      "src": "/images/uploads/2026/07/split-extract-960.jpg",
+      "alt": "Technician shutting off a home's main water valve after a burst pipe in Northern Virginia",
+      "width": 800,
+      "height": 600,
+      "picture": {
+        "srcset": "/images/uploads/2026/07/split-extract-960.jpg 960w, /images/uploads/2026/07/split-extract-960-300x225.jpg 300w, /images/uploads/2026/07/split-extract-960-768x576.jpg 768w, /images/uploads/2026/07/split-extract-960-600x450.jpg 600w",
+        "sizes": "(max-width: 800px) 100vw, 800px",
+        "decoding": "async"
+      }
     },
     "body": [
       {
@@ -563,6 +575,8 @@ export const fallbackPosts: Post[] = [
         ]
       }
     ],
+    "comments": true,
+    "wpId": 9215,
     "seo": {
       "title": "Burst Pipe? What to Do in the First Hour | Water Damage Pro",
       "description": "A burst pipe can flood a room in minutes. Shut-off steps, what to move, what to avoid, and when to call a 24/7 water damage restoration crew in Northern VA."
@@ -575,10 +589,15 @@ export const fallbackPosts: Post[] = [
     "category": "water-damage-guides",
     "excerpt": "It’s the first question almost every homeowner asks when they discover a leak, a burst pipe, or water spreading across the floor: is this covered? The honest answer is “it depends,” but not in a vague way. Coverage comes down to one thing: the source of the water and how suddenly it happened. Once you […]",
     "image": {
-      "src": "/images/photos/technician-moisture-meter.jpg",
+      "src": "/images/uploads/2026/07/phero-insurance-1448.jpg",
       "alt": "Restoration technician documenting water damage for a homeowners insurance claim",
-      "width": 1448,
-      "height": 966
+      "width": 800,
+      "height": 533,
+      "picture": {
+        "srcset": "/images/uploads/2026/07/phero-insurance-1448.jpg 800w, /images/uploads/2026/07/phero-insurance-1448-300x200.jpg 300w, /images/uploads/2026/07/phero-insurance-1448-768x512.jpg 768w, /images/uploads/2026/07/phero-insurance-1448-600x400.jpg 600w",
+        "sizes": "(max-width: 800px) 100vw, 800px",
+        "decoding": "async"
+      }
     },
     "body": [
       {
@@ -1833,6 +1852,9 @@ export const fallbackPosts: Post[] = [
         ]
       }
     ],
+    "css": ".single-post .site-main,.single-post .site-main *{text-transform:none!important}\n.single-post .site-main{max-width:780px;margin:0 auto;padding:0 16px 48px}\n.single-post .site-main p,.single-post .site-main li{font-size:17px;line-height:1.7;color:#1f2d3a}\n.single-post .site-main h1{font-size:clamp(28px,4vw,40px);line-height:1.2;font-weight:800;color:#0A1826;margin:24px 0 16px}\n.single-post .site-main h2{font-size:clamp(22px,3vw,28px);font-weight:800;color:#0A1826;margin:36px 0 12px}\n.single-post .site-main h3{font-size:19px;font-weight:700;color:#0A1826;margin:24px 0 8px}\n.single-post .site-main a{color:#D10000;text-decoration:underline}\n.single-post .site-main .wp-block-quote{border-left:5px solid #FF0000;background:#FFE5E5;padding:18px 22px;margin:28px 0;border-radius:8px}\n.single-post .site-main .wp-block-quote p{margin:0;font-size:17px}",
+    "comments": false,
+    "wpId": 9202,
     "seo": {
       "title": "Does Homeowners Insurance Cover Water Damage? (2026 Guide)",
       "description": "What water damage homeowners insurance covers, what it won't, and how to get your claim paid. Clear 2026 guide from a DMV restoration team that bills insurance."
@@ -1845,10 +1867,15 @@ export const fallbackPosts: Post[] = [
     "category": "water-damage-guides",
     "excerpt": "A flooded basement is one of the most stressful things a homeowner can walk into, and in the DC–Maryland–Virginia area it happens more than most people expect. Heavy summer thunderstorms, saturated clay soil, aging sump pumps, and older foundations around Fairfax, Arlington, Alexandria, and Loudoun County make basement flooding a year-round risk. What you do […]",
     "image": {
-      "src": "/images/photos/technician-extracting-living-room.jpg",
-      "alt": "Water Damage Pro technician extracting standing water from a hardwood floor",
-      "width": 1448,
-      "height": 1086
+      "src": "/images/uploads/2026/07/split-extract-1448-1024x768.jpg",
+      "alt": "Water Damage Pro technician extracting standing water in Alexandria VA",
+      "width": 800,
+      "height": 600,
+      "picture": {
+        "srcset": "/images/uploads/2026/07/split-extract-1448-1024x768.jpg 1024w, /images/uploads/2026/07/split-extract-1448-300x225.jpg 300w, /images/uploads/2026/07/split-extract-1448-768x576.jpg 768w, /images/uploads/2026/07/split-extract-1448-600x450.jpg 600w, /images/uploads/2026/07/split-extract-1448.jpg 1448w",
+        "sizes": "(max-width: 800px) 100vw, 800px",
+        "decoding": "async"
+      }
     },
     "body": [
       {
@@ -2695,6 +2722,9 @@ export const fallbackPosts: Post[] = [
         ]
       }
     ],
+    "css": ".single-post .site-main,.single-post .site-main *{text-transform:none!important}\n.single-post .site-main{max-width:780px;margin:0 auto;padding:0 16px 48px}\n.single-post .site-main p,.single-post .site-main li{font-size:17px;line-height:1.7;color:#1f2d3a}\n.single-post .site-main h1{font-size:clamp(28px,4vw,40px);line-height:1.2;font-weight:800;color:#0A1826;margin:24px 0 16px}\n.single-post .site-main h2{font-size:clamp(22px,3vw,28px);font-weight:800;color:#0A1826;margin:36px 0 12px}\n.single-post .site-main h3{font-size:19px;font-weight:700;color:#0A1826;margin:24px 0 8px}\n.single-post .site-main a{color:#D10000;text-decoration:underline}\n.single-post .site-main .wp-block-quote{border-left:5px solid #FF0000;background:#FFE5E5;padding:18px 22px;margin:28px 0;border-radius:8px}\n.single-post .site-main .wp-block-quote p{margin:0;font-size:17px}",
+    "comments": false,
+    "wpId": 9201,
     "seo": {
       "title": "What to Do When Your Basement Floods: 7 Steps (DMV Guide)",
       "description": "Basement flooding? Here's exactly what to do in the first hour, how to stay safe, when to call a pro, and how to file insurance. 24/7 help across the DMV: (571) 210-2498."
@@ -2707,10 +2737,15 @@ export const fallbackPosts: Post[] = [
     "category": "water-damage-guides",
     "excerpt": "If your basement takes on water every time there’s a heavy storm, it’s not bad luck. It’s a fixable drainage problem. In the DMV, where clay-heavy soil holds water and summer storms can dump inches of rain in an hour, rain-driven basement flooding is one of the most common calls we get in Fairfax, Reston, […]",
     "image": {
-      "src": "/images/photos/hero-flood.jpg",
-      "alt": "A flooded suburban home surrounded by storm water",
-      "width": 1448,
-      "height": 1086
+      "src": "/images/uploads/2026/07/split-flood-1448-1.jpg",
+      "alt": "Flooded basement after heavy rain in Northern Virginia",
+      "width": 480,
+      "height": 319,
+      "picture": {
+        "srcset": "/images/uploads/2026/07/split-flood-1448-1.jpg 480w, /images/uploads/2026/07/split-flood-1448-1-300x199.jpg 300w",
+        "sizes": "(max-width: 480px) 100vw, 480px",
+        "decoding": "async"
+      }
     },
     "body": [
       {
@@ -3509,6 +3544,9 @@ export const fallbackPosts: Post[] = [
         ]
       }
     ],
+    "css": ".single-post .site-main,.single-post .site-main *{text-transform:none!important}\n.single-post .site-main{max-width:780px;margin:0 auto;padding:0 16px 48px}\n.single-post .site-main p,.single-post .site-main li{font-size:17px;line-height:1.7;color:#1f2d3a}\n.single-post .site-main h1{font-size:clamp(28px,4vw,40px);line-height:1.2;font-weight:800;color:#0A1826;margin:24px 0 16px}\n.single-post .site-main h2{font-size:clamp(22px,3vw,28px);font-weight:800;color:#0A1826;margin:36px 0 12px}\n.single-post .site-main h3{font-size:19px;font-weight:700;color:#0A1826;margin:24px 0 8px}\n.single-post .site-main a{color:#D10000;text-decoration:underline}\n.single-post .site-main .wp-block-quote{border-left:5px solid #FF0000;background:#FFE5E5;padding:18px 22px;margin:28px 0;border-radius:8px}\n.single-post .site-main .wp-block-quote p{margin:0;font-size:17px}",
+    "comments": false,
+    "wpId": 9200,
     "seo": {
       "title": "Why Does My Basement Flood When It Rains? (Causes & Fixes)",
       "description": "The real reasons your basement floods in heavy rain, and how to prevent it. A DMV homeowner's guide to causes, fixes, and when to call for help. (571) 210-2498."
@@ -3520,17 +3558,19 @@ export const fallbackCategories: Category[] = [
   {
     "slug": "water-damage-guides",
     "title": "Water Damage Guides",
+    "wpId": 16,
     "seo": {
       "title": "Water Damage Guides - Water Damage Pro",
-      "description": "[PLACEHOLDER]"
+      "description": ""
     }
   },
   {
     "slug": "uncategorized",
     "title": "Uncategorized",
+    "wpId": 1,
     "seo": {
       "title": "Uncategorized - Water Damage Pro",
-      "description": "[PLACEHOLDER]"
+      "description": ""
     }
   }
 ];
@@ -3949,6 +3989,7 @@ export const fallbackTextPages: TextPage[] = [
         ]
       }
     ],
+    "wpId": 9221,
     "seo": {
       "title": "Water Damage Restoration Alexandria VA | 24/7 Emergency Help",
       "description": "Water damage restoration in Alexandria VA: burst pipes, basement flooding, storm damage. 24/7 emergency response, structural drying & mold prevention."

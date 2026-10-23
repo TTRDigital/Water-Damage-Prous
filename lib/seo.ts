@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { Img, Seo } from "@/lib/types";
 
 const SITE_NAME = "Water Damage Pro";
-const DEFAULT_IMAGE: Img = { src: "/images/photos/hero-flood.jpg", alt: "A flooded suburban home surrounded by storm water", width: 1448, height: 1086 };
+const DEFAULT_IMAGE: Img = { src: "/images/uploads/2026/07/hero-flood-1448.jpg", alt: "A flooded suburban home surrounded by storm water", width: 1448, height: 1086 };
 
 /** One place for title, description, canonical, Open Graph and Twitter tags. Titles are used as written (same as the old site). */
 export function pageMetadata(seo: Seo, path: string, fallbackImage?: Img): Metadata {

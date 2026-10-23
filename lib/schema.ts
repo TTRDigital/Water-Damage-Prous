@@ -19,7 +19,7 @@ export function businessSchema(s: SiteSettings) {
     url: absoluteUrl("/"),
     telephone: s.phoneHref.replace(/^tel:/, ""),
     email: s.email,
-    image: absoluteUrl("/images/photos/hero-flood.jpg"),
+    image: absoluteUrl("/images/uploads/2026/07/hero-flood-1448.jpg"),
     logo: absoluteUrl(s.logoFull.src),
     address: { "@type": "PostalAddress", streetAddress: s.street, addressLocality: s.city, addressRegion: s.region, postalCode: s.postalCode, addressCountry: "US" },
     geo: { "@type": "GeoCoordinates", latitude: s.latitude, longitude: s.longitude },

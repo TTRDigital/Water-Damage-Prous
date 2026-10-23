@@ -2,17 +2,14 @@ import Link from "next/link";
 import type { SiteSettings } from "@/lib/types";
 import { CallIcon } from "@/components/ui/Icon";
 
-/**
- * The old site's header: transparent over the photo hero, solid once the page scrolls
- * (components/layout/SiteScripts.tsx). Pages without a dark hero get the solid header from the start.
- */
-export function Header({ settings, onHome, solid }: { settings: SiteSettings; onHome: boolean; solid: boolean }) {
+/** The old site's header: transparent over the photo hero, solid once the page scrolls (components/layout/SiteScripts.tsx). */
+export function Header({ settings, onHome }: { settings: SiteSettings; onHome: boolean }) {
   // On the home page the menu's /#section links stay on the page (#section), as before.
   const href = (h: string) => (onHome && h.startsWith("/#") ? h.slice(1) : h);
   return (
-    <header className={solid ? "wdp-header is-scrolled" : "wdp-header"} id="wdpHeader" data-solid={solid ? "" : undefined}>
+    <header className="wdp-header" id="wdpHeader">
       <div className="wdp-container wdp-container--wide wdp-header__in">
-        <Link className="wdp-brand" href="/" prefetch={false}>
+        <Link className="wdp-brand" href="/" prefetch={false} aria-label={`${settings.name} — home`}>
           {/* eslint-disable-next-line @next/next/no-img-element -- small PNG logo, no preload */}
           <img className="wdp-brand__mark" src={settings.logo.src} alt={settings.logo.alt} width={41} height={40} decoding="async" />
           <span className="wdp-brand__name">

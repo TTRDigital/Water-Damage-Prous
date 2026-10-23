@@ -1,10 +1,14 @@
 import { Fragment } from "react";
-import type { SiteSettings } from "@/lib/types";
+import type { Link, SiteSettings } from "@/lib/types";
 import { CallIcon, ClockIcon, PhoneOutlineIcon, PinIcon } from "@/components/ui/Icon";
 
-/** The old site's footer: call band, brand + badges, link columns, contact, legal bar (Site settings). */
-export function Footer({ settings: s }: { settings: SiteSettings }) {
+/**
+ * The old site's footer: call band, brand + badges, link columns, contact, legal bar (Site settings).
+ * `linkLabels`: links of the area columns this page labels differently (as the old pages did).
+ */
+export function Footer({ settings: s, linkLabels = [] }: { settings: SiteSettings; linkLabels?: Link[] }) {
   const f = s.footer;
+  const label = (l: Link) => linkLabels.find((x) => x.href === l.href)?.label || l.label;
   return (
     <footer className="wdp-footer" aria-labelledby="wdp-footer-cta">
       <div className="wdp-footer__top">
@@ -38,7 +42,7 @@ export function Footer({ settings: s }: { settings: SiteSettings }) {
             <h3>{c.heading}</h3>
             {c.links.map((l) => (
               <a key={l.href} href={l.href}>
-                {l.label}
+                {label(l)}
               </a>
             ))}
           </nav>

@@ -91,6 +91,13 @@ export const page = defineType({
     }),
     defineField({ name: "order", type: "number" }),
     defineField({ name: "sections", type: "array", of: sectionMembers }),
+    defineField({
+      name: "footerLinkLabels",
+      title: "Footer links labelled differently on this page",
+      description: "A footer link (same address) shown with another label on this page only.",
+      type: "array",
+      of: [defineArrayMember({ type: "link" })],
+    }),
     defineField({ name: "seo", type: "seo" }),
   ],
   orderings: [{ title: "Order", name: "order", by: [{ field: "order", direction: "asc" }] }],
@@ -101,7 +108,7 @@ export const category = defineType({
   name: "category",
   title: "Blog category",
   type: "document",
-  fields: [defineField({ name: "title", type: "string", validation: (r) => r.required() }), slug("title"), defineField({ name: "seo", type: "seo" })],
+  fields: [defineField({ name: "title", type: "string", validation: (r) => r.required() }), slug("title"), defineField({ name: "seo", type: "seo" }), defineField({ name: "wpId", title: "Old WordPress ID", description: "Kept from the old site (page classes, comment form). Leave as is.", type: "number", readOnly: true })],
 });
 
 export const post = defineType({
@@ -116,7 +123,10 @@ export const post = defineType({
     defineField({ name: "excerpt", title: "Excerpt (category pages)", type: "text", rows: 3 }),
     defineField({ name: "image", title: "Photo (category pages and sharing)", type: "altImage" }),
     defineField({ name: "body", type: "body" }),
+    defineField({ name: "comments", title: "Show the “Leave a Reply” form", type: "boolean", initialValue: true }),
+    defineField({ name: "css", title: "Article style (CSS)", description: "The post's own style block, printed above the text as on the old site.", type: "text", rows: 6 }),
     defineField({ name: "seo", type: "seo" }),
+    defineField({ name: "wpId", title: "Old WordPress ID", description: "Kept from the old site (page classes, comment form). Leave as is.", type: "number", readOnly: true }),
   ],
   orderings: [{ title: "Newest", name: "date", by: [{ field: "date", direction: "desc" }] }],
   preview: { select: { title: "title", subtitle: "date", media: "image" } },
@@ -126,7 +136,13 @@ export const textPage = defineType({
   name: "textPage",
   title: "Text page",
   type: "document",
-  fields: [defineField({ name: "title", type: "string", validation: (r) => r.required() }), slug("title"), defineField({ name: "body", type: "body" }), defineField({ name: "seo", type: "seo" })],
+  fields: [
+    defineField({ name: "title", type: "string", validation: (r) => r.required() }),
+    slug("title"),
+    defineField({ name: "body", type: "body" }),
+    defineField({ name: "seo", type: "seo" }),
+    defineField({ name: "wpId", title: "Old WordPress ID", description: "Kept from the old site (page classes, comment form). Leave as is.", type: "number", readOnly: true }),
+  ],
   preview: { select: { title: "title", subtitle: "slug.current" } },
 });
 

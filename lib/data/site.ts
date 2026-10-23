@@ -1,4 +1,4 @@
-import type { SiteSettings, TextPage } from "@/lib/types";
+import type { SiteSettings } from "@/lib/types";
 
 /* Site-wide content from the old site's header, trust strip and footer (word for word). */
 
@@ -16,8 +16,9 @@ export const fallbackSettings: SiteSettings = {
   latitude: 38.9012,
   longitude: -77.2653,
   hoursText: "Open 24/7 · 365 days",
-  logo: { src: "/images/brand/logo-icon.png", alt: "Water Damage Pro logo", width: 123, height: 120 },
-  logoFull: { src: "/images/brand/logo.png", alt: "Water Damage Pro logo", width: 195, height: 222 },
+  // The header and footer logo had empty alt text (the link has an aria-label / the name follows).
+  logo: { src: "/images/uploads/2026/07/logo-icon.png", alt: "", width: 123, height: 120 },
+  logoFull: { src: "/images/uploads/2025/04/Asset-13-1-removebg-preview.png", alt: "Water Damage Pro logo", width: 195, height: 222 },
   menu: [
     { label: "Services", href: "/#services" },
     { label: "Locations", href: "/#locations" },
@@ -55,7 +56,7 @@ export const fallbackSettings: SiteSettings = {
           { label: "Tysons", href: "/tysons/" },
           { label: "Fairfax", href: "/fairfax/" },
           { label: "Arlington", href: "/arlington/" },
-          { label: "Alexandria", href: "/water-damage-restoration-alexandria-va/" },
+          { label: "Alexandria", href: "/alexandria/" },
           { label: "Reston", href: "/reston/" },
         ],
       },
@@ -76,7 +77,7 @@ export const fallbackSettings: SiteSettings = {
     companyHeading: "Company",
     companyLinks: [
       { label: "About", href: "/about/" },
-      { label: "Reviews", href: "/#reviews" },
+      { label: "Reviews", href: "/reviews/" },
       { label: "Contact", href: "/contact/" },
     ],
     copyright: "© 2026 Water Damage Pro · Serving VA · DC · MD · WV",
@@ -108,20 +109,3 @@ export const fallbackSettings: SiteSettings = {
     "Martinsburg WV",
   ],
 };
-
-const placeholder = (k: string): TextPage["body"][number] => ({
-  _type: "block",
-  _key: k,
-  style: "normal",
-  markDefs: [],
-  children: [{ _type: "span", _key: `${k}s`, text: "[PLACEHOLDER]", marks: [] }],
-});
-
-/**
- * The footer linked to /privacy/ and /accessibility/, which never existed. The pages exist now
- * with [PLACEHOLDER] text; they stay noindex and out of the sitemap until the client sends the text.
- */
-export const fallbackLegalPages: TextPage[] = [
-  { slug: "privacy", title: "Privacy Policy", body: [placeholder("pp1")], seo: { title: "Privacy Policy - Water Damage Pro", description: "[PLACEHOLDER]", noIndex: true } },
-  { slug: "accessibility", title: "Accessibility", body: [placeholder("ac1")], seo: { title: "Accessibility - Water Damage Pro", description: "[PLACEHOLDER]", noIndex: true } },
-];

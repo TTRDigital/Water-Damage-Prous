@@ -8,7 +8,15 @@ export const altImage = defineType({
   title: "Photo",
   type: "image",
   options: { hotspot: true },
-  fields: [defineField({ name: "alt", title: "Alt text (describe the photo)", type: "string", validation: (r) => r.required() })],
+  fields: [
+    defineField({
+      name: "alt",
+      title: "Alt text (describe the photo)",
+      description: "Leave empty only for a decorative photo (as the old site did for the logo and the About page's top photo).",
+      type: "string",
+      validation: (r) => r.warning().custom((v) => (v ? true : "No alt text: screen readers skip this photo.")),
+    }),
+  ],
 });
 
 export const link = defineType({

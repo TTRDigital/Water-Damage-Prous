@@ -17,7 +17,14 @@ export const metadata: Metadata = {
   title: { default: "Water Damage Pro", template: "%s - Water Damage Pro" },
   applicationName: "Water Damage Pro",
   formatDetection: { telephone: false, address: false, email: false },
-  icons: { icon: [{ url: "/images/brand/logo-icon.png", type: "image/png" }], apple: "/images/brand/logo-icon.png" },
+  // The old site's icons.
+  icons: {
+    icon: [
+      { url: "/images/uploads/2025/04/Asset-13-1-removebg-preview-1-150x150.png", sizes: "32x32" },
+      { url: "/images/uploads/2025/04/Asset-13-1-removebg-preview-1.png", sizes: "192x192" },
+    ],
+    apple: "/images/uploads/2025/04/Asset-13-1-removebg-preview-1.png",
+  },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0A1826" };
