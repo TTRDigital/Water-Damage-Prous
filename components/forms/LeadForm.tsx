@@ -107,6 +107,7 @@ export function LeadForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           form: form.variant,
+          form_name: form.title,
           ...Object.fromEntries(fields.map((f) => [f.name, values[f.name] ?? ""])),
           consent: true,
           website_url: honeypot,
@@ -210,6 +211,7 @@ export function LeadForm({
           {errors.consent}
         </p>
       ) : null}
+      <input type="hidden" name="form_name" value={form.title} />
       <div className="wdp-honeypot" aria-hidden="true">
         <label htmlFor={id("website_url")}>Leave this field empty</label>
         <input id={id("website_url")} name="website_url" type="text" tabIndex={-1} autoComplete="off" />

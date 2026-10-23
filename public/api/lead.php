@@ -150,34 +150,56 @@ else $phone = (str_starts_with($lead['phone'], '+') ? '+' : '') . $digits;
 
 $parts = preg_split('/\s+/', $lead['name']);
 $kinds = [
-    'quick' => ['Website emergency help form', 'emergency-help-form'],
-    'message' => ['Website contact form', 'contact-form'],
-    'comment' => ['Website blog comment', 'blog-comment'],
+    'quick' => ['Website emergency help form', 'emergency-help-form', 'Request Immediate Help'],
+    'message' => ['Website contact form', 'contact-form', 'Send Us a Message'],
+    'comment' => ['Website blog comment', 'blog-comment', 'Leave a Reply'],
 ];
 $tags = ['website-lead', $kinds[$form][1]];
 if ($spamCheck !== 'ok') $tags[] = 'suspected-spam';
+$formName = text($in, 'form_name', 100) ?: $kinds[$form][2];
+$pageUrl = text($in, 'page_url', 1000) ?: (string) ($_SERVER['HTTP_REFERER'] ?? '');
 
-$payload = [
-    'source' => $kinds[$form][0],
-    'submitted_at' => gmdate('c'),
-    'name' => $lead['name'],
-    'first_name' => $parts[0],
-    'last_name' => implode(' ', array_slice($parts, 1)),
-    'email' => $lead['email'],
-    'phone' => $phone,
-    'phone_raw' => $lead['phone'],
-    'address' => $lead['address'],
-    'message' => $lead['details'],
-    'website' => $lead['website'],
-    'form' => $form,
-    'consent' => $form !== 'comment',
-    'tags' => $tags,
-    'spam_check' => $spamCheck,
+/*
+ * One payload for every form, so one GoHighLevel workflow handles them all: name, phone and email
+ * first, then every field (always the same keys, empty when the form has no such field), then
+ * "response": all of it as one block of text, one "Label: value" line per field.
+ */
+$fields = [
+    // key => label in "response"
+    'name' => ['Name', $lead['name']],
+    'phone' => ['Phone', $phone],
+    'email' => ['Email', $lead['email']],
+    'first_name' => ['First name', $parts[0]],
+    'last_name' => ['Last name', implode(' ', array_slice($parts, 1))],
+    'phone_raw' => ['Phone (as typed)', $lead['phone']],
+    'address' => ['Property address', $lead['address']],
+    'message' => ['Message', $lead['details']],
+    'website' => ['Website', $lead['website']],
+    'form_name' => ['Form', $formName],
+    'form' => ['Form type', $form],
+    'source' => ['Source', $kinds[$form][0]],
+    'page_url' => ['Page', $pageUrl],
+    'landing_page' => ['Landing page', text($in, 'landing_page', 1000)],
+    'referrer' => ['Referrer', text($in, 'referrer', 1000)],
+    'utm_source' => ['UTM source', text($in, 'utm_source', 1000)],
+    'utm_medium' => ['UTM medium', text($in, 'utm_medium', 1000)],
+    'utm_campaign' => ['UTM campaign', text($in, 'utm_campaign', 1000)],
+    'utm_term' => ['UTM term', text($in, 'utm_term', 1000)],
+    'utm_content' => ['UTM content', text($in, 'utm_content', 1000)],
+    'gclid' => ['Google click ID (gclid)', text($in, 'gclid', 1000)],
+    'fbclid' => ['Facebook click ID (fbclid)', text($in, 'fbclid', 1000)],
+    'consent' => ['Agreed to be contacted', $form === 'comment' ? 'No' : 'Yes'],
+    'spam_check' => ['Spam check', $spamCheck],
+    'tags' => ['Tags', implode(', ', $tags)],
+    'submitted_at' => ['Submitted (UTC)', gmdate('Y-m-d H:i:s')],
 ];
-foreach (['page_url', 'landing_page', 'referrer', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'] as $key) {
-    $payload[$key] = text($in, $key, 1000);
+$payload = [];
+$lines = [];
+foreach ($fields as $key => [$label, $value]) {
+    $payload[$key] = $value;
+    $lines[] = $label . ': ' . ($value === '' ? 'Not provided' : $value);
 }
-if ($payload['page_url'] === '') $payload['page_url'] = (string) ($_SERVER['HTTP_REFERER'] ?? '');
+$payload['response'] = implode("\n", $lines);
 
 // One retry for rate limits, server errors and network failures.
 $body = json_encode($payload);

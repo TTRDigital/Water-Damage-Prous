@@ -111,6 +111,7 @@ export function LegacyScripts() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               form: "comment",
+              form_name: "Leave a Reply",
               name: value("author"),
               email: value("email"),
               website: value("url"),
