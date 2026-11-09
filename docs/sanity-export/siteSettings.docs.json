@@ -1,0 +1,285 @@
+[
+ {
+  "_id": "siteSettings",
+  "_type": "siteSettings",
+  "name": "Water Damage Pro",
+  "tagline": "FAST · LOCAL · TRUSTED",
+  "phone": "(571) 210-2498",
+  "phoneHref": "tel:+15712102498",
+  "email": "waterdamageprous@gmail.com",
+  "street": "8858 Glenridge Ct",
+  "city": "Vienna",
+  "region": "VA",
+  "postalCode": "22182",
+  "latitude": 38.9012,
+  "longitude": -77.2653,
+  "hoursText": "Open 24/7 · 365 days",
+  "areaServed": [
+   "Vienna VA",
+   "McLean VA",
+   "Tysons VA",
+   "Falls Church VA",
+   "Fairfax VA",
+   "Reston VA",
+   "Arlington VA",
+   "Alexandria VA",
+   "Ashburn VA",
+   "Leesburg VA",
+   "Washington DC",
+   "Bethesda MD",
+   "Rockville MD",
+   "Silver Spring MD",
+   "Frederick MD",
+   "Winchester VA",
+   "Fredericksburg VA",
+   "Martinsburg WV"
+  ],
+  "menu": [
+   {
+    "_key": "k0",
+    "_type": "link",
+    "label": "Services",
+    "href": "/#services"
+   },
+   {
+    "_key": "k1",
+    "_type": "link",
+    "label": "Locations",
+    "href": "/#locations"
+   },
+   {
+    "_key": "k2",
+    "_type": "link",
+    "label": "Reviews",
+    "href": "/#reviews"
+   },
+   {
+    "_key": "k3",
+    "_type": "link",
+    "label": "About",
+    "href": "/about/"
+   },
+   {
+    "_key": "k4",
+    "_type": "link",
+    "label": "Contact",
+    "href": "/contact/"
+   }
+  ],
+  "trustLabel": "As trusted & reviewed on",
+  "trustBadges": [
+   "IICRC",
+   "5.0 Google",
+   "BBB A+",
+   "Yelp",
+   "Angi",
+   "We Bill Insurance",
+   "Licensed & Insured"
+  ],
+  "footer": {
+   "ctaHeading": "Need help right now?",
+   "ctaText": "Certified technicians dispatched fast — 24/7 across the DMV.",
+   "description": "The DMV’s fastest, most trusted water, fire & storm damage restoration team. Locally owned in Vienna, VA — certified, insured, and on call 24/7.",
+   "badges": [
+    "IICRC Certified",
+    "Licensed & Insured",
+    "BBB A+",
+    "★ 5.0 Google"
+   ],
+   "columns": [
+    {
+     "_key": "k5",
+     "_type": "footerColumn",
+     "heading": "Services",
+     "ariaLabel": "Services",
+     "links": [
+      {
+       "_key": "k6",
+       "_type": "link",
+       "label": "Water Damage",
+       "href": "/water-damage-restoration/"
+      },
+      {
+       "_key": "k7",
+       "_type": "link",
+       "label": "Flood & Basement",
+       "href": "/water-extraction/"
+      },
+      {
+       "_key": "k8",
+       "_type": "link",
+       "label": "Fire & Smoke",
+       "href": "/fire-damage-restoration/"
+      },
+      {
+       "_key": "k9",
+       "_type": "link",
+       "label": "Storm Damage",
+       "href": "/storm-damage-restoration/"
+      },
+      {
+       "_key": "ka",
+       "_type": "link",
+       "label": "Commercial",
+       "href": "/commercial-water-damage/"
+      },
+      {
+       "_key": "kb",
+       "_type": "link",
+       "label": "24/7 Emergency",
+       "href": "/emergency-water-damage/"
+      },
+      {
+       "_key": "kc",
+       "_type": "link",
+       "label": "Insurance Claims",
+       "href": "/insurance-claims/"
+      }
+     ]
+    },
+    {
+     "_key": "kd",
+     "_type": "footerColumn",
+     "heading": "Northern VA",
+     "ariaLabel": "Northern Virginia service areas",
+     "links": [
+      {
+       "_key": "ke",
+       "_type": "link",
+       "label": "Vienna",
+       "href": "/vienna/"
+      },
+      {
+       "_key": "kf",
+       "_type": "link",
+       "label": "McLean",
+       "href": "/mclean/"
+      },
+      {
+       "_key": "kg",
+       "_type": "link",
+       "label": "Tysons",
+       "href": "/tysons/"
+      },
+      {
+       "_key": "kh",
+       "_type": "link",
+       "label": "Fairfax",
+       "href": "/fairfax/"
+      },
+      {
+       "_key": "ki",
+       "_type": "link",
+       "label": "Arlington",
+       "href": "/arlington/"
+      },
+      {
+       "_key": "kj",
+       "_type": "link",
+       "label": "Alexandria",
+       "href": "/alexandria/"
+      },
+      {
+       "_key": "kk",
+       "_type": "link",
+       "label": "Reston",
+       "href": "/reston/"
+      }
+     ]
+    },
+    {
+     "_key": "kl",
+     "_type": "footerColumn",
+     "heading": "DC · MD · WV",
+     "ariaLabel": "DC, Maryland and West Virginia service areas",
+     "links": [
+      {
+       "_key": "km",
+       "_type": "link",
+       "label": "Washington DC",
+       "href": "/washington-dc/"
+      },
+      {
+       "_key": "kn",
+       "_type": "link",
+       "label": "Bethesda",
+       "href": "/bethesda/"
+      },
+      {
+       "_key": "ko",
+       "_type": "link",
+       "label": "Rockville",
+       "href": "/rockville/"
+      },
+      {
+       "_key": "kp",
+       "_type": "link",
+       "label": "Frederick",
+       "href": "/frederick/"
+      },
+      {
+       "_key": "kq",
+       "_type": "link",
+       "label": "Winchester",
+       "href": "/winchester/"
+      },
+      {
+       "_key": "kr",
+       "_type": "link",
+       "label": "Fredericksburg",
+       "href": "/fredericksburg/"
+      },
+      {
+       "_key": "ks",
+       "_type": "link",
+       "label": "Martinsburg",
+       "href": "/martinsburg/"
+      }
+     ]
+    }
+   ],
+   "companyHeading": "Company",
+   "companyLinks": [
+    {
+     "_key": "kt",
+     "_type": "link",
+     "label": "About",
+     "href": "/about/"
+    },
+    {
+     "_key": "ku",
+     "_type": "link",
+     "label": "Reviews",
+     "href": "/reviews/"
+    },
+    {
+     "_key": "kv",
+     "_type": "link",
+     "label": "Contact",
+     "href": "/contact/"
+    }
+   ],
+   "copyright": "© 2026 Water Damage Pro · Serving VA · DC · MD · WV",
+   "legalLinks": [
+    {
+     "_key": "kw",
+     "_type": "link",
+     "label": "Privacy",
+     "href": "/privacy/"
+    },
+    {
+     "_key": "kx",
+     "_type": "link",
+     "label": "Sitemap",
+     "href": "/sitemap/"
+    },
+    {
+     "_key": "ky",
+     "_type": "link",
+     "label": "Accessibility",
+     "href": "/accessibility/"
+    }
+   ]
+  }
+ }
+]

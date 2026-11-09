@@ -9,12 +9,15 @@ import Script from "next/script";
 const gaEnv = process.env.NEXT_PUBLIC_GA_ID;
 const GA_ID = gaEnv === "off" ? "" : gaEnv || "G-F3JQ9WQY4G";
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+// TTR OS tracker: only when the site key is set (NEXT_PUBLIC_TTR_SITE_KEY in Vercel).
+const TTR_KEY = process.env.NEXT_PUBLIC_TTR_SITE_KEY;
 
 const TRACK_CLICKS = `document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var n=a.getAttribute('data-track'),p={link_url:a.href||'',page:location.pathname};if(window.gtag)window.gtag('event',n,p);else(window.dataLayer=window.dataLayer||[]).push(Object.assign({event:n},p))});`;
 
 export function Analytics() {
   return (
     <>
+      {TTR_KEY ? <Script src="https://ttr-portal.vercel.app/api/site/script" data-site={TTR_KEY} strategy="lazyOnload" /> : null}
       {GTM_ID ? (
         <Script id="gtm" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}

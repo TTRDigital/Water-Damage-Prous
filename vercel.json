@@ -1,0 +1,1264 @@
+{
+ "$schema": "https://openapi.vercel.sh/vercel.json",
+ "trailingSlash": true,
+ "cleanUrls": false,
+ "redirects": [
+  {
+   "source": "/alexandria",
+   "destination": "/water-damage-restoration-alexandria-va/",
+   "permanent": true
+  },
+  {
+   "source": "/alexandria/",
+   "destination": "/water-damage-restoration-alexandria-va/",
+   "permanent": true
+  },
+  {
+   "source": "/about-us",
+   "destination": "/about/",
+   "permanent": true
+  },
+  {
+   "source": "/about-us/",
+   "destination": "/about/",
+   "permanent": true
+  },
+  {
+   "source": "/contact-us",
+   "destination": "/contact/",
+   "permanent": true
+  },
+  {
+   "source": "/contact-us/",
+   "destination": "/contact/",
+   "permanent": true
+  },
+  {
+   "source": "/services",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/services/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/reviews",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/reviews/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/home",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/home/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/sample-page",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/sample-page/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/water-damage-clean-up",
+   "destination": "/water-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/water-damage-clean-up/",
+   "destination": "/water-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/mold-damage-restoration",
+   "destination": "/water-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/mold-damage-restoration/",
+   "destination": "/water-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/flood-damage-in-basement",
+   "destination": "/water-extraction/",
+   "permanent": true
+  },
+  {
+   "source": "/flood-damage-in-basement/",
+   "destination": "/water-extraction/",
+   "permanent": true
+  },
+  {
+   "source": "/storm-damage-cleanup",
+   "destination": "/storm-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/storm-damage-cleanup/",
+   "destination": "/storm-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/fire-damage-cleanup",
+   "destination": "/fire-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/fire-damage-cleanup/",
+   "destination": "/fire-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/mclean-va",
+   "destination": "/mclean/",
+   "permanent": true
+  },
+  {
+   "source": "/mclean-va/",
+   "destination": "/mclean/",
+   "permanent": true
+  },
+  {
+   "source": "/sterling-va",
+   "destination": "/ashburn/",
+   "permanent": true
+  },
+  {
+   "source": "/sterling-va/",
+   "destination": "/ashburn/",
+   "permanent": true
+  },
+  {
+   "source": "/leesburg-va",
+   "destination": "/leesburg/",
+   "permanent": true
+  },
+  {
+   "source": "/leesburg-va/",
+   "destination": "/leesburg/",
+   "permanent": true
+  },
+  {
+   "source": "/ashburn-va",
+   "destination": "/ashburn/",
+   "permanent": true
+  },
+  {
+   "source": "/ashburn-va/",
+   "destination": "/ashburn/",
+   "permanent": true
+  },
+  {
+   "source": "/vienna-va",
+   "destination": "/vienna/",
+   "permanent": true
+  },
+  {
+   "source": "/vienna-va/",
+   "destination": "/vienna/",
+   "permanent": true
+  },
+  {
+   "source": "/alexandria-va",
+   "destination": "/alexandria/",
+   "permanent": true
+  },
+  {
+   "source": "/alexandria-va/",
+   "destination": "/alexandria/",
+   "permanent": true
+  },
+  {
+   "source": "/arlington-va",
+   "destination": "/arlington/",
+   "permanent": true
+  },
+  {
+   "source": "/arlington-va/",
+   "destination": "/arlington/",
+   "permanent": true
+  },
+  {
+   "source": "/water-damage",
+   "destination": "/water-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/water-damage/",
+   "destination": "/water-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/fire-damage",
+   "destination": "/fire-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/fire-damage/",
+   "destination": "/fire-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/storm-damage",
+   "destination": "/storm-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/storm-damage/",
+   "destination": "/storm-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/commercial",
+   "destination": "/commercial-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/commercial/",
+   "destination": "/commercial-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/emergency",
+   "destination": "/emergency-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/emergency/",
+   "destination": "/emergency-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/insurance",
+   "destination": "/insurance-claims/",
+   "permanent": true
+  },
+  {
+   "source": "/insurance/",
+   "destination": "/insurance-claims/",
+   "permanent": true
+  },
+  {
+   "source": "/pompano-beach-fl",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/pompano-beach-fl/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/fort-lauderdale-fl",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/fort-lauderdale-fl/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/hollywood-fl",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/hollywood-fl/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/hialeah-fl",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/hialeah-fl/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/miami-beach-fl",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/miami-beach-fl/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/pembroke-pines-fl",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/pembroke-pines-fl/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/kendall-fl",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/kendall-fl/",
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9001"
+    }
+   ],
+   "destination": "/about/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9001"
+    }
+   ],
+   "destination": "/about/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9002"
+    }
+   ],
+   "destination": "/alexandria/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9002"
+    }
+   ],
+   "destination": "/alexandria/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9003"
+    }
+   ],
+   "destination": "/arlington/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9003"
+    }
+   ],
+   "destination": "/arlington/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9004"
+    }
+   ],
+   "destination": "/ashburn/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9004"
+    }
+   ],
+   "destination": "/ashburn/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9005"
+    }
+   ],
+   "destination": "/bethesda/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9005"
+    }
+   ],
+   "destination": "/bethesda/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9006"
+    }
+   ],
+   "destination": "/commercial-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9006"
+    }
+   ],
+   "destination": "/commercial-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9007"
+    }
+   ],
+   "destination": "/contact/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9007"
+    }
+   ],
+   "destination": "/contact/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9008"
+    }
+   ],
+   "destination": "/emergency-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9008"
+    }
+   ],
+   "destination": "/emergency-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9009"
+    }
+   ],
+   "destination": "/fairfax/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9009"
+    }
+   ],
+   "destination": "/fairfax/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9010"
+    }
+   ],
+   "destination": "/falls-church/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9010"
+    }
+   ],
+   "destination": "/falls-church/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9011"
+    }
+   ],
+   "destination": "/fire-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9011"
+    }
+   ],
+   "destination": "/fire-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9012"
+    }
+   ],
+   "destination": "/frederick/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9012"
+    }
+   ],
+   "destination": "/frederick/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9013"
+    }
+   ],
+   "destination": "/fredericksburg/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9013"
+    }
+   ],
+   "destination": "/fredericksburg/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9014"
+    }
+   ],
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9014"
+    }
+   ],
+   "destination": "/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9015"
+    }
+   ],
+   "destination": "/insurance-claims/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9015"
+    }
+   ],
+   "destination": "/insurance-claims/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9016"
+    }
+   ],
+   "destination": "/leesburg/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9016"
+    }
+   ],
+   "destination": "/leesburg/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9017"
+    }
+   ],
+   "destination": "/martinsburg/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9017"
+    }
+   ],
+   "destination": "/martinsburg/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9018"
+    }
+   ],
+   "destination": "/mclean/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9018"
+    }
+   ],
+   "destination": "/mclean/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9019"
+    }
+   ],
+   "destination": "/reston/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9019"
+    }
+   ],
+   "destination": "/reston/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9020"
+    }
+   ],
+   "destination": "/rockville/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9020"
+    }
+   ],
+   "destination": "/rockville/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9021"
+    }
+   ],
+   "destination": "/sewage-cleanup/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9021"
+    }
+   ],
+   "destination": "/sewage-cleanup/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9022"
+    }
+   ],
+   "destination": "/silver-spring/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9022"
+    }
+   ],
+   "destination": "/silver-spring/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9023"
+    }
+   ],
+   "destination": "/storm-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9023"
+    }
+   ],
+   "destination": "/storm-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9024"
+    }
+   ],
+   "destination": "/tysons/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9024"
+    }
+   ],
+   "destination": "/tysons/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9025"
+    }
+   ],
+   "destination": "/vienna/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9025"
+    }
+   ],
+   "destination": "/vienna/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9026"
+    }
+   ],
+   "destination": "/washington-dc/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9026"
+    }
+   ],
+   "destination": "/washington-dc/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9028"
+    }
+   ],
+   "destination": "/water-extraction/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9028"
+    }
+   ],
+   "destination": "/water-extraction/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9029"
+    }
+   ],
+   "destination": "/winchester/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9029"
+    }
+   ],
+   "destination": "/winchester/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9099"
+    }
+   ],
+   "destination": "/water-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9099"
+    }
+   ],
+   "destination": "/water-damage-restoration/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9200"
+    }
+   ],
+   "destination": "/why-does-my-basement-flood-when-it-rains/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9200"
+    }
+   ],
+   "destination": "/why-does-my-basement-flood-when-it-rains/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9201"
+    }
+   ],
+   "destination": "/what-to-do-when-your-basement-floods/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9201"
+    }
+   ],
+   "destination": "/what-to-do-when-your-basement-floods/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9202"
+    }
+   ],
+   "destination": "/does-homeowners-insurance-cover-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9202"
+    }
+   ],
+   "destination": "/does-homeowners-insurance-cover-water-damage/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9215"
+    }
+   ],
+   "destination": "/burst-pipe-what-to-do-first-hour/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9215"
+    }
+   ],
+   "destination": "/burst-pipe-what-to-do-first-hour/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9219"
+    }
+   ],
+   "destination": "/flooded-basement-cleanup-what-happens-next/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9219"
+    }
+   ],
+   "destination": "/flooded-basement-cleanup-what-happens-next/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "page_id",
+     "value": "9221"
+    }
+   ],
+   "destination": "/water-damage-restoration-alexandria-va/",
+   "permanent": true
+  },
+  {
+   "source": "/",
+   "has": [
+    {
+     "type": "query",
+     "key": "p",
+     "value": "9221"
+    }
+   ],
+   "destination": "/water-damage-restoration-alexandria-va/",
+   "permanent": true
+  },
+  {
+   "source": "/(sitemap_index|wp-sitemap|[a-z_-]+-sitemap[0-9]*|wp-sitemap-[a-z0-9_-]+).xml",
+   "destination": "/sitemap.xml",
+   "permanent": true
+  },
+  {
+   "source": "/wp-content/uploads/(.+)-[0-9]+x[0-9]+.(jpe?g|png|webp)",
+   "destination": "/images/uploads/$1.$2",
+   "permanent": true
+  },
+  {
+   "source": "/wp-content/uploads/:path*",
+   "destination": "/images/uploads/:path*",
+   "permanent": true
+  },
+  {
+   "source": "/:path*",
+   "has": [
+    {
+     "type": "host",
+     "value": "www.waterdamageprous.com"
+    }
+   ],
+   "destination": "https://waterdamageprous.com/:path*",
+   "permanent": true
+  }
+ ],
+ "headers": [
+  {
+   "source": "/((?!cms).*)",
+   "headers": [
+    {
+     "key": "X-Frame-Options",
+     "value": "SAMEORIGIN"
+    },
+    {
+     "key": "X-Content-Type-Options",
+     "value": "nosniff"
+    },
+    {
+     "key": "Referrer-Policy",
+     "value": "strict-origin-when-cross-origin"
+    },
+    {
+     "key": "Permissions-Policy",
+     "value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    {
+     "key": "Strict-Transport-Security",
+     "value": "max-age=31536000; includeSubDomains"
+    },
+    {
+     "key": "Content-Security-Policy",
+     "value": "default-src 'self'; script-src 'self' https://ttr-portal.vercel.app 'unsafe-inline' https://www.googletagmanager.com https://*.leadconnectorhq.com https://*.msgsndr.com; style-src 'self' 'unsafe-inline' https://*.leadconnectorhq.com https://*.msgsndr.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.gstatic.com https://*.leadconnectorhq.com https://*.msgsndr.com; font-src 'self' data: https://*.leadconnectorhq.com https://*.msgsndr.com; connect-src 'self' https://ttr-portal.vercel.app https://www.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.leadconnectorhq.com https://*.msgsndr.com wss://*.leadconnectorhq.com; frame-src 'self' https://www.google.com https://maps.google.com https://*.leadconnectorhq.com https://*.msgsndr.com; media-src 'self' https://*.leadconnectorhq.com https://*.msgsndr.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+    }
+   ]
+  },
+  {
+   "source": "/cms/(.*)",
+   "headers": [
+    {
+     "key": "X-Frame-Options",
+     "value": "SAMEORIGIN"
+    },
+    {
+     "key": "X-Content-Type-Options",
+     "value": "nosniff"
+    },
+    {
+     "key": "Referrer-Policy",
+     "value": "strict-origin-when-cross-origin"
+    },
+    {
+     "key": "Permissions-Policy",
+     "value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+    },
+    {
+     "key": "Strict-Transport-Security",
+     "value": "max-age=31536000; includeSubDomains"
+    }
+   ]
+  },
+  {
+   "source": "/images/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=2592000"
+    }
+   ]
+  }
+ ],
+ "rewrites": [
+  {
+   "source": "/api/lead.php",
+   "destination": "/api/lead"
+  }
+ ]
+}
