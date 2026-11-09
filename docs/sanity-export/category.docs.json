@@ -1,0 +1,32 @@
+[
+ {
+  "_id": "category-water-damage-guides",
+  "_type": "category",
+  "title": "Water Damage Guides",
+  "slug": {
+   "_type": "slug",
+   "current": "water-damage-guides"
+  },
+  "wpId": 16,
+  "seo": {
+   "_type": "seo",
+   "title": "Water Damage Guides - Water Damage Pro",
+   "noIndex": false
+  }
+ },
+ {
+  "_id": "category-uncategorized",
+  "_type": "category",
+  "title": "Uncategorized",
+  "slug": {
+   "_type": "slug",
+   "current": "uncategorized"
+  },
+  "wpId": 1,
+  "seo": {
+   "_type": "seo",
+   "title": "Uncategorized - Water Damage Pro",
+   "noIndex": false
+  }
+ }
+]
