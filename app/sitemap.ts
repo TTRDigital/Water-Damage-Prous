@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getCategories, getPages, getPosts, getTextPages } from "@/lib/content";
 import { absoluteUrl } from "@/lib/site";
 
-export const dynamic = "force-static";
+export const revalidate = 300;
 
 /** Every indexable page. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
