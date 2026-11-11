@@ -1,5 +1,5 @@
 /*
- * next/image loader for the static export (no image server on SiteGround). Only photos replaced in
+ * next/image loader (kept from the static export, so the old markup is unchanged). Only photos replaced in
  * Sanity go through next/image (the built-in photos print the old site's own <picture> markup,
  * components/ui/Photo.tsx): Sanity's image CDN resizes them. Anything else is served as it is.
  */
