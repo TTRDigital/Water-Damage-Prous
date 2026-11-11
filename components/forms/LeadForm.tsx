@@ -142,7 +142,7 @@ export function LeadForm({
     );
 
   return (
-    <form ref={ref} className="wdp-form" method="post" action="/api/lead/" noValidate onSubmit={onSubmit}>
+    <form ref={ref} className="wdp-form" method="post" action="/api/lead/" data-ttr-skip noValidate onSubmit={onSubmit}>
       <p className="wdp-form__rating">
         <span className="stars" aria-hidden="true">
           ★★★★★

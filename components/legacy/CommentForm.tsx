@@ -15,7 +15,7 @@ export function CommentForm({ slug, postId }: { slug: string; postId?: number })
             </a>
           </small>
         </h2>
-        <form action="/api/lead/" method="post" id="commentform" className="comment-form">
+        <form action="/api/lead/" data-ttr-skip method="post" id="commentform" className="comment-form">
           <p className="comment-notes">
             <span id="email-notes">Your email address will not be published.</span>{" "}
             <span className="required-field-message">
