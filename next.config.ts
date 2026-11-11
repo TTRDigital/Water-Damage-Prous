@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
     return [{ source: "/api/lead.php", destination: "/api/lead" }];
   },
   async redirects() {
-    return movedPages.map(([from, to]) => ({ source: `/${from}`, destination: to, permanent: true }));
+    return movedPages.map(([from, to]) => ({ source: `/${from}`, destination: to, statusCode: 301 }));
   },
   async headers() {
     return [
