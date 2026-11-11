@@ -26,7 +26,7 @@ const FIELDS: Record<HelpSection["form"]["variant"], Field[]> = {
 
 const now = () => Date.now();
 
-/* Client checks; public/api/lead.php checks the same on the server. */
+/* Client checks; app/api/lead/route.ts checks the same on the server. */
 function check(f: FieldName, v: string): string | undefined {
   const t = v.trim();
   if (f === "name") return t.length < 2 ? "Please enter your full name." : undefined;
@@ -36,7 +36,7 @@ function check(f: FieldName, v: string): string | undefined {
 }
 
 /**
- * "Request Immediate Help" / "Send Us a Message" form. Posts JSON to /api/lead.php (SiteGround PHP),
+ * "Request Immediate Help" / "Send Us a Message" form. Posts JSON to /api/lead (a Next route on Vercel),
  * which forwards to GoHighLevel. Spam: hidden field + timing check. On success the form is replaced
  * by the old site's thank-you message.
  */
@@ -69,7 +69,7 @@ export function LeadForm({
 
   useEffect(() => {
     startedAt.current = now();
-    // Sent without JavaScript: /api/lead.php sends the visitor back with ?sent=1.
+    // Sent without JavaScript: /api/lead sends the visitor back with ?sent=1.
     const sentWithoutJs = () => {
       if (new URLSearchParams(window.location.search).get("sent") === "1") setStatus("done");
     };
@@ -102,7 +102,7 @@ export function LeadForm({
     }
     const honeypot = (ref.current?.elements.namedItem("website_url") as HTMLInputElement | null)?.value ?? "";
     try {
-      const res = await fetch("/api/lead.php", {
+      const res = await fetch("/api/lead/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -142,7 +142,7 @@ export function LeadForm({
     );
 
   return (
-    <form ref={ref} className="wdp-form" method="post" action="/api/lead.php" noValidate onSubmit={onSubmit}>
+    <form ref={ref} className="wdp-form" method="post" action="/api/lead/" noValidate onSubmit={onSubmit}>
       <p className="wdp-form__rating">
         <span className="stars" aria-hidden="true">
           ★★★★★
