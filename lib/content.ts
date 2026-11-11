@@ -133,7 +133,12 @@ export const getPosts = cache(async (): Promise<Post[]> => {
     {},
     ["post"],
   );
-  return mergeBySlug(fallbackPosts, localizeAll(cms, fallbackPosts), blankPost).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+  // Newest first. Posts with the same date keep the built-in order (the old site's), not the order Sanity answers in.
+  const rank = (slug: string) => {
+    const i = fallbackPosts.findIndex((f) => f.slug === slug);
+    return i < 0 ? fallbackPosts.length : i;
+  };
+  return mergeBySlug(fallbackPosts, localizeAll(cms, fallbackPosts), blankPost).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : rank(a.slug) - rank(b.slug)));
 });
 
 export const getCategories = cache(async (): Promise<Category[]> => {
