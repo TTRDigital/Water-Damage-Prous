@@ -10,7 +10,7 @@ const COMMENTER_KEY = "wdp_commenter";
  * - the ElementsKit menu (elementskit-lite nav-menu.js): the hamburger opens and closes the
  *   off-canvas menu; on phones the arrow next to "Services" / "Areas" opens the submenu (the
  *   label itself is a link); on desktop the submenus open on hover (CSS), aria-expanded follows;
- * - the "Leave a Reply" form: sent to /api/lead.php without leaving the page; "Save my name…"
+ * - the "Leave a Reply" form: sent to /api/lead without leaving the page; "Save my name…"
  *   keeps name, email and website in this browser, as WordPress's cookies did.
  */
 export function LegacyScripts() {
@@ -106,7 +106,7 @@ export function LegacyScripts() {
         }
         if (submit) submit.disabled = true;
         try {
-          const res = await fetch("/api/lead.php", {
+          const res = await fetch("/api/lead/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

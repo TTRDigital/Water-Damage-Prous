@@ -1,4 +1,4 @@
-/* Constants for the lead forms. public/api/lead.php repeats the field rules: keep them in sync. */
+/* Constants for the lead forms. app/api/lead/route.ts repeats the field rules: keep them in sync. */
 
 export const attributionKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"] as const;
 

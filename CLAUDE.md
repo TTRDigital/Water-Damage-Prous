@@ -1,7 +1,7 @@
 @AGENTS.md
 # Water Damage Pro website
 
-Static Next.js 16 export for SiteGround + Sanity Studio at /cms. See README.md for pages, redirects, setup and the changes from the old WordPress site.
+Next.js 16 on Vercel (was a static export for SiteGround) + Sanity Studio at /cms. See README.md for pages, redirects, setup and the changes from the old WordPress site.
 
 - Built-in content lives in `lib/data` (generated from the old pages); Sanity values merge over it in `lib/content.ts`.
 - The site copies the live site exactly, quirks included (the client's call): do not "fix" how a page looks or reads without being asked.

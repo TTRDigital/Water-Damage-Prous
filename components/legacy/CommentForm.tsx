@@ -1,5 +1,5 @@
 /**
- * The posts' "Leave a Reply" form, as WordPress printed it. It posts to /api/lead.php (the comment
+ * The posts' "Leave a Reply" form, as WordPress printed it. It posts to /api/lead (the comment
  * reaches the business with the other leads; components/legacy/LegacyScripts.tsx sends it without
  * leaving the page); WordPress's own comment system is not carried over.
  */
@@ -15,7 +15,7 @@ export function CommentForm({ slug, postId }: { slug: string; postId?: number })
             </a>
           </small>
         </h2>
-        <form action="/api/lead.php" method="post" id="commentform" className="comment-form">
+        <form action="/api/lead/" method="post" id="commentform" className="comment-form">
           <p className="comment-notes">
             <span id="email-notes">Your email address will not be published.</span>{" "}
             <span className="required-field-message">
