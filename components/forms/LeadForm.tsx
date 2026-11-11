@@ -37,7 +37,7 @@ function check(f: FieldName, v: string): string | undefined {
 
 /**
  * "Request Immediate Help" / "Send Us a Message" form. Posts JSON to /api/lead (a Next route on Vercel),
- * which forwards to GoHighLevel. Spam: hidden field + timing check. On success the form is replaced
+ * which sends it to TTR OS. Spam: hidden field + timing check. On success the form is replaced
  * by the old site's thank-you message.
  */
 export function LeadForm({

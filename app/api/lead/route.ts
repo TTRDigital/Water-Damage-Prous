@@ -3,12 +3,9 @@
  * "quick" (name, phone, address, what happened), "message" (name, phone, email, address, message) and
  * "comment" (the blog posts' "Leave a Reply" form).
  *
- * Where a lead goes (Ben, Nov 11):
- * - Quick and message forms: TTR OS (the client's Leads page, POST <TTR_OS_URL>/api/site/form, needs the site key)
- *   AND the GoHighLevel inbound webhook (GHL_WEBHOOK_URL, same flat JSON as lead.php sent), so the existing
- *   workflow keeps working. The visitor sees success when either one took the lead.
- * - Comments: GoHighLevel only, as before (no new leads from comments).
- * GHL_WEBHOOK_URL is set on the Production scope only, so a preview deployment never posts to the real workflow.
+ * Every lead goes to TTR OS only (POST <TTR_OS_URL>/api/site/form, needs the site key): Water Damage Pro has no
+ * GoHighLevel and never will (Kia, Nov 11); the client's leads live in the TTR OS CRM. A comment arrives as a lead named
+ * "Blog comment" so it is not lost. Success when TTR OS took it, else "call us".
  * Without JavaScript the browser posts the fields directly and is sent back with ?sent=1 or ?error=1.
  */
 import { MIN_FILL_MS } from "@/lib/lead-options";
@@ -59,17 +56,10 @@ function back(req: Request, flag: "sent" | "error", comment: boolean) {
   return new Response(null, { status: 303, headers: { ...NO_STORE, Location: `${path}?${flag}=1${comment ? "#respond" : "#help"}` } });
 }
 
-function e164(raw: string): string {
-  const d = raw.replace(/\D/g, "");
-  if (d.length === 10) return `+1${d}`;
-  if (d.length === 11 && d[0] === "1") return `+${d}`;
-  return (raw.startsWith("+") ? "+" : "") + d;
-}
-
 const KINDS = {
-  quick: ["Website emergency help form", "emergency-help-form", "Request Immediate Help"],
-  message: ["Website contact form", "contact-form", "Send Us a Message"],
-  comment: ["Website blog comment", "blog-comment", "Leave a Reply"],
+  quick: "Request Immediate Help",
+  message: "Send Us a Message",
+  comment: "Leave a Reply",
 } as const;
 
 export async function POST(req: Request) {
@@ -131,78 +121,21 @@ export async function POST(req: Request) {
   if (Object.keys(errors).length) return reply(422, { ok: false, error: "Please check the form.", fields: errors }, comment);
 
   // Spam: drop only when both signals agree (hidden field filled AND sent faster than a person can type);
-  // one signal alone is delivered with a "suspected-spam" tag.
+  // one signal alone is delivered with a spam_check note.
   const trapFilled = text(input, "website_url", 200) !== "";
   const elapsed = typeof input.elapsed_ms === "number" ? input.elapsed_ms : null;
   const tooFast = elapsed !== null && elapsed < MIN_FILL_MS;
   if (trapFilled && tooFast) return reply(200, { ok: true }, comment);
   const spamCheck = trapFilled ? "suspect: hidden field filled" : tooFast ? `suspect: sent in ${elapsed} ms` : "ok";
 
-  const parts = lead.name.split(/\s+/);
-  const phone = e164(lead.phone);
-  const tags = ["website-lead", KINDS[form][1], ...(spamCheck === "ok" ? [] : ["suspected-spam"])];
   const referer = req.headers.get("referer") || "";
-  // One payload for every form, so one GoHighLevel workflow handles them all (same keys and order as lead.php).
-  const fields: [string, string, string][] = [
-    ["name", "Name", lead.name],
-    ["phone", "Phone", phone],
-    ["email", "Email", lead.email],
-    ["first_name", "First name", parts[0] ?? ""],
-    ["last_name", "Last name", parts.slice(1).join(" ")],
-    ["phone_raw", "Phone (as typed)", lead.phone],
-    ["address", "Property address", lead.address],
-    ["message", "Message", lead.details],
-    ["website", "Website", lead.website],
-    ["form_name", "Form", text(input, "form_name", 100) || KINDS[form][2]],
-    ["form", "Form type", form],
-    ["source", "Source", KINDS[form][0]],
-    ["page_url", "Page", text(input, "page_url", 1000) || referer],
-    ["landing_page", "Landing page", text(input, "landing_page", 1000)],
-    ["referrer", "Referrer", text(input, "referrer", 1000)],
-    ["utm_source", "UTM source", text(input, "utm_source", 1000)],
-    ["utm_medium", "UTM medium", text(input, "utm_medium", 1000)],
-    ["utm_campaign", "UTM campaign", text(input, "utm_campaign", 1000)],
-    ["utm_term", "UTM term", text(input, "utm_term", 1000)],
-    ["utm_content", "UTM content", text(input, "utm_content", 1000)],
-    ["gclid", "Google click ID (gclid)", text(input, "gclid", 1000)],
-    ["fbclid", "Facebook click ID (fbclid)", text(input, "fbclid", 1000)],
-    ["consent", "Agreed to be contacted", comment ? "No" : "Yes"],
-    ["spam_check", "Spam check", spamCheck],
-    ["tags", "Tags", tags.join(", ")],
-    ["submitted_at", "Submitted (UTC)", new Date().toISOString().slice(0, 19).replace("T", " ")],
-  ];
-  const payload: Record<string, string> = {};
-  for (const [k, , v] of fields) payload[k] = v;
-  payload.response = fields.map(([, label, v]) => `${label}: ${v === "" ? "Not provided" : v}`).join("\n");
+  const pick = (k: string) => text(input, k, 1000);
 
   const sends: Promise<boolean>[] = [];
 
-  const hook = (process.env.GHL_WEBHOOK_URL || "").trim().replace(/^["']|["']$/g, "");
-  // https only; plain http is allowed for a local test webhook (localhost), as lead.php did.
-  if (/^https:\/\//.test(hook) || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\//.test(hook)) {
-    sends.push(
-      (async () => {
-        // One retry for rate limits, server errors and network failures.
-        for (let attempt = 0; attempt < 2; attempt++) {
-          try {
-            const r = await fetch(hook, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload), signal: AbortSignal.timeout(8000) });
-            if (r.ok) return true;
-            console.error(`[lead] GoHighLevel webhook answered ${r.status}`);
-            if (r.status !== 429 && r.status < 500) return false;
-          } catch (e) {
-            console.error("[lead] GoHighLevel webhook failed:", String(e).slice(0, 160));
-          }
-          await new Promise((r) => setTimeout(r, 600));
-        }
-        return false;
-      })(),
-    );
-  } else {
-    console.error("[lead] GHL_WEBHOOK_URL is not set: nothing is sent to GoHighLevel.");
-  }
-
   const siteKey = (process.env.NEXT_PUBLIC_TTR_SITE_KEY || process.env.TTR_SITE_KEY || "").trim();
-  if (!comment && siteKey) {
+  if (!siteKey) console.error("[lead] NEXT_PUBLIC_TTR_SITE_KEY is not set: nothing is sent.");
+  else {
     const os = new URLSearchParams({
       k: siteKey,
       p: new URL(text(input, "page_url", 1000) || referer || SITE_ORIGIN + "/", SITE_ORIGIN).pathname,
@@ -210,8 +143,8 @@ export async function POST(req: Request) {
       u: text(input, "landing_page", 1000) || text(input, "page_url", 1000),
     });
     const keep: [string, string][] = [["name", lead.name], ["phone", lead.phone], ["email", lead.email], ["address", lead.address], ["message", lead.details],
-      ["form", KINDS[form][2]], ["utm_source", String(payload.utm_source)], ["utm_medium", String(payload.utm_medium)], ["utm_campaign", String(payload.utm_campaign)],
-      ["utm_term", String(payload.utm_term)], ["utm_content", String(payload.utm_content)], ["gclid", String(payload.gclid)], ["fbclid", String(payload.fbclid)]];
+      ["form", comment ? "Blog comment" : KINDS[form]], ["spam_check", spamCheck === "ok" ? "" : spamCheck],
+      ...(["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"] as const).map((k): [string, string] => [k, pick(k)])];
     for (const [k, v] of keep) if (v) os.set(`f_${k}`, v);
     sends.push(
       fetch(`${OS_URL}/api/site/form`, {
