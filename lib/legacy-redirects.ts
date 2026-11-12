@@ -170,7 +170,33 @@ export const shortLinks: Record<string, string> = {
  "9202": "/does-homeowners-insurance-cover-water-damage/",
  "9215": "/burst-pipe-what-to-do-first-hour/",
  "9219": "/flooded-basement-cleanup-what-happens-next/",
- "9221": "/water-damage-restoration-alexandria-va/"
+ "9221": "/water-damage-restoration-alexandria-va/",
+ // The old WordPress page ids the legacy template's header menu still links to (lib/data/legacy.ts),
+ // sent where movedPages sends the same old pages.
+ "13": "/",
+ "122": "/about/",
+ "124": "/",
+ "125": "/",
+ "126": "/contact/",
+ "131": "/water-damage-restoration/",
+ "132": "/water-damage-restoration/",
+ "133": "/water-extraction/",
+ "134": "/storm-damage-restoration/",
+ "136": "/fire-damage-restoration/",
+ "141": "/mclean/",
+ "142": "/ashburn/",
+ "143": "/leesburg/",
+ "144": "/ashburn/",
+ "149": "/alexandria/",
+ "150": "/vienna/",
+ "154": "/arlington/",
+ "527": "/",
+ "544": "/",
+ "549": "/",
+ "574": "/",
+ "586": "/",
+ "591": "/",
+ "599": "/"
 };
 
 /** Files in public/images/uploads (relative), so old wp-content/uploads addresses go to the same file. */
