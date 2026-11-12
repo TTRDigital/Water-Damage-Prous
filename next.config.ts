@@ -26,6 +26,9 @@ const nextConfig: NextConfig = {
   // Pages live at /about/ (matches the old WordPress URLs).
   trailingSlash: true,
   poweredByHeader: false,
+  // The site's CSS goes inside the HTML instead of 3 separate files the phone has to fetch before it
+  // can draw anything (PageSpeed mobile: about 470 ms of render-blocking requests, TTR-1572).
+  experimental: { inlineCss: true },
   async rewrites() {
     return [{ source: "/api/lead.php", destination: "/api/lead" }];
   },

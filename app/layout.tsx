@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { siteUrl } from "@/lib/site";
 
 /*
@@ -8,9 +8,11 @@ import { siteUrl } from "@/lib/site";
  * global typography (app/styles/kit.css).
  */
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap", variable: "--font-jakarta", weight: ["600", "700", "800"] });
+// The same Google Fonts files (latin subset), kept in the repo so a build never has to download them:
+// a failed fonts.googleapis.com fetch at build time is what stopped a Vercel deploy (TTR-1725).
+const jakarta = localFont({ src: "./fonts/plus-jakarta-sans-latin-600-800.woff2", weight: "600 800", display: "swap", variable: "--font-jakarta" });
 // Inter (body text of forms, chips and footer) is mostly below the fold: not preloaded, so it never delays the hero photo.
-const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter", weight: ["400", "500", "600"], preload: false });
+const inter = localFont({ src: "./fonts/inter-latin-400-600.woff2", weight: "400 600", display: "swap", variable: "--font-inter", preload: false });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

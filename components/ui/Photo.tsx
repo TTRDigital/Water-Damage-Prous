@@ -43,6 +43,8 @@ export function Photo({ img, sizes, hero = false, className }: { img: Img; sizes
       className={className}
       loading={hero ? "eager" : "lazy"}
       fetchPriority={hero ? "high" : undefined}
+      // The hero is also preloaded from <head>, so the phone starts downloading it before the HTML body is read.
+      preload={hero}
       decoding="async"
     />
   );
