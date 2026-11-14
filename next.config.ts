@@ -12,6 +12,13 @@ import { movedPages } from "./lib/legacy-redirects";
 // plus the TTR OS host for the visit tracker. A new third-party tag needs its host here.
 const csp = "default-src 'self'; script-src 'self' 'unsafe-inline' https://portal.ttrdigitalmarketing.com https://www.googletagmanager.com https://*.leadconnectorhq.com https://*.msgsndr.com; style-src 'self' 'unsafe-inline' https://*.leadconnectorhq.com https://*.msgsndr.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.gstatic.com https://*.leadconnectorhq.com https://*.msgsndr.com; font-src 'self' data: https://*.leadconnectorhq.com https://*.msgsndr.com; connect-src 'self' https://portal.ttrdigitalmarketing.com https://www.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.leadconnectorhq.com https://*.msgsndr.com wss://*.leadconnectorhq.com; frame-src 'self' https://www.google.com https://maps.google.com https://*.leadconnectorhq.com https://*.msgsndr.com; media-src 'self' https://*.leadconnectorhq.com https://*.msgsndr.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests";
 
+// Vercel PREVIEW builds only (the staging copy, branch ttr-staging-copy): the TTR OS editing bar and its uploads. Production keeps the policy above, unchanged.
+const previewCsp = csp
+  .replace("script-src 'self' 'unsafe-inline' ", "script-src 'self' 'unsafe-inline' https://ttr-portal.vercel.app ")
+  .replace("connect-src 'self' ", "connect-src 'self' https://ttr-portal.vercel.app ")
+  .replace("img-src 'self' data: blob: ", "img-src 'self' data: blob: https://*.blob.vercel-storage.com ");
+const policy = process.env.VERCEL_ENV === "preview" ? previewCsp : csp;
+
 const security = [
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -36,7 +43,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/:path*", headers: security },
       // Everything but the Studio gets the CSP.
-      { source: "/((?!cms).*)", headers: [{ key: "Content-Security-Policy", value: csp }] },
+      { source: "/((?!cms).*)", headers: [{ key: "Content-Security-Policy", value: policy }] },
       // Photos and the old stylesheet and scripts: a month (hashed /_next files are immutable by default, pages revalidate).
       { source: "/images/:path*", headers: month },
       { source: "/legacy/:path*", headers: month },
