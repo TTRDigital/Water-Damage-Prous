@@ -11979,5 +11979,1684 @@ export const fallbackPages: Page[] = [
         "label": "Martinsburg"
       }
     ]
+  },
+  {
+    "slug": "mold-remediation",
+    "kind": "service",
+    "name": "Mold Remediation",
+    "order": 28,
+    "sections": [
+      {
+        "_type": "pageHero",
+        "variant": "default",
+        "image": {
+          "src": "/images/uploads/2026/07/phero-extract-1448.jpg",
+          "alt": "Technician performing emergency water extraction in a flooded home",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-extract-960.webp 960w, /images/uploads/2026/07/phero-extract-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-extract-960.jpg 960w, /images/uploads/2026/07/phero-extract-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
+        },
+        "breadcrumb": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Services",
+            "href": "/#services"
+          },
+          {
+            "label": "Mold Remediation"
+          }
+        ],
+        "heading": "Mold Remediation *After Water Damage*",
+        "sub": "Drying that keeps mold from taking hold, and containment and cleanup where it already has, across Northern Virginia, DC and Maryland.",
+        "buttons": [
+          {
+            "label": "Call (571) 210-2498",
+            "href": "tel:+15712102498",
+            "style": "primary",
+            "pulse": true,
+            "phoneIcon": true
+          },
+          {
+            "label": "Get Help Now",
+            "href": "#help",
+            "style": "ghost"
+          }
+        ],
+        "ticks": [
+          "IICRC Certified",
+          "Licensed & Insured",
+          "Locally Owned in Vienna, VA"
+        ]
+      },
+      {
+        "_type": "proof",
+        "ariaLabel": "Proof and credentials",
+        "items": [
+          {
+            "mark": "check",
+            "value": "1,000+",
+            "label": "Homes Restored"
+          },
+          {
+            "mark": "star",
+            "value": "5.0",
+            "label": "Google Rating"
+          },
+          {
+            "value": "Fast",
+            "label": "Response"
+          },
+          {
+            "value": "IICRC",
+            "label": "Certified"
+          },
+          {
+            "value": "VA · DC · MD",
+            "label": "Service Area"
+          }
+        ]
+      },
+      {
+        "_type": "trust"
+      },
+      {
+        "_type": "split",
+        "variant": "default",
+        "kicker": "Mold Follows Water",
+        "heading": "Find the moisture, and you find the mold.",
+        "paragraphs": [
+          "Mold can begin growing within 24 to 48 hours of water exposure. Most of the time it starts where you can’t see it: inside walls, under floors and in insulation that stayed wet after a leak.",
+          "Proper drying usually prevents it. Where growth has already started, our IICRC-certified crew contains it and remediates it so it doesn’t spread through the HVAC system or wall cavities, then dries the area and restores it."
+        ],
+        "image": {
+          "src": "/images/uploads/2026/07/split-extract-1448.jpg",
+          "alt": "Water Damage Pro technician extracting water from a hardwood floor",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-extract-960.webp 960w, /images/uploads/2026/07/split-extract-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-extract-960.jpg 960w, /images/uploads/2026/07/split-extract-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
+        }
+      },
+      {
+        "_type": "services",
+        "kicker": "What’s Included",
+        "heading": "Mold remediation, start to finish.",
+        "intro": "We fix the moisture problem behind the mold, not just the spots you can see.",
+        "items": [
+          {
+            "icon": "search",
+            "title": "Moisture Detection",
+            "text": "We find the wet areas behind walls and under floors."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Containment",
+            "text": "We isolate the area so mold doesn’t spread."
+          },
+          {
+            "icon": "flood",
+            "title": "Water Extraction",
+            "text": "We remove any standing water at the source."
+          },
+          {
+            "icon": "dehumidifier",
+            "title": "Structural Drying",
+            "text": "Air movers and dehumidifiers dry the structure."
+          },
+          {
+            "icon": "sanitize",
+            "title": "Cleaning & Treatment",
+            "text": "Antimicrobial treatment to prevent mold and odor."
+          },
+          {
+            "icon": "hammer",
+            "title": "Repairs & Restoration",
+            "text": "We restore the affected areas once they read dry."
+          }
+        ]
+      },
+      {
+        "_type": "steps",
+        "background": "paper",
+        "kicker": "Our Process",
+        "heading": "How we handle mold.",
+        "items": [
+          {
+            "title": "Inspect & Measure",
+            "text": "We find the moisture and check how far it reaches."
+          },
+          {
+            "title": "Contain",
+            "text": "We isolate the affected area."
+          },
+          {
+            "title": "Remediate",
+            "text": "We clean up the growth that has started."
+          },
+          {
+            "title": "Dry & Treat",
+            "text": "We dry the structure and apply antimicrobial treatment."
+          },
+          {
+            "title": "Restore",
+            "text": "We repair the affected areas."
+          }
+        ]
+      },
+      {
+        "_type": "causes",
+        "kicker": "Where Mold Starts",
+        "heading": "Any leak left wet can grow mold.",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Burst & frozen pipes"
+          },
+          {
+            "icon": "basement",
+            "title": "Basement flooding"
+          },
+          {
+            "icon": "roof",
+            "title": "Roof & storm leaks"
+          },
+          {
+            "icon": "appliance-fire",
+            "title": "Appliance & washer leaks"
+          },
+          {
+            "icon": "drop",
+            "title": "Sewage backups"
+          },
+          {
+            "icon": "sump",
+            "title": "Sump-pump failure"
+          }
+        ]
+      },
+      {
+        "_type": "projects",
+        "anchor": "recent-projects",
+        "kicker": "Recent Jobs Near You",
+        "heading": "We were just down the street.",
+        "intro": "A look at recent water damage jobs across the DMV.",
+        "items": [
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "McLean, VA",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
+              "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Storm · Water",
+            "location": "Herndon, VA",
+            "title": "Storm flooding & cleanup",
+            "text": "Emergency extraction and drying after storm water entered the home.",
+            "meta": [
+              "⏱ Same-day start"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Bethesda, MD",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "cities",
+        "kicker": "Mold Remediation Near You",
+        "heading": "Serving your city across the DMV.",
+        "intro": "Local crews across Northern Virginia, DC and Maryland. Find yours:",
+        "links": [
+          {
+            "label": "Mold Remediation in Arlington",
+            "href": "/arlington/"
+          },
+          {
+            "label": "Mold Remediation in Alexandria",
+            "href": "/alexandria/"
+          },
+          {
+            "label": "Mold Remediation in McLean",
+            "href": "/mclean/"
+          },
+          {
+            "label": "Mold Remediation in Fairfax",
+            "href": "/fairfax/"
+          },
+          {
+            "label": "Mold Remediation in Washington DC",
+            "href": "/washington-dc/"
+          },
+          {
+            "label": "Mold Remediation in Vienna",
+            "href": "/vienna/"
+          },
+          {
+            "label": "Mold Remediation in Tysons",
+            "href": "/tysons/"
+          },
+          {
+            "label": "Mold Remediation in Reston",
+            "href": "/reston/"
+          },
+          {
+            "label": "Mold Remediation in Falls Church",
+            "href": "/falls-church/"
+          },
+          {
+            "label": "Mold Remediation in Ashburn",
+            "href": "/ashburn/"
+          },
+          {
+            "label": "Mold Remediation in Herndon",
+            "href": "/herndon/"
+          },
+          {
+            "label": "Mold Remediation in Sterling",
+            "href": "/sterling/"
+          },
+          {
+            "label": "Mold Remediation in Bethesda",
+            "href": "/bethesda/"
+          },
+          {
+            "label": "Mold Remediation in Silver Spring",
+            "href": "/silver-spring/"
+          }
+        ]
+      },
+      {
+        "_type": "faq",
+        "kicker": "Mold Remediation FAQ",
+        "heading": "Common questions.",
+        "items": [
+          {
+            "question": "How soon can mold grow after water damage?",
+            "answer": "Mold can begin growing within 24 to 48 hours of water exposure. That’s why fast extraction and complete drying matter so much after a leak or flood."
+          },
+          {
+            "question": "Can I just clean mold with bleach?",
+            "answer": "Bleach doesn’t fix a moisture problem. If the wall, floor or insulation behind it is still wet, the mold comes back. The moisture has to be found and dried first."
+          },
+          {
+            "question": "Do you fix the water problem too?",
+            "answer": "Yes. We extract the water, dry the structure with commercial air movers and dehumidifiers, and check moisture levels with meters until walls, floors and framing read dry."
+          },
+          {
+            "question": "What areas do you serve?",
+            "answer": "We serve homes and businesses across Northern Virginia, DC and Maryland. Call (571) 210-2498 to talk to our team."
+          }
+        ]
+      },
+      {
+        "_type": "help",
+        "anchor": "help",
+        "kicker": "Fast Help",
+        "heading": "Tell us what happened.",
+        "lead": "Send us the details and we’ll call you back. No obligation, no pressure.",
+        "ticks": [
+          "Certified, licensed & insured crew",
+          "Locally owned in Vienna, VA",
+          "Serving Northern Virginia, DC & Maryland"
+        ],
+        "form": {
+          "variant": "quick",
+          "ratingValue": "5.0",
+          "ratingText": "· Trusted by DMV homeowners",
+          "title": "Request Immediate Help",
+          "sub": "Tell us what’s happening and we’ll call you back.",
+          "button": "Request Help →",
+          "safe": "No obligation · No pressure",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full name",
+              "placeholder": "Full name"
+            },
+            {
+              "name": "phone",
+              "label": "Phone number",
+              "placeholder": "Phone number"
+            },
+            {
+              "name": "address",
+              "label": "Property address",
+              "placeholder": "Property address"
+            },
+            {
+              "name": "issue",
+              "label": "What happened?",
+              "placeholder": "What happened? (burst pipe, flood…)"
+            }
+          ]
+        }
+      }
+    ],
+    "seo": {
+      "title": "Mold Remediation in Northern VA, DC & MD - Water Damage Pro",
+      "description": "Mold remediation after water damage across Northern Virginia, DC and Maryland. Containment, drying and cleanup by IICRC-certified technicians. Call (571) 210-2498."
+    }
+  },
+  {
+    "slug": "burst-pipe-water-damage",
+    "kind": "service",
+    "name": "Burst Pipe Water Damage",
+    "order": 29,
+    "sections": [
+      {
+        "_type": "pageHero",
+        "variant": "default",
+        "image": {
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
+          "alt": "Water Damage Pro technician extracting water from a hardwood floor",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
+        },
+        "breadcrumb": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Services",
+            "href": "/#services"
+          },
+          {
+            "label": "Burst Pipe Water Damage"
+          }
+        ],
+        "heading": "Burst Pipe *Water Damage Cleanup*",
+        "sub": "Water extraction, drying and restoration after a burst or frozen pipe, across Northern Virginia, DC and Maryland.",
+        "buttons": [
+          {
+            "label": "Call (571) 210-2498",
+            "href": "tel:+15712102498",
+            "style": "primary",
+            "pulse": true,
+            "phoneIcon": true
+          },
+          {
+            "label": "Get Help Now",
+            "href": "#help",
+            "style": "ghost"
+          }
+        ],
+        "ticks": [
+          "IICRC Certified",
+          "Licensed & Insured",
+          "Locally Owned in Vienna, VA"
+        ]
+      },
+      {
+        "_type": "proof",
+        "ariaLabel": "Proof and credentials",
+        "items": [
+          {
+            "mark": "check",
+            "value": "1,000+",
+            "label": "Homes Restored"
+          },
+          {
+            "mark": "star",
+            "value": "5.0",
+            "label": "Google Rating"
+          },
+          {
+            "value": "Fast",
+            "label": "Response"
+          },
+          {
+            "value": "IICRC",
+            "label": "Certified"
+          },
+          {
+            "value": "VA · DC · MD",
+            "label": "Service Area"
+          }
+        ]
+      },
+      {
+        "_type": "trust"
+      },
+      {
+        "_type": "split",
+        "variant": "default",
+        "kicker": "After the Pipe Bursts",
+        "heading": "A plumber stops the leak. We dry out the house.",
+        "paragraphs": [
+          "A burst pipe can soak floors, walls and belongings fast. A plumber fixes the pipe, but the water has already moved into drywall, insulation and subflooring, and mold can start within 24 to 48 hours.",
+          "Our IICRC-certified crew extracts the water, dries the structure with commercial air movers and dehumidifiers, and checks moisture levels with meters until walls, floors and framing read dry. Then we restore what was damaged."
+        ],
+        "image": {
+          "src": "/images/uploads/2026/07/split-emergency-1448.jpg",
+          "alt": "Water Damage Pro technician extracting water from a flooded hardwood floor inside a home",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-emergency-960.webp 960w, /images/uploads/2026/07/split-emergency-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-emergency-960.jpg 960w, /images/uploads/2026/07/split-emergency-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
+        }
+      },
+      {
+        "_type": "services",
+        "kicker": "What’s Included",
+        "heading": "Everything after the leak, end to end.",
+        "intro": "One team, one call, from extraction to repairs.",
+        "items": [
+          {
+            "icon": "flood",
+            "title": "Emergency Water Extraction",
+            "text": "We remove standing water from floors and carpet."
+          },
+          {
+            "icon": "dehumidifier",
+            "title": "Structural Drying",
+            "text": "Air movers and dehumidifiers dry walls and subfloor."
+          },
+          {
+            "icon": "search",
+            "title": "Moisture Monitoring",
+            "text": "Meter readings until every area reads dry."
+          },
+          {
+            "icon": "sanitize",
+            "title": "Cleaning & Sanitizing",
+            "text": "Antimicrobial treatment to prevent mold and odor."
+          },
+          {
+            "icon": "document",
+            "title": "Damage Documentation",
+            "text": "Photo and moisture records of the damage."
+          },
+          {
+            "icon": "hammer",
+            "title": "Repairs & Restoration",
+            "text": "We repair floors, walls and ceilings."
+          }
+        ]
+      },
+      {
+        "_type": "steps",
+        "background": "paper",
+        "kicker": "Our Process",
+        "heading": "What to do, and what we do.",
+        "items": [
+          {
+            "title": "Stop the Water",
+            "text": "Shut off the main water valve if it’s safe."
+          },
+          {
+            "title": "Call Us",
+            "text": "Call (571) 210-2498 and we’ll talk you through it."
+          },
+          {
+            "title": "Extract",
+            "text": "We remove the standing water."
+          },
+          {
+            "title": "Dry & Monitor",
+            "text": "We dry the structure and check it with meters."
+          },
+          {
+            "title": "Restore",
+            "text": "We repair what the water damaged."
+          }
+        ]
+      },
+      {
+        "_type": "causes",
+        "kicker": "Leaks We Handle",
+        "heading": "Any pipe, any room.",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Burst & frozen pipes"
+          },
+          {
+            "icon": "appliance",
+            "title": "Appliance & water-heater overflows"
+          },
+          {
+            "icon": "appliance-fire",
+            "title": "Appliance & washer leaks"
+          },
+          {
+            "icon": "toilet",
+            "title": "Toilet overflows"
+          },
+          {
+            "icon": "basement",
+            "title": "Basement flooding"
+          },
+          {
+            "icon": "sump",
+            "title": "Sump-pump failure"
+          }
+        ]
+      },
+      {
+        "_type": "projects",
+        "anchor": "recent-projects",
+        "kicker": "Recent Jobs Near You",
+        "heading": "We were just down the street.",
+        "intro": "A look at recent water damage jobs across the DMV.",
+        "items": [
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "McLean, VA",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Reston, VA",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Arlington, VA",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "cities",
+        "kicker": "Burst Pipe Help Near You",
+        "heading": "Serving your city across the DMV.",
+        "intro": "Local crews across Northern Virginia, DC and Maryland. Find yours:",
+        "links": [
+          {
+            "label": "Burst Pipe Cleanup in Arlington",
+            "href": "/arlington/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Alexandria",
+            "href": "/alexandria/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in McLean",
+            "href": "/mclean/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Fairfax",
+            "href": "/fairfax/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Washington DC",
+            "href": "/washington-dc/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Vienna",
+            "href": "/vienna/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Tysons",
+            "href": "/tysons/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Reston",
+            "href": "/reston/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Falls Church",
+            "href": "/falls-church/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Ashburn",
+            "href": "/ashburn/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Herndon",
+            "href": "/herndon/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Sterling",
+            "href": "/sterling/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Bethesda",
+            "href": "/bethesda/"
+          },
+          {
+            "label": "Burst Pipe Cleanup in Silver Spring",
+            "href": "/silver-spring/"
+          }
+        ]
+      },
+      {
+        "_type": "faq",
+        "kicker": "Burst Pipe FAQ",
+        "heading": "Common questions.",
+        "items": [
+          {
+            "question": "What should I do first when a pipe bursts?",
+            "answer": "Shut off the main water valve, usually near where the line enters the house, in the basement or utility room. Then turn off electricity to any area where water is near outlets, appliances or the panel, and don’t stand under a bulging ceiling."
+          },
+          {
+            "question": "Do you repair the pipe itself?",
+            "answer": "A plumber stops the source and fixes the pipe. We handle the water damage: extraction, drying and restoration of the areas the water reached."
+          },
+          {
+            "question": "Can I dry it out myself?",
+            "answer": "Towels and a wet/dry vacuum help with shallow water. Don’t use a household vacuum on standing water or aim space heaters at wet walls. Call a restoration crew if water has reached walls, ceilings or more than one room."
+          },
+          {
+            "question": "Should I take photos?",
+            "answer": "Yes. Photograph everything before you move it. We also document the damage with photos and moisture readings as we work."
+          }
+        ]
+      },
+      {
+        "_type": "help",
+        "anchor": "help",
+        "kicker": "Fast Help",
+        "heading": "Tell us what happened.",
+        "lead": "Send us the details and we’ll call you back. No obligation, no pressure.",
+        "ticks": [
+          "Certified, licensed & insured crew",
+          "Locally owned in Vienna, VA",
+          "Serving Northern Virginia, DC & Maryland"
+        ],
+        "form": {
+          "variant": "quick",
+          "ratingValue": "5.0",
+          "ratingText": "· Trusted by DMV homeowners",
+          "title": "Request Immediate Help",
+          "sub": "Tell us what’s happening and we’ll call you back.",
+          "button": "Request Help →",
+          "safe": "No obligation · No pressure",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full name",
+              "placeholder": "Full name"
+            },
+            {
+              "name": "phone",
+              "label": "Phone number",
+              "placeholder": "Phone number"
+            },
+            {
+              "name": "address",
+              "label": "Property address",
+              "placeholder": "Property address"
+            },
+            {
+              "name": "issue",
+              "label": "What happened?",
+              "placeholder": "What happened? (burst pipe, flood…)"
+            }
+          ]
+        }
+      }
+    ],
+    "seo": {
+      "title": "Burst Pipe Water Damage Cleanup in Northern VA, DC & MD - Water Damage Pro",
+      "description": "Burst or frozen pipe? Water Damage Pro extracts the water, dries the structure and restores your home across Northern Virginia, DC and Maryland. Call (571) 210-2498."
+    }
+  },
+  {
+    "slug": "herndon",
+    "kind": "location",
+    "name": "Herndon, VA",
+    "order": 30,
+    "sections": [
+      {
+        "_type": "pageHero",
+        "variant": "default",
+        "image": {
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
+          "alt": "Water Damage Pro technician extracting water from a hardwood floor",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
+        },
+        "breadcrumb": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Service Areas",
+            "href": "/#locations"
+          },
+          {
+            "label": "Herndon, VA"
+          }
+        ],
+        "heading": "Water Damage Restoration in *Herndon, VA*",
+        "sub": "Your local team for burst pipes, flooded basements, and storm and fire damage in Herndon, from extraction and drying to full restoration.",
+        "buttons": [
+          {
+            "label": "Call (571) 210-2498",
+            "href": "tel:+15712102498",
+            "style": "primary",
+            "pulse": true,
+            "phoneIcon": true
+          },
+          {
+            "label": "Get Help Now",
+            "href": "#help",
+            "style": "ghost"
+          }
+        ],
+        "ticks": [
+          "Serving Herndon",
+          "IICRC Certified",
+          "Licensed & Insured"
+        ]
+      },
+      {
+        "_type": "proof",
+        "ariaLabel": "Proof and credentials",
+        "items": [
+          {
+            "mark": "check",
+            "value": "1,000+",
+            "label": "Homes Restored"
+          },
+          {
+            "mark": "star",
+            "value": "5.0",
+            "label": "Google Rating"
+          },
+          {
+            "value": "Fast",
+            "label": "Response"
+          },
+          {
+            "value": "IICRC",
+            "label": "Certified"
+          },
+          {
+            "value": "VA · DC · MD",
+            "label": "Service Area"
+          }
+        ]
+      },
+      {
+        "_type": "trust"
+      },
+      {
+        "_type": "split",
+        "variant": "default",
+        "kicker": "Local to Herndon",
+        "heading": "Certified restoration for Herndon.",
+        "paragraphs": [
+          "Water Damage Pro is locally owned in Vienna, VA, and serves Herndon and the rest of Northern Virginia, DC and Maryland. When a pipe bursts or a storm floods your basement, you get a local crew, not a national call center. Herndon is near Reston and Ashburn, two towns we already serve, and we’ve handled storm flooding cleanup in a Herndon home.",
+          "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration."
+        ],
+        "image": {
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
+          "alt": "A flooded suburban home surrounded by water",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
+        }
+      },
+      {
+        "_type": "services",
+        "kicker": "What We Do in Herndon",
+        "heading": "Complete restoration for Herndon homes & businesses.",
+        "intro": "One local team from the first drop to the final repair.",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Water Damage Restoration",
+            "text": "Extraction, drying, and full restoration after any leak or flood.",
+            "href": "/water-damage-restoration/",
+            "linkLabel": "Water Damage Restoration"
+          },
+          {
+            "icon": "flood",
+            "title": "Flood & Basement Cleanup",
+            "text": "Rapid water removal and structural drying for flooded spaces.",
+            "href": "/water-extraction/",
+            "linkLabel": "Flood and Basement Cleanup"
+          },
+          {
+            "icon": "flame",
+            "title": "Fire & Smoke Damage",
+            "text": "Soot, odor, and smoke remediation with full rebuild.",
+            "href": "/fire-damage-restoration/",
+            "linkLabel": "Fire and Smoke Damage"
+          },
+          {
+            "icon": "storm",
+            "title": "Storm Damage",
+            "text": "Emergency response and cleanup after severe weather.",
+            "href": "/storm-damage-restoration/",
+            "linkLabel": "Storm Damage"
+          },
+          {
+            "icon": "building",
+            "title": "Commercial Restoration",
+            "text": "Restoration for Herndon businesses & property managers.",
+            "href": "/commercial-water-damage/",
+            "linkLabel": "Commercial Restoration"
+          },
+          {
+            "icon": "phone",
+            "title": "Emergency Water Damage",
+            "text": "Help when water is still coming in.",
+            "href": "/emergency-water-damage/",
+            "linkLabel": "Emergency Response"
+          }
+        ]
+      },
+      {
+        "_type": "causes",
+        "background": "paper",
+        "kicker": "What We Handle in Herndon",
+        "heading": "Any leak or flood in Herndon.",
+        "intro": "Homes and businesses across Herndon, including:",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Burst & frozen pipes"
+          },
+          {
+            "icon": "basement",
+            "title": "Basement flooding"
+          },
+          {
+            "icon": "roof",
+            "title": "Roof & storm leaks"
+          },
+          {
+            "icon": "appliance-fire",
+            "title": "Appliance & washer leaks"
+          },
+          {
+            "icon": "drop",
+            "title": "Sewage backups"
+          },
+          {
+            "icon": "sump",
+            "title": "Sump-pump failure"
+          }
+        ]
+      },
+      {
+        "_type": "steps",
+        "kicker": "Our Process",
+        "heading": "How we handle your Herndon water damage.",
+        "items": [
+          {
+            "title": "Call Us",
+            "text": "Call (571) 210-2498 or send the form below."
+          },
+          {
+            "title": "Assess & Document",
+            "text": "We inspect, measure, and document the damage."
+          },
+          {
+            "title": "Extract & Dry",
+            "text": "We remove the water and dry the structure completely."
+          },
+          {
+            "title": "Clean & Sanitize",
+            "text": "Antimicrobial treatment to prevent mold and odor."
+          },
+          {
+            "title": "Restore",
+            "text": "We repair and restore the affected areas."
+          }
+        ]
+      },
+      {
+        "_type": "projects",
+        "anchor": "recent-projects",
+        "kicker": "Recent Jobs Near Herndon",
+        "heading": "We were just down the street.",
+        "intro": "A look at recent restorations near you.",
+        "items": [
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
+              "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Storm · Water",
+            "location": "Herndon, VA",
+            "title": "Storm flooding & cleanup",
+            "text": "Emergency extraction and drying after storm water entered the home.",
+            "meta": [
+              "⏱ Same-day start"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Reston, VA",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
+              "alt": "Interior of a living room with fire and smoke damage",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Fire · Smoke",
+            "location": "Sterling, VA",
+            "title": "Fire & smoke restored",
+            "text": "Soot removal, odor treatment, and full restoration after a kitchen fire.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "map",
+        "anchor": "map",
+        "kicker": "Service Area",
+        "heading": "Serving Herndon.",
+        "query": "Herndon, VA",
+        "zoom": 12,
+        "title": "Water Damage Pro service area: Herndon, VA",
+        "framed": true
+      },
+      {
+        "_type": "cities",
+        "kicker": "Nearby Communities",
+        "heading": "Also serving near Herndon.",
+        "intro": "Local crews across the DMV. Find yours:",
+        "links": [
+          {
+            "label": "Water Damage Restoration in Reston",
+            "href": "/reston/"
+          },
+          {
+            "label": "Water Damage Restoration in Ashburn",
+            "href": "/ashburn/"
+          },
+          {
+            "label": "Water Damage Restoration in Sterling",
+            "href": "/sterling/"
+          },
+          {
+            "label": "Water Damage Restoration in Vienna",
+            "href": "/vienna/"
+          },
+          {
+            "label": "Water Damage Restoration in Leesburg",
+            "href": "/leesburg/"
+          },
+          {
+            "label": "Water Damage Restoration in Fairfax",
+            "href": "/fairfax/"
+          }
+        ]
+      },
+      {
+        "_type": "faq",
+        "kicker": "Herndon FAQ",
+        "heading": "Common questions.",
+        "items": [
+          {
+            "question": "Do you serve Herndon?",
+            "answer": "Yes. We serve homes and businesses in Herndon and across Northern Virginia, DC and Maryland. Call (571) 210-2498 to reach our team."
+          },
+          {
+            "question": "What should I do right now, before you arrive?",
+            "answer": "If it’s safe: stop the water source, turn off electricity to affected areas, and move valuables up off the floor. Then call us and we’ll guide you on the phone."
+          },
+          {
+            "question": "Do you handle mold after a leak?",
+            "answer": "Yes. Proper drying usually prevents mold. Where growth has already started, we contain and remediate it so it doesn’t spread through the HVAC system or wall cavities."
+          },
+          {
+            "question": "Do you work on commercial properties in Herndon?",
+            "answer": "Yes. We restore offices, warehouses, retail spaces, restaurants, medical and dental offices, and multi-tenant and HOA buildings."
+          }
+        ]
+      },
+      {
+        "_type": "help",
+        "anchor": "help",
+        "kicker": "Fast Help in Herndon",
+        "heading": "Water damage in Herndon? Let’s move.",
+        "lead": "Call (571) 210-2498, or send the details and we’ll call you back.",
+        "ticks": [
+          "Local Northern Virginia crew",
+          "Certified, licensed & insured",
+          "Locally owned in Vienna, VA"
+        ],
+        "form": {
+          "variant": "quick",
+          "ratingValue": "5.0",
+          "ratingText": "· Trusted by DMV homeowners",
+          "title": "Request Immediate Help",
+          "sub": "Tell us what’s happening and we’ll call you back.",
+          "button": "Request Help →",
+          "safe": "No obligation · No pressure",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full name",
+              "placeholder": "Full name"
+            },
+            {
+              "name": "phone",
+              "label": "Phone number",
+              "placeholder": "Phone number"
+            },
+            {
+              "name": "address",
+              "label": "Property address",
+              "placeholder": "Property address"
+            },
+            {
+              "name": "issue",
+              "label": "What happened?",
+              "placeholder": "What happened? (burst pipe, flood…)"
+            }
+          ]
+        }
+      }
+    ],
+    "seo": {
+      "title": "Water Damage Restoration in Herndon, VA - Water Damage Pro",
+      "description": "Water damage restoration in Herndon, VA: water extraction, drying, mold, fire and storm cleanup by IICRC-certified technicians. Call Water Damage Pro at (571) 210-2498."
+    }
+  },
+  {
+    "slug": "sterling",
+    "kind": "location",
+    "name": "Sterling, VA",
+    "order": 31,
+    "sections": [
+      {
+        "_type": "pageHero",
+        "variant": "default",
+        "image": {
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
+          "alt": "Water Damage Pro technician extracting water from a hardwood floor",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
+        },
+        "breadcrumb": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Service Areas",
+            "href": "/#locations"
+          },
+          {
+            "label": "Sterling, VA"
+          }
+        ],
+        "heading": "Water Damage Restoration in *Sterling, VA*",
+        "sub": "Your local team for burst pipes, flooded basements, and storm and fire damage in Sterling, from extraction and drying to full restoration.",
+        "buttons": [
+          {
+            "label": "Call (571) 210-2498",
+            "href": "tel:+15712102498",
+            "style": "primary",
+            "pulse": true,
+            "phoneIcon": true
+          },
+          {
+            "label": "Get Help Now",
+            "href": "#help",
+            "style": "ghost"
+          }
+        ],
+        "ticks": [
+          "Serving Sterling",
+          "IICRC Certified",
+          "Licensed & Insured"
+        ]
+      },
+      {
+        "_type": "proof",
+        "ariaLabel": "Proof and credentials",
+        "items": [
+          {
+            "mark": "check",
+            "value": "1,000+",
+            "label": "Homes Restored"
+          },
+          {
+            "mark": "star",
+            "value": "5.0",
+            "label": "Google Rating"
+          },
+          {
+            "value": "Fast",
+            "label": "Response"
+          },
+          {
+            "value": "IICRC",
+            "label": "Certified"
+          },
+          {
+            "value": "VA · DC · MD",
+            "label": "Service Area"
+          }
+        ]
+      },
+      {
+        "_type": "trust"
+      },
+      {
+        "_type": "split",
+        "variant": "default",
+        "kicker": "Local to Sterling",
+        "heading": "Certified restoration for Sterling.",
+        "paragraphs": [
+          "Water Damage Pro is locally owned in Vienna, VA, and serves Sterling and the rest of Northern Virginia, DC and Maryland. When a pipe bursts or a storm floods your basement, you get a local crew, not a national call center. We’ve worked in Sterling before, from a fire and smoke job in a home to a large-loss warehouse dry-out, and we serve nearby Ashburn, Leesburg and Herndon too.",
+          "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration."
+        ],
+        "image": {
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
+          "alt": "A flooded suburban home surrounded by water",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
+        }
+      },
+      {
+        "_type": "services",
+        "kicker": "What We Do in Sterling",
+        "heading": "Complete restoration for Sterling homes & businesses.",
+        "intro": "One local team from the first drop to the final repair.",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Water Damage Restoration",
+            "text": "Extraction, drying, and full restoration after any leak or flood.",
+            "href": "/water-damage-restoration/",
+            "linkLabel": "Water Damage Restoration"
+          },
+          {
+            "icon": "flood",
+            "title": "Flood & Basement Cleanup",
+            "text": "Rapid water removal and structural drying for flooded spaces.",
+            "href": "/water-extraction/",
+            "linkLabel": "Flood and Basement Cleanup"
+          },
+          {
+            "icon": "flame",
+            "title": "Fire & Smoke Damage",
+            "text": "Soot, odor, and smoke remediation with full rebuild.",
+            "href": "/fire-damage-restoration/",
+            "linkLabel": "Fire and Smoke Damage"
+          },
+          {
+            "icon": "storm",
+            "title": "Storm Damage",
+            "text": "Emergency response and cleanup after severe weather.",
+            "href": "/storm-damage-restoration/",
+            "linkLabel": "Storm Damage"
+          },
+          {
+            "icon": "building",
+            "title": "Commercial Restoration",
+            "text": "Restoration for Sterling businesses & property managers.",
+            "href": "/commercial-water-damage/",
+            "linkLabel": "Commercial Restoration"
+          },
+          {
+            "icon": "phone",
+            "title": "Emergency Water Damage",
+            "text": "Help when water is still coming in.",
+            "href": "/emergency-water-damage/",
+            "linkLabel": "Emergency Response"
+          }
+        ]
+      },
+      {
+        "_type": "causes",
+        "background": "paper",
+        "kicker": "What We Handle in Sterling",
+        "heading": "Any leak or flood in Sterling.",
+        "intro": "Homes and businesses across Sterling, including:",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Burst & frozen pipes"
+          },
+          {
+            "icon": "basement",
+            "title": "Basement flooding"
+          },
+          {
+            "icon": "roof",
+            "title": "Roof & storm leaks"
+          },
+          {
+            "icon": "appliance-fire",
+            "title": "Appliance & washer leaks"
+          },
+          {
+            "icon": "drop",
+            "title": "Sewage backups"
+          },
+          {
+            "icon": "sump",
+            "title": "Sump-pump failure"
+          }
+        ]
+      },
+      {
+        "_type": "steps",
+        "kicker": "Our Process",
+        "heading": "How we handle your Sterling water damage.",
+        "items": [
+          {
+            "title": "Call Us",
+            "text": "Call (571) 210-2498 or send the form below."
+          },
+          {
+            "title": "Assess & Document",
+            "text": "We inspect, measure, and document the damage."
+          },
+          {
+            "title": "Extract & Dry",
+            "text": "We remove the water and dry the structure completely."
+          },
+          {
+            "title": "Clean & Sanitize",
+            "text": "Antimicrobial treatment to prevent mold and odor."
+          },
+          {
+            "title": "Restore",
+            "text": "We repair and restore the affected areas."
+          }
+        ]
+      },
+      {
+        "_type": "projects",
+        "anchor": "recent-projects",
+        "kicker": "Recent Jobs Near Sterling",
+        "heading": "We were just down the street.",
+        "intro": "A look at recent restorations near you.",
+        "items": [
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-comm-2-800.jpg",
+              "alt": "Commercial drying equipment fleet staged for a large-loss job",
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-comm-2-480.webp 480w, /images/uploads/2026/07/proj-comm-2-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-comm-2-480.jpg 480w, /images/uploads/2026/07/proj-comm-2-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Warehouse · Large Loss",
+            "location": "Sterling, VA",
+            "title": "Warehouse large-loss dry-out",
+            "text": "Deployed a full equipment fleet to dry a large facility and protect stored inventory.",
+            "meta": [
+              "⏱ Rapid mobilization",
+              "✓ Contents protected"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
+              "alt": "Interior of a living room with fire and smoke damage",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Fire · Smoke",
+            "location": "Sterling, VA",
+            "title": "Fire & smoke restored",
+            "text": "Soot removal, odor treatment, and full restoration after a kitchen fire.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
+              "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Storm · Water",
+            "location": "Herndon, VA",
+            "title": "Storm flooding & cleanup",
+            "text": "Emergency extraction and drying after storm water entered the home.",
+            "meta": [
+              "⏱ Same-day start"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "map",
+        "anchor": "map",
+        "kicker": "Service Area",
+        "heading": "Serving Sterling.",
+        "query": "Sterling, VA",
+        "zoom": 12,
+        "title": "Water Damage Pro service area: Sterling, VA",
+        "framed": true
+      },
+      {
+        "_type": "cities",
+        "kicker": "Nearby Communities",
+        "heading": "Also serving near Sterling.",
+        "intro": "Local crews across the DMV. Find yours:",
+        "links": [
+          {
+            "label": "Water Damage Restoration in Ashburn",
+            "href": "/ashburn/"
+          },
+          {
+            "label": "Water Damage Restoration in Herndon",
+            "href": "/herndon/"
+          },
+          {
+            "label": "Water Damage Restoration in Leesburg",
+            "href": "/leesburg/"
+          },
+          {
+            "label": "Water Damage Restoration in Reston",
+            "href": "/reston/"
+          },
+          {
+            "label": "Water Damage Restoration in Vienna",
+            "href": "/vienna/"
+          },
+          {
+            "label": "Water Damage Restoration in Fairfax",
+            "href": "/fairfax/"
+          }
+        ]
+      },
+      {
+        "_type": "faq",
+        "kicker": "Sterling FAQ",
+        "heading": "Common questions.",
+        "items": [
+          {
+            "question": "Do you serve Sterling?",
+            "answer": "Yes. We serve homes and businesses in Sterling and across Northern Virginia, DC and Maryland. Call (571) 210-2498 to reach our team."
+          },
+          {
+            "question": "What should I do right now, before you arrive?",
+            "answer": "If it’s safe: stop the water source, turn off electricity to affected areas, and move valuables up off the floor. Then call us and we’ll guide you on the phone."
+          },
+          {
+            "question": "Do you handle mold after a leak?",
+            "answer": "Yes. Proper drying usually prevents mold. Where growth has already started, we contain and remediate it so it doesn’t spread through the HVAC system or wall cavities."
+          },
+          {
+            "question": "Do you work on commercial properties in Sterling?",
+            "answer": "Yes. We restore offices, warehouses, retail spaces, restaurants, medical and dental offices, and multi-tenant and HOA buildings."
+          }
+        ]
+      },
+      {
+        "_type": "help",
+        "anchor": "help",
+        "kicker": "Fast Help in Sterling",
+        "heading": "Water damage in Sterling? Let’s move.",
+        "lead": "Call (571) 210-2498, or send the details and we’ll call you back.",
+        "ticks": [
+          "Local Northern Virginia crew",
+          "Certified, licensed & insured",
+          "Locally owned in Vienna, VA"
+        ],
+        "form": {
+          "variant": "quick",
+          "ratingValue": "5.0",
+          "ratingText": "· Trusted by DMV homeowners",
+          "title": "Request Immediate Help",
+          "sub": "Tell us what’s happening and we’ll call you back.",
+          "button": "Request Help →",
+          "safe": "No obligation · No pressure",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full name",
+              "placeholder": "Full name"
+            },
+            {
+              "name": "phone",
+              "label": "Phone number",
+              "placeholder": "Phone number"
+            },
+            {
+              "name": "address",
+              "label": "Property address",
+              "placeholder": "Property address"
+            },
+            {
+              "name": "issue",
+              "label": "What happened?",
+              "placeholder": "What happened? (burst pipe, flood…)"
+            }
+          ]
+        }
+      }
+    ],
+    "seo": {
+      "title": "Water Damage Restoration in Sterling, VA - Water Damage Pro",
+      "description": "Water damage restoration in Sterling, VA: water extraction, drying, mold, fire and storm cleanup by IICRC-certified technicians. Call Water Damage Pro at (571) 210-2498."
+    }
   }
 ];
