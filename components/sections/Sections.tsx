@@ -258,7 +258,8 @@ function Benefits({ s }: { s: BenefitsSection }) {
               <Icon name={it.icon} />
             </span>
             <div>
-              <h3>{it.title}</h3>
+              {/* Level 2 for assistive tech: the strip sits right under the page's h1. Kept as h3 so it looks the same. */}
+              <h3 aria-level={2}>{it.title}</h3>
               <p>{it.text}</p>
             </div>
           </div>

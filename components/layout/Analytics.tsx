@@ -11,26 +11,26 @@ const GA_ID = gaEnv === "off" ? "" : gaEnv || "G-F3JQ9WQY4G";
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 // TTR OS visit tracker (public site key, no cookies, no visible change). Forms carry data-ttr-skip: app/api/lead/route.ts sends the lead itself.
 const TTR_KEY = process.env.NEXT_PUBLIC_TTR_SITE_KEY;
-const TTR_OS = process.env.NEXT_PUBLIC_TTR_OS_URL || "https://portal.ttrdigitalmarketing.com";
+// Versioned address, cached for a year (TTR-2524). A new script version gets a new address; old ones keep working.
+const TTR_SCRIPT = "https://portal.ttrdigitalmarketing.com/api/site/script/5a23a7758595";
 
 const TRACK_CLICKS = `document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-track]');if(!a)return;var n=a.getAttribute('data-track'),p={link_url:a.href||'',page:location.pathname};if(window.gtag)window.gtag('event',n,p);else(window.dataLayer=window.dataLayer||[]).push(Object.assign({event:n},p))});`;
 
 export function Analytics() {
   return (
     <>
-      {TTR_KEY ? <Script src={`${TTR_OS}/api/site/script`} data-site={TTR_KEY} strategy="lazyOnload" /> : null}
+      {TTR_KEY ? <Script src={TTR_SCRIPT} data-site={TTR_KEY} strategy="lazyOnload" /> : null}
       {GTM_ID ? (
         <Script id="gtm" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
       ) : null}
       {GA_ID ? (
-        <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
-          <Script id="ga" strategy="lazyOnload">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_ID}');`}
-          </Script>
-        </>
+        // gtag() queues into dataLayer right away (page view, leads, call clicks); the gtag.js library itself
+        // (about 150 KB) loads on the first scroll, tap or key press, or 5 s after the page has loaded.
+        <Script id="ga" strategy="lazyOnload">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_ID}');(function(){var d=0,ev=['pointerdown','keydown','scroll','touchstart'];function l(){if(d)return;d=1;ev.forEach(function(e){removeEventListener(e,l)});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.appendChild(s)}ev.forEach(function(e){addEventListener(e,l,{passive:true})});setTimeout(l,5000)})();`}
+        </Script>
       ) : null}
       {GA_ID || GTM_ID ? (
         <Script id="track-clicks" strategy="lazyOnload">
