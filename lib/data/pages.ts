@@ -13658,5 +13658,1665 @@ export const fallbackPages: Page[] = [
       "title": "Water Damage Restoration in Sterling, VA - Water Damage Pro",
       "description": "Water damage restoration in Sterling, VA: water extraction, drying, mold, fire and storm cleanup by IICRC-certified technicians. Call Water Damage Pro at (571) 210-2498."
     }
+  },
+  {
+    "slug": "oakton",
+    "kind": "location",
+    "name": "Oakton, VA",
+    "order": 32,
+    "sections": [
+      {
+        "_type": "pageHero",
+        "variant": "default",
+        "image": {
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
+          "alt": "Water Damage Pro technician extracting water from a hardwood floor",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
+        },
+        "breadcrumb": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Service Areas",
+            "href": "/#locations"
+          },
+          {
+            "label": "Oakton, VA"
+          }
+        ],
+        "heading": "Water Damage Restoration in *Oakton, VA*",
+        "sub": "Your local team for burst pipes, flooded basements, and storm and fire damage in Oakton, from extraction and drying to full restoration.",
+        "buttons": [
+          {
+            "label": "Call (571) 210-2498",
+            "href": "tel:+15712102498",
+            "style": "primary",
+            "pulse": true,
+            "phoneIcon": true
+          },
+          {
+            "label": "Get Help Now",
+            "href": "#help",
+            "style": "ghost"
+          }
+        ],
+        "ticks": [
+          "Serving Oakton",
+          "IICRC Certified",
+          "Licensed & Insured"
+        ]
+      },
+      {
+        "_type": "proof",
+        "ariaLabel": "Proof and credentials",
+        "items": [
+          {
+            "mark": "check",
+            "value": "1,000+",
+            "label": "Homes Restored"
+          },
+          {
+            "mark": "star",
+            "value": "5.0",
+            "label": "Google Rating"
+          },
+          {
+            "value": "Fast",
+            "label": "Response"
+          },
+          {
+            "value": "IICRC",
+            "label": "Certified"
+          },
+          {
+            "value": "VA · DC · MD",
+            "label": "Service Area"
+          }
+        ]
+      },
+      {
+        "_type": "trust"
+      },
+      {
+        "_type": "split",
+        "variant": "default",
+        "kicker": "Local to Oakton",
+        "heading": "Certified restoration for Oakton.",
+        "paragraphs": [
+          "Water Damage Pro is locally owned in Vienna, VA, and serves Oakton and the rest of Northern Virginia, DC and Maryland. When a pipe bursts or a storm floods your basement, you get a local crew, not a national call center. Oakton is near Vienna, where we’re locally owned, and we’ve handled storm flooding and fire and smoke jobs in Oakton homes.",
+          "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration."
+        ],
+        "image": {
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
+          "alt": "A flooded suburban home surrounded by water",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
+        }
+      },
+      {
+        "_type": "services",
+        "kicker": "What We Do in Oakton",
+        "heading": "Complete restoration for Oakton homes & businesses.",
+        "intro": "One local team from the first drop to the final repair.",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Water Damage Restoration",
+            "text": "Extraction, drying, and full restoration after any leak or flood.",
+            "href": "/water-damage-restoration/",
+            "linkLabel": "Water Damage Restoration"
+          },
+          {
+            "icon": "flood",
+            "title": "Flood & Basement Cleanup",
+            "text": "Rapid water removal and structural drying for flooded spaces.",
+            "href": "/water-extraction/",
+            "linkLabel": "Flood and Basement Cleanup"
+          },
+          {
+            "icon": "flame",
+            "title": "Fire & Smoke Damage",
+            "text": "Soot, odor, and smoke remediation with full rebuild.",
+            "href": "/fire-damage-restoration/",
+            "linkLabel": "Fire and Smoke Damage"
+          },
+          {
+            "icon": "storm",
+            "title": "Storm Damage",
+            "text": "Emergency response and cleanup after severe weather.",
+            "href": "/storm-damage-restoration/",
+            "linkLabel": "Storm Damage"
+          },
+          {
+            "icon": "building",
+            "title": "Commercial Restoration",
+            "text": "Restoration for Oakton businesses & property managers.",
+            "href": "/commercial-water-damage/",
+            "linkLabel": "Commercial Restoration"
+          },
+          {
+            "icon": "phone",
+            "title": "Emergency Water Damage",
+            "text": "Help when water is still coming in.",
+            "href": "/emergency-water-damage/",
+            "linkLabel": "Emergency Response"
+          }
+        ]
+      },
+      {
+        "_type": "causes",
+        "background": "paper",
+        "kicker": "What We Handle in Oakton",
+        "heading": "Any leak or flood in Oakton.",
+        "intro": "Homes and businesses across Oakton, including:",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Burst & frozen pipes"
+          },
+          {
+            "icon": "basement",
+            "title": "Basement flooding"
+          },
+          {
+            "icon": "roof",
+            "title": "Roof & storm leaks"
+          },
+          {
+            "icon": "appliance-fire",
+            "title": "Appliance & washer leaks"
+          },
+          {
+            "icon": "drop",
+            "title": "Sewage backups"
+          },
+          {
+            "icon": "sump",
+            "title": "Sump-pump failure"
+          }
+        ]
+      },
+      {
+        "_type": "steps",
+        "kicker": "Our Process",
+        "heading": "How we handle your Oakton water damage.",
+        "items": [
+          {
+            "title": "Call Us",
+            "text": "Call (571) 210-2498 or send the form below."
+          },
+          {
+            "title": "Assess & Document",
+            "text": "We inspect, measure, and document the damage."
+          },
+          {
+            "title": "Extract & Dry",
+            "text": "We remove the water and dry the structure completely."
+          },
+          {
+            "title": "Clean & Sanitize",
+            "text": "Antimicrobial treatment to prevent mold and odor."
+          },
+          {
+            "title": "Restore",
+            "text": "We repair and restore the affected areas."
+          }
+        ]
+      },
+      {
+        "_type": "projects",
+        "anchor": "recent-projects",
+        "kicker": "Recent Jobs Near Oakton",
+        "heading": "We were just down the street.",
+        "intro": "A look at recent restorations near you.",
+        "items": [
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
+              "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Storm · Water",
+            "location": "Oakton, VA",
+            "title": "Storm flooding & cleanup",
+            "text": "Emergency extraction and drying after storm water entered the home.",
+            "meta": [
+              "⏱ Same-day start"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
+              "alt": "Interior of a living room with fire and smoke damage",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Fire · Smoke",
+            "location": "Oakton, VA",
+            "title": "Fire & smoke restored",
+            "text": "Soot removal, odor treatment, and full restoration after a kitchen fire.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Vienna, VA",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "map",
+        "anchor": "map",
+        "kicker": "Service Area",
+        "heading": "Serving Oakton.",
+        "query": "Oakton, VA",
+        "zoom": 12,
+        "title": "Water Damage Pro service area: Oakton, VA",
+        "framed": true
+      },
+      {
+        "_type": "cities",
+        "kicker": "Nearby Communities",
+        "heading": "Also serving near Oakton.",
+        "intro": "Local crews across the DMV. Find yours:",
+        "links": [
+          {
+            "label": "Water Damage Restoration in Vienna",
+            "href": "/vienna/"
+          },
+          {
+            "label": "Water Damage Restoration in Fairfax",
+            "href": "/fairfax/"
+          },
+          {
+            "label": "Water Damage Restoration in Reston",
+            "href": "/reston/"
+          },
+          {
+            "label": "Water Damage Restoration in Tysons",
+            "href": "/tysons/"
+          },
+          {
+            "label": "Water Damage Restoration in McLean",
+            "href": "/mclean/"
+          },
+          {
+            "label": "Water Damage Restoration in Falls Church",
+            "href": "/falls-church/"
+          }
+        ]
+      },
+      {
+        "_type": "faq",
+        "kicker": "Oakton FAQ",
+        "heading": "Common questions.",
+        "items": [
+          {
+            "question": "Do you serve Oakton?",
+            "answer": "Yes. We serve homes and businesses in Oakton and across Northern Virginia, DC and Maryland. Call (571) 210-2498 to reach our team."
+          },
+          {
+            "question": "What should I do right now, before you arrive?",
+            "answer": "If it’s safe: stop the water source, turn off electricity to affected areas, and move valuables up off the floor. Then call us and we’ll guide you on the phone."
+          },
+          {
+            "question": "Do you handle mold after a leak?",
+            "answer": "Yes. Proper drying usually prevents mold. Where growth has already started, we contain and remediate it so it doesn’t spread through the HVAC system or wall cavities."
+          },
+          {
+            "question": "Do you work on commercial properties in Oakton?",
+            "answer": "Yes. We restore offices, warehouses, retail spaces, restaurants, medical and dental offices, and multi-tenant and HOA buildings."
+          }
+        ]
+      },
+      {
+        "_type": "help",
+        "anchor": "help",
+        "kicker": "Fast Help in Oakton",
+        "heading": "Water damage in Oakton? Let’s move.",
+        "lead": "Call (571) 210-2498, or send the details and we’ll call you back.",
+        "ticks": [
+          "Local Northern Virginia crew",
+          "Certified, licensed & insured",
+          "Locally owned in Vienna, VA"
+        ],
+        "form": {
+          "variant": "quick",
+          "ratingValue": "5.0",
+          "ratingText": "· Trusted by DMV homeowners",
+          "title": "Request Immediate Help",
+          "sub": "Tell us what’s happening and we’ll call you back.",
+          "button": "Request Help →",
+          "safe": "No obligation · No pressure",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full name",
+              "placeholder": "Full name"
+            },
+            {
+              "name": "phone",
+              "label": "Phone number",
+              "placeholder": "Phone number"
+            },
+            {
+              "name": "address",
+              "label": "Property address",
+              "placeholder": "Property address"
+            },
+            {
+              "name": "issue",
+              "label": "What happened?",
+              "placeholder": "What happened? (burst pipe, flood…)"
+            }
+          ]
+        }
+      }
+    ],
+    "seo": {
+      "title": "Water Damage Restoration in Oakton, VA - Water Damage Pro",
+      "description": "Water damage restoration in Oakton, VA: water extraction, drying, mold, fire and storm cleanup by IICRC-certified technicians. Call Water Damage Pro at (571) 210-2498."
+    }
+  },
+  {
+    "slug": "potomac",
+    "kind": "location",
+    "name": "Potomac, MD",
+    "order": 33,
+    "sections": [
+      {
+        "_type": "pageHero",
+        "variant": "default",
+        "image": {
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
+          "alt": "Water Damage Pro technician extracting water from a hardwood floor",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
+        },
+        "breadcrumb": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Service Areas",
+            "href": "/#locations"
+          },
+          {
+            "label": "Potomac, MD"
+          }
+        ],
+        "heading": "Water Damage Restoration in *Potomac, MD*",
+        "sub": "Your local team for burst pipes, flooded basements, and storm and fire damage in Potomac, from extraction and drying to full restoration.",
+        "buttons": [
+          {
+            "label": "Call (571) 210-2498",
+            "href": "tel:+15712102498",
+            "style": "primary",
+            "pulse": true,
+            "phoneIcon": true
+          },
+          {
+            "label": "Get Help Now",
+            "href": "#help",
+            "style": "ghost"
+          }
+        ],
+        "ticks": [
+          "Serving Potomac",
+          "IICRC Certified",
+          "Licensed & Insured"
+        ]
+      },
+      {
+        "_type": "proof",
+        "ariaLabel": "Proof and credentials",
+        "items": [
+          {
+            "mark": "check",
+            "value": "1,000+",
+            "label": "Homes Restored"
+          },
+          {
+            "mark": "star",
+            "value": "5.0",
+            "label": "Google Rating"
+          },
+          {
+            "value": "Fast",
+            "label": "Response"
+          },
+          {
+            "value": "IICRC",
+            "label": "Certified"
+          },
+          {
+            "value": "VA · DC · MD",
+            "label": "Service Area"
+          }
+        ]
+      },
+      {
+        "_type": "trust"
+      },
+      {
+        "_type": "split",
+        "variant": "default",
+        "kicker": "Local to Potomac",
+        "heading": "Certified restoration for Potomac.",
+        "paragraphs": [
+          "Water Damage Pro is locally owned in Vienna, VA, and serves Potomac and the rest of Northern Virginia, DC and Maryland. When a pipe bursts or a storm floods your basement, you get a local crew, not a national call center. We serve Potomac along with nearby Bethesda and Rockville, and we’ve restored a Potomac home after fire and smoke damage.",
+          "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration."
+        ],
+        "image": {
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
+          "alt": "A flooded suburban home surrounded by water",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
+        }
+      },
+      {
+        "_type": "services",
+        "kicker": "What We Do in Potomac",
+        "heading": "Complete restoration for Potomac homes & businesses.",
+        "intro": "One local team from the first drop to the final repair.",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Water Damage Restoration",
+            "text": "Extraction, drying, and full restoration after any leak or flood.",
+            "href": "/water-damage-restoration/",
+            "linkLabel": "Water Damage Restoration"
+          },
+          {
+            "icon": "flood",
+            "title": "Flood & Basement Cleanup",
+            "text": "Rapid water removal and structural drying for flooded spaces.",
+            "href": "/water-extraction/",
+            "linkLabel": "Flood and Basement Cleanup"
+          },
+          {
+            "icon": "flame",
+            "title": "Fire & Smoke Damage",
+            "text": "Soot, odor, and smoke remediation with full rebuild.",
+            "href": "/fire-damage-restoration/",
+            "linkLabel": "Fire and Smoke Damage"
+          },
+          {
+            "icon": "storm",
+            "title": "Storm Damage",
+            "text": "Emergency response and cleanup after severe weather.",
+            "href": "/storm-damage-restoration/",
+            "linkLabel": "Storm Damage"
+          },
+          {
+            "icon": "building",
+            "title": "Commercial Restoration",
+            "text": "Restoration for Potomac businesses & property managers.",
+            "href": "/commercial-water-damage/",
+            "linkLabel": "Commercial Restoration"
+          },
+          {
+            "icon": "phone",
+            "title": "Emergency Water Damage",
+            "text": "Help when water is still coming in.",
+            "href": "/emergency-water-damage/",
+            "linkLabel": "Emergency Response"
+          }
+        ]
+      },
+      {
+        "_type": "causes",
+        "background": "paper",
+        "kicker": "What We Handle in Potomac",
+        "heading": "Any leak or flood in Potomac.",
+        "intro": "Homes and businesses across Potomac, including:",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Burst & frozen pipes"
+          },
+          {
+            "icon": "basement",
+            "title": "Basement flooding"
+          },
+          {
+            "icon": "roof",
+            "title": "Roof & storm leaks"
+          },
+          {
+            "icon": "appliance-fire",
+            "title": "Appliance & washer leaks"
+          },
+          {
+            "icon": "drop",
+            "title": "Sewage backups"
+          },
+          {
+            "icon": "sump",
+            "title": "Sump-pump failure"
+          }
+        ]
+      },
+      {
+        "_type": "steps",
+        "kicker": "Our Process",
+        "heading": "How we handle your Potomac water damage.",
+        "items": [
+          {
+            "title": "Call Us",
+            "text": "Call (571) 210-2498 or send the form below."
+          },
+          {
+            "title": "Assess & Document",
+            "text": "We inspect, measure, and document the damage."
+          },
+          {
+            "title": "Extract & Dry",
+            "text": "We remove the water and dry the structure completely."
+          },
+          {
+            "title": "Clean & Sanitize",
+            "text": "Antimicrobial treatment to prevent mold and odor."
+          },
+          {
+            "title": "Restore",
+            "text": "We repair and restore the affected areas."
+          }
+        ]
+      },
+      {
+        "_type": "projects",
+        "anchor": "recent-projects",
+        "kicker": "Recent Jobs Near Potomac",
+        "heading": "We were just down the street.",
+        "intro": "A look at recent restorations near you.",
+        "items": [
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
+              "alt": "Interior of a living room with fire and smoke damage",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Fire · Smoke",
+            "location": "Potomac, MD",
+            "title": "Fire & smoke restored",
+            "text": "Soot removal, odor treatment, and full restoration after a kitchen fire.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Bethesda, MD",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Rockville, MD",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "map",
+        "anchor": "map",
+        "kicker": "Service Area",
+        "heading": "Serving Potomac.",
+        "query": "Potomac, MD",
+        "zoom": 12,
+        "title": "Water Damage Pro service area: Potomac, MD",
+        "framed": true
+      },
+      {
+        "_type": "cities",
+        "kicker": "Nearby Communities",
+        "heading": "Also serving near Potomac.",
+        "intro": "Local crews across the DMV. Find yours:",
+        "links": [
+          {
+            "label": "Water Damage Restoration in Bethesda",
+            "href": "/bethesda/"
+          },
+          {
+            "label": "Water Damage Restoration in Rockville",
+            "href": "/rockville/"
+          },
+          {
+            "label": "Water Damage Restoration in Silver Spring",
+            "href": "/silver-spring/"
+          },
+          {
+            "label": "Water Damage Restoration in Washington DC",
+            "href": "/washington-dc/"
+          },
+          {
+            "label": "Water Damage Restoration in McLean",
+            "href": "/mclean/"
+          },
+          {
+            "label": "Water Damage Restoration in Frederick",
+            "href": "/frederick/"
+          }
+        ]
+      },
+      {
+        "_type": "faq",
+        "kicker": "Potomac FAQ",
+        "heading": "Common questions.",
+        "items": [
+          {
+            "question": "Do you serve Potomac?",
+            "answer": "Yes. We serve homes and businesses in Potomac and across Northern Virginia, DC and Maryland. Call (571) 210-2498 to reach our team."
+          },
+          {
+            "question": "What should I do right now, before you arrive?",
+            "answer": "If it’s safe: stop the water source, turn off electricity to affected areas, and move valuables up off the floor. Then call us and we’ll guide you on the phone."
+          },
+          {
+            "question": "Do you handle mold after a leak?",
+            "answer": "Yes. Proper drying usually prevents mold. Where growth has already started, we contain and remediate it so it doesn’t spread through the HVAC system or wall cavities."
+          },
+          {
+            "question": "Do you work on commercial properties in Potomac?",
+            "answer": "Yes. We restore offices, warehouses, retail spaces, restaurants, medical and dental offices, and multi-tenant and HOA buildings."
+          }
+        ]
+      },
+      {
+        "_type": "help",
+        "anchor": "help",
+        "kicker": "Fast Help in Potomac",
+        "heading": "Water damage in Potomac? Let’s move.",
+        "lead": "Call (571) 210-2498, or send the details and we’ll call you back.",
+        "ticks": [
+          "Local Maryland crew",
+          "Certified, licensed & insured",
+          "Locally owned in Vienna, VA"
+        ],
+        "form": {
+          "variant": "quick",
+          "ratingValue": "5.0",
+          "ratingText": "· Trusted by DMV homeowners",
+          "title": "Request Immediate Help",
+          "sub": "Tell us what’s happening and we’ll call you back.",
+          "button": "Request Help →",
+          "safe": "No obligation · No pressure",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full name",
+              "placeholder": "Full name"
+            },
+            {
+              "name": "phone",
+              "label": "Phone number",
+              "placeholder": "Phone number"
+            },
+            {
+              "name": "address",
+              "label": "Property address",
+              "placeholder": "Property address"
+            },
+            {
+              "name": "issue",
+              "label": "What happened?",
+              "placeholder": "What happened? (burst pipe, flood…)"
+            }
+          ]
+        }
+      }
+    ],
+    "seo": {
+      "title": "Water Damage Restoration in Potomac, MD - Water Damage Pro",
+      "description": "Water damage restoration in Potomac, MD: water extraction, drying, mold, fire and storm cleanup by IICRC-certified technicians. Call Water Damage Pro at (571) 210-2498."
+    }
+  },
+  {
+    "slug": "gaithersburg",
+    "kind": "location",
+    "name": "Gaithersburg, MD",
+    "order": 34,
+    "sections": [
+      {
+        "_type": "pageHero",
+        "variant": "default",
+        "image": {
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
+          "alt": "Water Damage Pro technician extracting water from a hardwood floor",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
+        },
+        "breadcrumb": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Service Areas",
+            "href": "/#locations"
+          },
+          {
+            "label": "Gaithersburg, MD"
+          }
+        ],
+        "heading": "Water Damage Restoration in *Gaithersburg, MD*",
+        "sub": "Your local team for burst pipes, flooded basements, and storm and fire damage in Gaithersburg, from extraction and drying to full restoration.",
+        "buttons": [
+          {
+            "label": "Call (571) 210-2498",
+            "href": "tel:+15712102498",
+            "style": "primary",
+            "pulse": true,
+            "phoneIcon": true
+          },
+          {
+            "label": "Get Help Now",
+            "href": "#help",
+            "style": "ghost"
+          }
+        ],
+        "ticks": [
+          "Serving Gaithersburg",
+          "IICRC Certified",
+          "Licensed & Insured"
+        ]
+      },
+      {
+        "_type": "proof",
+        "ariaLabel": "Proof and credentials",
+        "items": [
+          {
+            "mark": "check",
+            "value": "1,000+",
+            "label": "Homes Restored"
+          },
+          {
+            "mark": "star",
+            "value": "5.0",
+            "label": "Google Rating"
+          },
+          {
+            "value": "Fast",
+            "label": "Response"
+          },
+          {
+            "value": "IICRC",
+            "label": "Certified"
+          },
+          {
+            "value": "VA · DC · MD",
+            "label": "Service Area"
+          }
+        ]
+      },
+      {
+        "_type": "trust"
+      },
+      {
+        "_type": "split",
+        "variant": "default",
+        "kicker": "Local to Gaithersburg",
+        "heading": "Certified restoration for Gaithersburg.",
+        "paragraphs": [
+          "Water Damage Pro is locally owned in Vienna, VA, and serves Gaithersburg and the rest of Northern Virginia, DC and Maryland. When a pipe bursts or a storm floods your basement, you get a local crew, not a national call center. We serve Gaithersburg along with nearby Rockville, and we’ve restored a Gaithersburg home after fire and smoke damage.",
+          "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration."
+        ],
+        "image": {
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
+          "alt": "A flooded suburban home surrounded by water",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
+        }
+      },
+      {
+        "_type": "services",
+        "kicker": "What We Do in Gaithersburg",
+        "heading": "Complete restoration for Gaithersburg homes & businesses.",
+        "intro": "One local team from the first drop to the final repair.",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Water Damage Restoration",
+            "text": "Extraction, drying, and full restoration after any leak or flood.",
+            "href": "/water-damage-restoration/",
+            "linkLabel": "Water Damage Restoration"
+          },
+          {
+            "icon": "flood",
+            "title": "Flood & Basement Cleanup",
+            "text": "Rapid water removal and structural drying for flooded spaces.",
+            "href": "/water-extraction/",
+            "linkLabel": "Flood and Basement Cleanup"
+          },
+          {
+            "icon": "flame",
+            "title": "Fire & Smoke Damage",
+            "text": "Soot, odor, and smoke remediation with full rebuild.",
+            "href": "/fire-damage-restoration/",
+            "linkLabel": "Fire and Smoke Damage"
+          },
+          {
+            "icon": "storm",
+            "title": "Storm Damage",
+            "text": "Emergency response and cleanup after severe weather.",
+            "href": "/storm-damage-restoration/",
+            "linkLabel": "Storm Damage"
+          },
+          {
+            "icon": "building",
+            "title": "Commercial Restoration",
+            "text": "Restoration for Gaithersburg businesses & property managers.",
+            "href": "/commercial-water-damage/",
+            "linkLabel": "Commercial Restoration"
+          },
+          {
+            "icon": "phone",
+            "title": "Emergency Water Damage",
+            "text": "Help when water is still coming in.",
+            "href": "/emergency-water-damage/",
+            "linkLabel": "Emergency Response"
+          }
+        ]
+      },
+      {
+        "_type": "causes",
+        "background": "paper",
+        "kicker": "What We Handle in Gaithersburg",
+        "heading": "Any leak or flood in Gaithersburg.",
+        "intro": "Homes and businesses across Gaithersburg, including:",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Burst & frozen pipes"
+          },
+          {
+            "icon": "basement",
+            "title": "Basement flooding"
+          },
+          {
+            "icon": "roof",
+            "title": "Roof & storm leaks"
+          },
+          {
+            "icon": "appliance-fire",
+            "title": "Appliance & washer leaks"
+          },
+          {
+            "icon": "drop",
+            "title": "Sewage backups"
+          },
+          {
+            "icon": "sump",
+            "title": "Sump-pump failure"
+          }
+        ]
+      },
+      {
+        "_type": "steps",
+        "kicker": "Our Process",
+        "heading": "How we handle your Gaithersburg water damage.",
+        "items": [
+          {
+            "title": "Call Us",
+            "text": "Call (571) 210-2498 or send the form below."
+          },
+          {
+            "title": "Assess & Document",
+            "text": "We inspect, measure, and document the damage."
+          },
+          {
+            "title": "Extract & Dry",
+            "text": "We remove the water and dry the structure completely."
+          },
+          {
+            "title": "Clean & Sanitize",
+            "text": "Antimicrobial treatment to prevent mold and odor."
+          },
+          {
+            "title": "Restore",
+            "text": "We repair and restore the affected areas."
+          }
+        ]
+      },
+      {
+        "_type": "projects",
+        "anchor": "recent-projects",
+        "kicker": "Recent Jobs Near Gaithersburg",
+        "heading": "We were just down the street.",
+        "intro": "A look at recent restorations near you.",
+        "items": [
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-fire-800.jpg",
+              "alt": "Interior of a living room with fire and smoke damage",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-fire-480.webp 480w, /images/uploads/2026/07/proj-fire-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-fire-480.jpg 480w, /images/uploads/2026/07/proj-fire-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Fire · Smoke",
+            "location": "Gaithersburg, MD",
+            "title": "Fire & smoke restored",
+            "text": "Soot removal, odor treatment, and full restoration after a kitchen fire.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Rockville, MD",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Frederick, MD",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "map",
+        "anchor": "map",
+        "kicker": "Service Area",
+        "heading": "Serving Gaithersburg.",
+        "query": "Gaithersburg, MD",
+        "zoom": 12,
+        "title": "Water Damage Pro service area: Gaithersburg, MD",
+        "framed": true
+      },
+      {
+        "_type": "cities",
+        "kicker": "Nearby Communities",
+        "heading": "Also serving near Gaithersburg.",
+        "intro": "Local crews across the DMV. Find yours:",
+        "links": [
+          {
+            "label": "Water Damage Restoration in Rockville",
+            "href": "/rockville/"
+          },
+          {
+            "label": "Water Damage Restoration in Bethesda",
+            "href": "/bethesda/"
+          },
+          {
+            "label": "Water Damage Restoration in Silver Spring",
+            "href": "/silver-spring/"
+          },
+          {
+            "label": "Water Damage Restoration in Frederick",
+            "href": "/frederick/"
+          },
+          {
+            "label": "Water Damage Restoration in Potomac",
+            "href": "/potomac/"
+          },
+          {
+            "label": "Water Damage Restoration in Washington DC",
+            "href": "/washington-dc/"
+          }
+        ]
+      },
+      {
+        "_type": "faq",
+        "kicker": "Gaithersburg FAQ",
+        "heading": "Common questions.",
+        "items": [
+          {
+            "question": "Do you serve Gaithersburg?",
+            "answer": "Yes. We serve homes and businesses in Gaithersburg and across Northern Virginia, DC and Maryland. Call (571) 210-2498 to reach our team."
+          },
+          {
+            "question": "What should I do right now, before you arrive?",
+            "answer": "If it’s safe: stop the water source, turn off electricity to affected areas, and move valuables up off the floor. Then call us and we’ll guide you on the phone."
+          },
+          {
+            "question": "Do you handle mold after a leak?",
+            "answer": "Yes. Proper drying usually prevents mold. Where growth has already started, we contain and remediate it so it doesn’t spread through the HVAC system or wall cavities."
+          },
+          {
+            "question": "Do you work on commercial properties in Gaithersburg?",
+            "answer": "Yes. We restore offices, warehouses, retail spaces, restaurants, medical and dental offices, and multi-tenant and HOA buildings."
+          }
+        ]
+      },
+      {
+        "_type": "help",
+        "anchor": "help",
+        "kicker": "Fast Help in Gaithersburg",
+        "heading": "Water damage in Gaithersburg? Let’s move.",
+        "lead": "Call (571) 210-2498, or send the details and we’ll call you back.",
+        "ticks": [
+          "Local Maryland crew",
+          "Certified, licensed & insured",
+          "Locally owned in Vienna, VA"
+        ],
+        "form": {
+          "variant": "quick",
+          "ratingValue": "5.0",
+          "ratingText": "· Trusted by DMV homeowners",
+          "title": "Request Immediate Help",
+          "sub": "Tell us what’s happening and we’ll call you back.",
+          "button": "Request Help →",
+          "safe": "No obligation · No pressure",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full name",
+              "placeholder": "Full name"
+            },
+            {
+              "name": "phone",
+              "label": "Phone number",
+              "placeholder": "Phone number"
+            },
+            {
+              "name": "address",
+              "label": "Property address",
+              "placeholder": "Property address"
+            },
+            {
+              "name": "issue",
+              "label": "What happened?",
+              "placeholder": "What happened? (burst pipe, flood…)"
+            }
+          ]
+        }
+      }
+    ],
+    "seo": {
+      "title": "Water Damage Restoration in Gaithersburg, MD - Water Damage Pro",
+      "description": "Water damage restoration in Gaithersburg, MD: water extraction, drying, mold, fire and storm cleanup by IICRC-certified technicians. Call Water Damage Pro at (571) 210-2498."
+    }
+  },
+  {
+    "slug": "chevy-chase",
+    "kind": "location",
+    "name": "Chevy Chase, MD",
+    "order": 35,
+    "sections": [
+      {
+        "_type": "pageHero",
+        "variant": "default",
+        "image": {
+          "src": "/images/uploads/2026/07/phero-water-1448.jpg",
+          "alt": "Water Damage Pro technician extracting water from a hardwood floor",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/phero-water-960.webp 960w, /images/uploads/2026/07/phero-water-1448.webp 1448w",
+            "webpSizes": "100vw",
+            "srcset": "/images/uploads/2026/07/phero-water-960.jpg 960w, /images/uploads/2026/07/phero-water-1448.jpg 1448w",
+            "sizes": "100vw",
+            "fetchPriority": "high",
+            "decoding": "async"
+          }
+        },
+        "breadcrumb": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "Service Areas",
+            "href": "/#locations"
+          },
+          {
+            "label": "Chevy Chase, MD"
+          }
+        ],
+        "heading": "Water Damage Restoration in *Chevy Chase, MD*",
+        "sub": "Your local team for burst pipes, flooded basements, and storm and fire damage in Chevy Chase, from extraction and drying to full restoration.",
+        "buttons": [
+          {
+            "label": "Call (571) 210-2498",
+            "href": "tel:+15712102498",
+            "style": "primary",
+            "pulse": true,
+            "phoneIcon": true
+          },
+          {
+            "label": "Get Help Now",
+            "href": "#help",
+            "style": "ghost"
+          }
+        ],
+        "ticks": [
+          "Serving Chevy Chase",
+          "IICRC Certified",
+          "Licensed & Insured"
+        ]
+      },
+      {
+        "_type": "proof",
+        "ariaLabel": "Proof and credentials",
+        "items": [
+          {
+            "mark": "check",
+            "value": "1,000+",
+            "label": "Homes Restored"
+          },
+          {
+            "mark": "star",
+            "value": "5.0",
+            "label": "Google Rating"
+          },
+          {
+            "value": "Fast",
+            "label": "Response"
+          },
+          {
+            "value": "IICRC",
+            "label": "Certified"
+          },
+          {
+            "value": "VA · DC · MD",
+            "label": "Service Area"
+          }
+        ]
+      },
+      {
+        "_type": "trust"
+      },
+      {
+        "_type": "split",
+        "variant": "default",
+        "kicker": "Local to Chevy Chase",
+        "heading": "Certified restoration for Chevy Chase.",
+        "paragraphs": [
+          "Water Damage Pro is locally owned in Vienna, VA, and serves Chevy Chase and the rest of Northern Virginia, DC and Maryland. When a pipe bursts or a storm floods your basement, you get a local crew, not a national call center. Chevy Chase is near Bethesda, which we already serve, and we’ve handled storm flooding cleanup in a Chevy Chase home.",
+          "We’ve restored more than 1,000 homes and businesses across the DMV, and our IICRC-certified technicians handle everything from emergency water extraction and drying to full restoration."
+        ],
+        "image": {
+          "src": "/images/uploads/2026/07/split-flood-1448.jpg",
+          "alt": "A flooded suburban home surrounded by water",
+          "width": 1448,
+          "height": 1086,
+          "picture": {
+            "webp": "/images/uploads/2026/07/split-flood-960.webp 960w, /images/uploads/2026/07/split-flood-1448.webp 1448w",
+            "webpSizes": "(max-width:820px) 100vw, 45vw",
+            "srcset": "/images/uploads/2026/07/split-flood-960.jpg 960w, /images/uploads/2026/07/split-flood-1448.jpg 1448w",
+            "sizes": "auto, (max-width:820px) 100vw, 45vw",
+            "loading": "lazy",
+            "decoding": "async"
+          }
+        }
+      },
+      {
+        "_type": "services",
+        "kicker": "What We Do in Chevy Chase",
+        "heading": "Complete restoration for Chevy Chase homes & businesses.",
+        "intro": "One local team from the first drop to the final repair.",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Water Damage Restoration",
+            "text": "Extraction, drying, and full restoration after any leak or flood.",
+            "href": "/water-damage-restoration/",
+            "linkLabel": "Water Damage Restoration"
+          },
+          {
+            "icon": "flood",
+            "title": "Flood & Basement Cleanup",
+            "text": "Rapid water removal and structural drying for flooded spaces.",
+            "href": "/water-extraction/",
+            "linkLabel": "Flood and Basement Cleanup"
+          },
+          {
+            "icon": "flame",
+            "title": "Fire & Smoke Damage",
+            "text": "Soot, odor, and smoke remediation with full rebuild.",
+            "href": "/fire-damage-restoration/",
+            "linkLabel": "Fire and Smoke Damage"
+          },
+          {
+            "icon": "storm",
+            "title": "Storm Damage",
+            "text": "Emergency response and cleanup after severe weather.",
+            "href": "/storm-damage-restoration/",
+            "linkLabel": "Storm Damage"
+          },
+          {
+            "icon": "building",
+            "title": "Commercial Restoration",
+            "text": "Restoration for Chevy Chase businesses & property managers.",
+            "href": "/commercial-water-damage/",
+            "linkLabel": "Commercial Restoration"
+          },
+          {
+            "icon": "phone",
+            "title": "Emergency Water Damage",
+            "text": "Help when water is still coming in.",
+            "href": "/emergency-water-damage/",
+            "linkLabel": "Emergency Response"
+          }
+        ]
+      },
+      {
+        "_type": "causes",
+        "background": "paper",
+        "kicker": "What We Handle in Chevy Chase",
+        "heading": "Any leak or flood in Chevy Chase.",
+        "intro": "Homes and businesses across Chevy Chase, including:",
+        "items": [
+          {
+            "icon": "drop",
+            "title": "Burst & frozen pipes"
+          },
+          {
+            "icon": "basement",
+            "title": "Basement flooding"
+          },
+          {
+            "icon": "roof",
+            "title": "Roof & storm leaks"
+          },
+          {
+            "icon": "appliance-fire",
+            "title": "Appliance & washer leaks"
+          },
+          {
+            "icon": "drop",
+            "title": "Sewage backups"
+          },
+          {
+            "icon": "sump",
+            "title": "Sump-pump failure"
+          }
+        ]
+      },
+      {
+        "_type": "steps",
+        "kicker": "Our Process",
+        "heading": "How we handle your Chevy Chase water damage.",
+        "items": [
+          {
+            "title": "Call Us",
+            "text": "Call (571) 210-2498 or send the form below."
+          },
+          {
+            "title": "Assess & Document",
+            "text": "We inspect, measure, and document the damage."
+          },
+          {
+            "title": "Extract & Dry",
+            "text": "We remove the water and dry the structure completely."
+          },
+          {
+            "title": "Clean & Sanitize",
+            "text": "Antimicrobial treatment to prevent mold and odor."
+          },
+          {
+            "title": "Restore",
+            "text": "We repair and restore the affected areas."
+          }
+        ]
+      },
+      {
+        "_type": "projects",
+        "anchor": "recent-projects",
+        "kicker": "Recent Jobs Near Chevy Chase",
+        "heading": "We were just down the street.",
+        "intro": "A look at recent restorations near you.",
+        "items": [
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-storm-800.jpg",
+              "alt": "Water Damage Pro van at a home with a large fallen tree on the roof",
+              "width": 800,
+              "height": 533,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-storm-480.webp 480w, /images/uploads/2026/07/proj-storm-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-storm-480.jpg 480w, /images/uploads/2026/07/proj-storm-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Storm · Water",
+            "location": "Chevy Chase, MD",
+            "title": "Storm flooding & cleanup",
+            "text": "Emergency extraction and drying after storm water entered the home.",
+            "meta": [
+              "⏱ Same-day start"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Bethesda, MD",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          },
+          {
+            "image": {
+              "src": "/images/uploads/2026/07/proj-water-800.jpg",
+              "alt": "Technician extracting water from a hardwood floor after a ceiling leak",
+              "width": 800,
+              "height": 600,
+              "picture": {
+                "webp": "/images/uploads/2026/07/proj-water-480.webp 480w, /images/uploads/2026/07/proj-water-800.webp 800w",
+                "webpSizes": "(max-width:820px) 100vw, 33vw",
+                "srcset": "/images/uploads/2026/07/proj-water-480.jpg 480w, /images/uploads/2026/07/proj-water-800.jpg 800w",
+                "sizes": "auto, (max-width:820px) 100vw, 33vw",
+                "loading": "lazy",
+                "decoding": "async"
+              }
+            },
+            "badge": "Water · Basement",
+            "location": "Washington, DC",
+            "title": "Burst pipe, finished basement",
+            "text": "Extracted the water, dried the structure, and restored the flooring.",
+            "meta": [
+              "⏱ Fast response"
+            ]
+          }
+        ]
+      },
+      {
+        "_type": "map",
+        "anchor": "map",
+        "kicker": "Service Area",
+        "heading": "Serving Chevy Chase.",
+        "query": "Chevy Chase, MD",
+        "zoom": 12,
+        "title": "Water Damage Pro service area: Chevy Chase, MD",
+        "framed": true
+      },
+      {
+        "_type": "cities",
+        "kicker": "Nearby Communities",
+        "heading": "Also serving near Chevy Chase.",
+        "intro": "Local crews across the DMV. Find yours:",
+        "links": [
+          {
+            "label": "Water Damage Restoration in Bethesda",
+            "href": "/bethesda/"
+          },
+          {
+            "label": "Water Damage Restoration in Washington DC",
+            "href": "/washington-dc/"
+          },
+          {
+            "label": "Water Damage Restoration in Silver Spring",
+            "href": "/silver-spring/"
+          },
+          {
+            "label": "Water Damage Restoration in Rockville",
+            "href": "/rockville/"
+          },
+          {
+            "label": "Water Damage Restoration in Potomac",
+            "href": "/potomac/"
+          },
+          {
+            "label": "Water Damage Restoration in Arlington",
+            "href": "/arlington/"
+          }
+        ]
+      },
+      {
+        "_type": "faq",
+        "kicker": "Chevy Chase FAQ",
+        "heading": "Common questions.",
+        "items": [
+          {
+            "question": "Do you serve Chevy Chase?",
+            "answer": "Yes. We serve homes and businesses in Chevy Chase and across Northern Virginia, DC and Maryland. Call (571) 210-2498 to reach our team."
+          },
+          {
+            "question": "What should I do right now, before you arrive?",
+            "answer": "If it’s safe: stop the water source, turn off electricity to affected areas, and move valuables up off the floor. Then call us and we’ll guide you on the phone."
+          },
+          {
+            "question": "Do you handle mold after a leak?",
+            "answer": "Yes. Proper drying usually prevents mold. Where growth has already started, we contain and remediate it so it doesn’t spread through the HVAC system or wall cavities."
+          },
+          {
+            "question": "Do you work on commercial properties in Chevy Chase?",
+            "answer": "Yes. We restore offices, warehouses, retail spaces, restaurants, medical and dental offices, and multi-tenant and HOA buildings."
+          }
+        ]
+      },
+      {
+        "_type": "help",
+        "anchor": "help",
+        "kicker": "Fast Help in Chevy Chase",
+        "heading": "Water damage in Chevy Chase? Let’s move.",
+        "lead": "Call (571) 210-2498, or send the details and we’ll call you back.",
+        "ticks": [
+          "Local Maryland crew",
+          "Certified, licensed & insured",
+          "Locally owned in Vienna, VA"
+        ],
+        "form": {
+          "variant": "quick",
+          "ratingValue": "5.0",
+          "ratingText": "· Trusted by DMV homeowners",
+          "title": "Request Immediate Help",
+          "sub": "Tell us what’s happening and we’ll call you back.",
+          "button": "Request Help →",
+          "safe": "No obligation · No pressure",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full name",
+              "placeholder": "Full name"
+            },
+            {
+              "name": "phone",
+              "label": "Phone number",
+              "placeholder": "Phone number"
+            },
+            {
+              "name": "address",
+              "label": "Property address",
+              "placeholder": "Property address"
+            },
+            {
+              "name": "issue",
+              "label": "What happened?",
+              "placeholder": "What happened? (burst pipe, flood…)"
+            }
+          ]
+        }
+      }
+    ],
+    "seo": {
+      "title": "Water Damage Restoration in Chevy Chase, MD - Water Damage Pro",
+      "description": "Water damage restoration in Chevy Chase, MD: water extraction, drying, mold, fire and storm cleanup by IICRC-certified technicians. Call Water Damage Pro at (571) 210-2498."
+    }
   }
 ];
