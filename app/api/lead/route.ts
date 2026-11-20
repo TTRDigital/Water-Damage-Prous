@@ -9,6 +9,7 @@
  * Without JavaScript the browser posts the fields directly and is sent back with ?sent=1 or ?error=1.
  */
 import { MIN_FILL_MS } from "@/lib/lead-options";
+import { clientIp, guardLead, rateLimited, SPAM_LABEL } from "@/lib/spam-guard";
 
 export const dynamic = "force-dynamic";
 
@@ -22,18 +23,8 @@ const text = (i: In, k: string, max: number) => {
   return typeof v === "string" ? v.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, " ").trim().slice(0, max) : "";
 };
 
-/* Best-effort limit per server instance: 10 requests per 10 minutes per address. TTR OS limits again on its side. */
-const seen = new Map<string, number[]>();
-function limited(ip: string): boolean {
-  const now = Date.now();
-  const recent = (seen.get(ip) ?? []).filter((t) => now - t < 600_000);
-  recent.push(now);
-  seen.set(ip, recent);
-  if (seen.size > 5000) for (const [k, v] of seen) if (!v.some((t) => now - t < 600_000)) seen.delete(k);
-  return recent.length > 10;
-}
 
-const ipOf = (req: Request) => (req.headers.get("x-real-ip") || req.headers.get("x-forwarded-for")?.split(",")[0] || "unknown").trim();
+const ipOf = clientIp;
 
 function sameSite(req: Request): boolean {
   const origin = req.headers.get("origin");
@@ -68,7 +59,7 @@ export async function POST(req: Request) {
     json ? Response.json(body, { status, headers: NO_STORE }) : back(req, body.ok ? "sent" : "error", comment);
 
   if (!sameSite(req)) return reply(403, { ok: false, error: "Forbidden." });
-  if (limited(ipOf(req))) return reply(429, { ok: false, error: "Too many requests. Please call us instead." });
+  if (rateLimited(ipOf(req))) return reply(429, { ok: false, error: "Too many requests. Please call us instead." });
 
   let input: In = {};
   try {
@@ -120,13 +111,14 @@ export async function POST(req: Request) {
   }
   if (Object.keys(errors).length) return reply(422, { ok: false, error: "Please check the form.", fields: errors }, comment);
 
-  // Spam: drop only when both signals agree (hidden field filled AND sent faster than a person can type);
-  // one signal alone is delivered with a spam_check note.
-  const trapFilled = text(input, "website_url", 200) !== "";
-  const elapsed = typeof input.elapsed_ms === "number" ? input.elapsed_ms : null;
-  const tooFast = elapsed !== null && elapsed < MIN_FILL_MS;
-  if (trapFilled && tooFast) return reply(200, { ok: true }, comment);
-  const spamCheck = trapFilled ? "suspect: hidden field filled" : tooFast ? `suspect: sent in ${elapsed} ms` : "ok";
+  // Spam (lib/spam-guard.ts): a bot gets the usual ok answer and nothing is sent; a doubtful lead is still sent, marked "Possible spam".
+  // A post without JavaScript has no fill time, so it is dropped like a bot (the forms always send one with JavaScript on).
+  const verdict = await guardLead({
+    trap: input.website_url, elapsedMs: input.elapsed_ms, minFillMs: MIN_FILL_MS,
+    texts: [lead.name, lead.email, lead.details, lead.website, lead.address], recaptchaToken: input.recaptcha_token, ip: ipOf(req),
+  });
+  if (verdict.action === "drop") return reply(200, { ok: true }, comment);
+  const spamCheck = verdict.note;
 
   const referer = req.headers.get("referer") || "";
   const pick = (k: string) => text(input, k, 1000);
@@ -143,7 +135,7 @@ export async function POST(req: Request) {
       u: text(input, "landing_page", 1000) || text(input, "page_url", 1000),
     });
     const keep: [string, string][] = [["name", lead.name], ["phone", lead.phone], ["email", lead.email], ["address", lead.address], ["message", lead.details],
-      ["form", comment ? "Blog comment" : KINDS[form]], ["spam_check", spamCheck === "ok" ? "" : spamCheck],
+      ["form", `${verdict.possibleSpam ? `${SPAM_LABEL}: ` : ""}${comment ? "Blog comment" : KINDS[form]}`], ["spam_check", spamCheck === "ok" ? "" : spamCheck],
       ...(["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"] as const).map((k): [string, string] => [k, pick(k)])];
     for (const [k, v] of keep) if (v) os.set(`f_${k}`, v);
     sends.push(

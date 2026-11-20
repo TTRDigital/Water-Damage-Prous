@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useId, useRef, useState, type ReactNode } from "react";
 import type { HelpSection } from "@/lib/types";
 import { ATTRIBUTION_STORAGE_KEY, attributionKeys } from "@/lib/lead-options";
+import { preloadRecaptcha, recaptchaToken } from "@/lib/spam-guard";
 
 type FieldName = "name" | "phone" | "email" | "address" | "issue" | "message";
 type Field = { name: FieldName; label: string; placeholder: string; type: "text" | "tel" | "email" | "textarea"; required?: boolean; autoComplete?: string };
@@ -69,6 +70,7 @@ export function LeadForm({
 
   useEffect(() => {
     startedAt.current = now();
+    preloadRecaptcha();
     // Sent without JavaScript: /api/lead sends the visitor back with ?sent=1.
     const sentWithoutJs = () => {
       if (new URLSearchParams(window.location.search).get("sent") === "1") setStatus("done");
@@ -101,6 +103,8 @@ export function LeadForm({
       /* storage unavailable */
     }
     const honeypot = (ref.current?.elements.namedItem("website_url") as HTMLInputElement | null)?.value ?? "";
+    const elapsed = now() - startedAt.current;
+    const token = await recaptchaToken("lead");
     try {
       const res = await fetch("/api/lead/", {
         method: "POST",
@@ -111,7 +115,8 @@ export function LeadForm({
           ...Object.fromEntries(fields.map((f) => [f.name, values[f.name] ?? ""])),
           consent: true,
           website_url: honeypot,
-          elapsed_ms: now() - startedAt.current,
+          elapsed_ms: elapsed,
+          recaptcha_token: token,
           page_url: window.location.href,
           landing_page: attribution.landing_page ?? "",
           referrer: attribution.referrer ?? document.referrer,

@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { ATTRIBUTION_STORAGE_KEY } from "@/lib/lead-options";
+import { preloadRecaptcha, recaptchaToken } from "@/lib/spam-guard";
 
 const COMMENTER_KEY = "wdp_commenter";
 
@@ -64,6 +65,7 @@ export function LegacyScripts() {
     const form = document.querySelector<HTMLFormElement>("#commentform");
     if (form) {
       const startedAt = Date.now();
+      preloadRecaptcha();
       const field = (name: string) => form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null;
       const remember = field("wp-comment-cookies-consent") as HTMLInputElement | null;
       try {
@@ -105,6 +107,8 @@ export function LegacyScripts() {
           /* storage unavailable */
         }
         if (submit) submit.disabled = true;
+        const elapsed = Date.now() - startedAt;
+        const token = await recaptchaToken("comment");
         try {
           const res = await fetch("/api/lead/", {
             method: "POST",
@@ -116,7 +120,8 @@ export function LegacyScripts() {
               email: value("email"),
               website: value("url"),
               message: value("comment"),
-              elapsed_ms: Date.now() - startedAt,
+              elapsed_ms: elapsed,
+              recaptcha_token: token,
               page_url: window.location.href,
               ...attribution,
             }),
