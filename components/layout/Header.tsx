@@ -9,7 +9,8 @@ export function Header({ settings, onHome }: { settings: SiteSettings; onHome: b
   return (
     <header className="wdp-header" id="wdpHeader">
       <div className="wdp-container wdp-container--wide wdp-header__in">
-        <Link className="wdp-brand" href="/" prefetch={false} aria-label={`${settings.name} — home`}>
+        {/* No aria-label: the link is named by its visible text (the logo is decorative), so speech users can say what they see. */}
+        <Link className="wdp-brand" href="/" prefetch={false}>
           {/* eslint-disable-next-line @next/next/no-img-element -- small PNG logo, no preload */}
           <img className="wdp-brand__mark" src={settings.logo.src} alt={settings.logo.alt} width={41} height={40} decoding="async" />
           <span className="wdp-brand__name">

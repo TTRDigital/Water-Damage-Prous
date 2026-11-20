@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element -- the old site's own <picture> markup, files served as they are */
 import Image from "next/image";
+import { preload } from "react-dom";
 import type { Img } from "@/lib/types";
 
 /**
@@ -11,6 +12,17 @@ import type { Img } from "@/lib/types";
 export function Photo({ img, sizes, hero = false, className }: { img: Img; sizes: string; hero?: boolean; className?: string }) {
   const p = img.picture;
   if (p) {
+    // The hero is the page's LCP image: preload the same file the <picture> picks (WebP when there is one),
+    // from <head>, so it starts before the stylesheets and fonts.
+    if (hero) {
+      preload(img.src, {
+        as: "image",
+        fetchPriority: "high",
+        imageSrcSet: p.webp ?? p.srcset,
+        imageSizes: p.webp ? p.webpSizes : p.sizes,
+        type: p.webp ? "image/webp" : undefined,
+      });
+    }
     const el = (
       <img
         alt={img.alt}

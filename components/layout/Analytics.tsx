@@ -25,12 +25,11 @@ export function Analytics() {
         </Script>
       ) : null}
       {GA_ID ? (
-        <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
-          <Script id="ga" strategy="lazyOnload">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_ID}');`}
-          </Script>
-        </>
+        // gtag() queues into dataLayer right away (page view, leads, call clicks); the gtag.js library itself
+        // (about 150 KB) loads on the first scroll, tap or key press, or 5 s after the page has loaded.
+        <Script id="ga" strategy="lazyOnload">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_ID}');(function(){var d=0,ev=['pointerdown','keydown','scroll','touchstart'];function l(){if(d)return;d=1;ev.forEach(function(e){removeEventListener(e,l)});var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.appendChild(s)}ev.forEach(function(e){addEventListener(e,l,{passive:true})});setTimeout(l,5000)})();`}
+        </Script>
       ) : null}
       {GA_ID || GTM_ID ? (
         <Script id="track-clicks" strategy="lazyOnload">

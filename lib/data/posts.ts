@@ -2727,7 +2727,7 @@ export const fallbackPosts: Post[] = [
     "wpId": 9201,
     "seo": {
       "title": "What to Do When Your Basement Floods: 7 Steps (DMV Guide)",
-      "description": "Basement flooding? Here's exactly what to do in the first hour, how to stay safe, when to call a pro, and how to file insurance. 24/7 help across the DMV: (571) 210-2498."
+      "description": "Basement flooding? What to do in the first hour, how to stay safe, when to call a pro, and how to file insurance. 24/7 help across the DMV: (571) 210-2498."
     }
   },
   {
@@ -3561,7 +3561,7 @@ export const fallbackCategories: Category[] = [
     "wpId": 16,
     "seo": {
       "title": "Water Damage Guides - Water Damage Pro",
-      "description": ""
+      "description": "Water damage guides from Water Damage Pro: why basements flood, what to do when yours does, and whether homeowners insurance covers the damage."
     }
   },
   {
@@ -3570,7 +3570,7 @@ export const fallbackCategories: Category[] = [
     "wpId": 1,
     "seo": {
       "title": "Uncategorized - Water Damage Pro",
-      "description": ""
+      "description": "Water Damage Pro articles on burst pipes and flooded basement cleanup: what to do in the first hour and what happens next. 24/7 help: (571) 210-2498."
     }
   }
 ];

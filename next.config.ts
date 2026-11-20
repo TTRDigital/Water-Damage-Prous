@@ -20,7 +20,9 @@ const security = [
   { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
 ];
 
-const month = [{ key: "Cache-Control", value: "public, max-age=2592000" }];
+// One year: the photos keep their old media-library names and never change in place, the old stylesheet is
+// requested with a version query (lib/data/legacy.ts) and its fonts are fixed files. A changed photo gets a new name.
+const year = [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }];
 
 const nextConfig: NextConfig = {
   // Pages live at /about/ (matches the old WordPress URLs).
@@ -37,9 +39,9 @@ const nextConfig: NextConfig = {
       { source: "/:path*", headers: security },
       // Everything but the Studio gets the CSP.
       { source: "/((?!cms).*)", headers: [{ key: "Content-Security-Policy", value: csp }] },
-      // Photos and the old stylesheet and scripts: a month (hashed /_next files are immutable by default, pages revalidate).
-      { source: "/images/:path*", headers: month },
-      { source: "/legacy/:path*", headers: month },
+      // Photos and the old stylesheet and fonts: a year (hashed /_next files are immutable by default, pages revalidate).
+      { source: "/images/:path*", headers: year },
+      { source: "/legacy/:path*", headers: year },
       // Only the real domain may be indexed: the vercel.app address and every preview get noindex.
       { source: "/:path*", missing: [{ type: "host", value: "waterdamageprous.com" }, { type: "host", value: "www.waterdamageprous.com" }], headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
     ];

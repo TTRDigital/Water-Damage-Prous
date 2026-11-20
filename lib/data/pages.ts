@@ -436,8 +436,8 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Water Damage Restoration in Northern VA, DC & MD | Water Damage Pro",
-      "description": "24/7 emergency water damage restoration across Northern VA, DC & MD. Water extraction, structural drying & mold prevention — we bill insurance directly. Call (571) 210-2498."
+      "title": "Water Damage Restoration in NoVA, DC & MD | Water Damage Pro",
+      "description": "24/7 water damage restoration across Northern VA, DC & MD. Water extraction, structural drying & mold prevention. We bill insurance. Call (571) 210-2498."
     }
   },
   {
@@ -691,7 +691,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Water Damage Restoration in Reston",
@@ -772,7 +772,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "About Water Damage Pro - Water Damage Pro",
-      "description": "Meet Water Damage Pro — a locally owned, IICRC-certified restoration team in Vienna, VA serving the DMV 24/7. 1,000+ homes restored, 5-star rated. Call (571) 210-2498."
+      "description": "Meet Water Damage Pro, a locally owned, IICRC-certified restoration team in Vienna, VA serving the DMV 24/7. 1,000+ homes restored, 5-star rated."
     }
   },
   {
@@ -1269,7 +1269,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Water Damage Restoration in McLean",
@@ -1717,7 +1717,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Extraction in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Water Extraction in McLean",
@@ -1829,7 +1829,7 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Emergency Water Extraction & Removal in Northern VA, DC, MD & WV - Water Damage Pro",
+      "title": "Emergency Water Extraction & Removal in VA, DC, MD & WV",
       "description": "Emergency water extraction & removal in Northern VA, DC, MD & WV. Rapid response to flooding & standing water, 24/7. Insured & IICRC-certified. Call (571) 210-2498."
     }
   },
@@ -2165,7 +2165,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Fire Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Fire Damage Restoration in McLean",
@@ -2277,8 +2277,8 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Fire & Smoke Damage Restoration in Northern VA, DC, MD & WV - Water Damage Pro",
-      "description": "Fire & smoke damage restoration across the DMV. We clean soot, remove odor & rebuild fast after a fire. 24/7 IICRC-certified crews. We bill insurance. Call (571) 210-2498."
+      "title": "Fire & Smoke Damage Restoration in VA, DC, MD & WV",
+      "description": "Fire & smoke damage restoration across the DMV. We clean soot, remove odor & rebuild fast. 24/7 IICRC-certified crews, we bill insurance. (571) 210-2498."
     }
   },
   {
@@ -2613,7 +2613,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Storm Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Storm Damage Restoration in McLean",
@@ -2725,7 +2725,7 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Storm & Fallen Tree Damage Restoration in Northern VA, DC, MD & WV - Water Damage Pro",
+      "title": "Storm & Fallen Tree Damage Restoration in VA, DC, MD & WV",
       "description": "Storm & fallen-tree damage restoration in Northern VA, DC, MD & WV. Fast tarping, water removal & repairs, 24/7. Insured & IICRC-certified. Call (571) 210-2498."
     }
   },
@@ -3106,7 +3106,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Commercial Water Damage in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Commercial Water Damage in McLean",
@@ -3218,8 +3218,8 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Commercial Water Damage Restoration in Northern VA, DC, MD & WV - Water Damage Pro",
-      "description": "Commercial water, fire & storm restoration across Northern VA, DC & MD. Minimize downtime with fast 24/7 IICRC-certified crews. We bill insurance. Call (571) 210-2498."
+      "title": "Commercial Water Damage Restoration in VA, DC, MD & WV",
+      "description": "Commercial water, fire & storm restoration across Northern VA, DC & MD. Fast 24/7 IICRC-certified crews cut downtime. We bill insurance. (571) 210-2498."
     }
   },
   {
@@ -3466,7 +3466,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Emergency Water Damage in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Emergency Water Damage in McLean",
@@ -3566,7 +3566,7 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "24/7 Emergency Water Damage Response in Northern VA, DC, MD & WV - Water Damage Pro",
+      "title": "24/7 Emergency Water Damage Response in VA, DC, MD & WV",
       "description": "24/7 emergency water damage response across the DMV. Burst pipe or flood? Water Damage Pro arrives fast to stop the damage & dry your property. Call (571) 210-2498."
     }
   },
@@ -3818,7 +3818,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Insurance Claims Help in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Insurance Claims Help in McLean",
@@ -3918,7 +3918,7 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Water Damage Insurance Claims Assistance in Northern VA, DC, MD & WV - Water Damage Pro",
+      "title": "Water Damage Insurance Claims Help in VA, DC, MD & WV",
       "description": "Water damage insurance claims made easy. Water Damage Pro documents the damage & bills your insurer directly across the DMV. IICRC-certified. Call (571) 210-2498."
     }
   },
@@ -4254,7 +4254,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Sewage Cleanup in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Sewage Cleanup in McLean",
@@ -4366,8 +4366,8 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Sewage Cleanup & Biohazard Removal in Northern VA, DC, MD & WV - Water Damage Pro",
-      "description": "24/7 sewage cleanup & biohazard removal across the DMV. Safe, fully sanitized restoration after contaminated water damage. IICRC-certified & insured. Call (571) 210-2498."
+      "title": "Sewage Cleanup & Biohazard Removal in VA, DC, MD & WV",
+      "description": "24/7 sewage cleanup & biohazard removal across the DMV. Safe, sanitized restoration after contaminated water. IICRC-certified & insured. (571) 210-2498."
     }
   },
   {
@@ -4808,8 +4808,8 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Water Damage Restoration Vienna VA | 24/7 Emergency | Water Damage Pro",
-      "description": "Based in Vienna, VA — 24/7 water damage restoration for burst pipes, flooded basements & storm damage. Water extraction, structural drying, direct insurance billing. Call (571) 210-2498."
+      "title": "Water Damage Restoration Vienna VA | 24/7 Emergency Help",
+      "description": "Based in Vienna, VA: 24/7 water damage restoration for burst pipes, flooded basements & storm damage. Structural drying, insurance billing. (571) 210-2498."
     }
   },
   {
@@ -6074,7 +6074,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           }
         ]
       },
@@ -6147,7 +6147,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Falls Church, VA - Water Damage Pro",
-      "description": "Water damage restoration in Falls Church, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Falls Church, VA: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -6522,7 +6522,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           }
         ]
       },
@@ -6594,8 +6594,8 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Water Damage Restoration Fairfax VA | 24/7 Emergency | Water Damage Pro",
-      "description": "Water damage restoration in Fairfax, VA — burst pipes, flooded basements & storm damage. 24/7 response from our Vienna base, direct insurance billing. Call (571) 210-2498."
+      "title": "Water Damage Restoration Fairfax VA | 24/7 Emergency Help",
+      "description": "Water damage restoration in Fairfax, VA: burst pipes, flooded basements & storm damage. 24/7 response from Vienna, insurance billing. (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -7398,7 +7398,7 @@ export const fallbackPages: Page[] = [
         "links": [
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Water Damage Restoration in Falls Church",
@@ -7491,7 +7491,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Arlington, VA - Water Damage Pro",
-      "description": "Water damage restoration in Arlington, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Arlington, VA: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -7939,7 +7939,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Ashburn, VA - Water Damage Pro",
-      "description": "Water damage restoration in Ashburn, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Ashburn, VA: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -8387,7 +8387,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Leesburg, VA - Water Damage Pro",
-      "description": "Water damage restoration in Leesburg, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Leesburg, VA: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -8746,7 +8746,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Water Damage Restoration in Bethesda",
@@ -8834,8 +8834,8 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Water Damage Restoration Washington DC | 24/7 Emergency | Water Damage Pro",
-      "description": "Emergency water damage restoration in Washington DC — burst pipes, flooded basements, storm damage. 24/7 response, structural drying, direct insurance billing. Call (571) 210-2498."
+      "title": "Water Damage Restoration Washington DC | 24/7 Emergency",
+      "description": "Emergency water damage restoration in Washington DC: burst pipes, flooded basements, storm damage. 24/7 response & insurance billing. (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -9282,8 +9282,8 @@ export const fallbackPages: Page[] = [
       }
     ],
     "seo": {
-      "title": "Water Damage Restoration Bethesda MD | 24/7 Emergency | Water Damage Pro",
-      "description": "Water damage restoration in Bethesda, MD for burst pipes, basement flooding & storm damage. 24/7 emergency response and direct insurance billing. Call (571) 210-2498."
+      "title": "Water Damage Restoration Bethesda MD | 24/7 Emergency Help",
+      "description": "Water damage restoration in Bethesda, MD for burst pipes, basement flooding & storm damage. 24/7 emergency response, insurance billing. (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -9731,7 +9731,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Rockville, MD - Water Damage Pro",
-      "description": "Water damage restoration in Rockville, MD — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Rockville, MD: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -10102,7 +10102,7 @@ export const fallbackPages: Page[] = [
           },
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Water Damage Restoration in Frederick",
@@ -10179,7 +10179,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Silver Spring, MD - Water Damage Pro",
-      "description": "Water damage restoration in Silver Spring, MD — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Silver Spring, MD: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -10627,7 +10627,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Frederick, MD - Water Damage Pro",
-      "description": "Water damage restoration in Frederick, MD — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Frederick, MD: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -11075,7 +11075,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Winchester, VA - Water Damage Pro",
-      "description": "Water damage restoration in Winchester, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Winchester, VA: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -11430,7 +11430,7 @@ export const fallbackPages: Page[] = [
         "links": [
           {
             "label": "Water Damage Restoration in Alexandria",
-            "href": "/alexandria/"
+            "href": "/water-damage-restoration-alexandria-va/"
           },
           {
             "label": "Water Damage Restoration in Arlington",
@@ -11523,7 +11523,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Fredericksburg, VA - Water Damage Pro",
-      "description": "Water damage restoration in Fredericksburg, VA — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Fredericksburg, VA: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {
@@ -11971,7 +11971,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration in Martinsburg, WV - Water Damage Pro",
-      "description": "Water damage restoration in Martinsburg, WV — 24/7 flood, fire & storm cleanup by Water Damage Pro. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
+      "description": "Water damage restoration in Martinsburg, WV: 24/7 flood, fire & storm cleanup. IICRC-certified & insured, and we bill insurance. Call (571) 210-2498."
     },
     "footerLinkLabels": [
       {

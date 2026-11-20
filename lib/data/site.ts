@@ -56,7 +56,7 @@ export const fallbackSettings: SiteSettings = {
           { label: "Tysons", href: "/tysons/" },
           { label: "Fairfax", href: "/fairfax/" },
           { label: "Arlington", href: "/arlington/" },
-          { label: "Alexandria", href: "/alexandria/" },
+          { label: "Alexandria", href: "/water-damage-restoration-alexandria-va/" },
           { label: "Reston", href: "/reston/" },
         ],
       },
@@ -77,7 +77,7 @@ export const fallbackSettings: SiteSettings = {
     companyHeading: "Company",
     companyLinks: [
       { label: "About", href: "/about/" },
-      { label: "Reviews", href: "/reviews/" },
+      { label: "Reviews", href: "/" },
       { label: "Contact", href: "/contact/" },
     ],
     copyright: "© 2026 Water Damage Pro · Serving VA · DC · MD · WV",
