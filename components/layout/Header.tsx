@@ -11,8 +11,9 @@ export function Header({ settings, onHome }: { settings: SiteSettings; onHome: b
       <div className="wdp-container wdp-container--wide wdp-header__in">
         {/* No aria-label: the link is named by its visible text (the logo is decorative), so speech users can say what they see. */}
         <Link className="wdp-brand" href="/" prefetch={false}>
+          {/* Low priority: React would otherwise preload this small logo at high priority, next to the hero photo. */}
           {/* eslint-disable-next-line @next/next/no-img-element -- small PNG logo, no preload */}
-          <img className="wdp-brand__mark" src={settings.logo.src} alt={settings.logo.alt} width={41} height={40} decoding="async" />
+          <img className="wdp-brand__mark" src={settings.logo.src} alt={settings.logo.alt} width={41} height={40} decoding="async" fetchPriority="low" />
           <span className="wdp-brand__name">
             {settings.name}
             <small>{settings.tagline}</small>
