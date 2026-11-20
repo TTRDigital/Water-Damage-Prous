@@ -46,6 +46,9 @@ const nextConfig: NextConfig = {
       { source: "/:path*", missing: [{ type: "host", value: "waterdamageprous.com" }, { type: "host", value: "www.waterdamageprous.com" }], headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
     ];
   },
+  // The page CSS (about 14 KB) goes inline in <head> instead of two render-blocking requests: most visitors
+  // arrive once, on a phone, in an emergency, so the first paint matters more than a cached stylesheet.
+  experimental: { inlineCss: true },
   images: {
     loader: "custom",
     loaderFile: "./lib/image-loader.ts",

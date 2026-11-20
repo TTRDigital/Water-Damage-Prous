@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { getSiteSettings } from "@/lib/content";
 import { businessSchema } from "@/lib/schema";
 import { legacyFooter, legacyHeader, legacyStylesheet } from "@/lib/data/legacy";
+import { LegacyStylesheet } from "@/components/legacy/LegacyStylesheet";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { LegacyScripts } from "@/components/legacy/LegacyScripts";
 import { ChatWidget } from "@/components/layout/ChatWidget";
@@ -22,7 +23,7 @@ export async function LegacyShell({ bodyClass, children }: { bodyClass: string; 
   const { class: footerClass, ...footerAttrs } = legacyFooter.attrs;
   return (
     <div className={`${bodyClass} ${THEME}`}>
-      <link rel="stylesheet" href={legacyStylesheet} precedence="legacy" />
+      <LegacyStylesheet href={legacyStylesheet} />
       <JsonLd data={businessSchema(settings)} />
       <a className="skip-link screen-reader-text" href="#content">
         Skip to content
