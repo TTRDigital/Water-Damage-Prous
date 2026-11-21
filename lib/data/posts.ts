@@ -304,7 +304,7 @@ export const fallbackPosts: Post[] = [
     "comments": true,
     "wpId": 9219,
     "seo": {
-      "title": "Flooded Basement Cleanup: What Happens Next | Water Damage Pro",
+      "title": "Flooded Basement Cleanup: What Happens Next (DMV Guide)",
       "description": "Basement flooded in Northern Virginia? What cleanup involves, what to avoid, how drying prevents mold, and when to call a 24/7 restoration crew."
     }
   },

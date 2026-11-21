@@ -1382,7 +1382,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Restoration Services - Water Damage Pro",
-      "description": "Fast 24/7 water damage restoration across the DMV. Water Damage Pro extracts water, dries structures & restores your property. IICRC-certified. Call (571) 210-2498."
+      "description": "24/7 water damage restoration across the DMV. We extract water, dry the structure & restore your property. IICRC-certified. Call (571) 210-2498."
     }
   },
   {
@@ -1830,7 +1830,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Emergency Water Extraction & Removal in VA, DC, MD & WV",
-      "description": "Emergency water extraction & removal in Northern VA, DC, MD & WV. Rapid response to flooding & standing water, 24/7. Insured & IICRC-certified. Call (571) 210-2498."
+      "description": "Emergency water extraction & removal in Northern VA, DC, MD & WV. Fast 24/7 response to flooding & standing water. IICRC-certified. (571) 210-2498."
     }
   },
   {
@@ -3567,7 +3567,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "24/7 Emergency Water Damage Response in VA, DC, MD & WV",
-      "description": "24/7 emergency water damage response across the DMV. Burst pipe or flood? Water Damage Pro arrives fast to stop the damage & dry your property. Call (571) 210-2498."
+      "description": "24/7 emergency water damage response across the DMV. Burst pipe or flood? We arrive fast to stop the damage & dry your property. Call (571) 210-2498."
     }
   },
   {
@@ -3919,7 +3919,7 @@ export const fallbackPages: Page[] = [
     ],
     "seo": {
       "title": "Water Damage Insurance Claims Help in VA, DC, MD & WV",
-      "description": "Water damage insurance claims made easy. Water Damage Pro documents the damage & bills your insurer directly across the DMV. IICRC-certified. Call (571) 210-2498."
+      "description": "Water damage insurance claims made easy. We document the damage & bill your insurer directly across the DMV. IICRC-certified. Call (571) 210-2498."
     }
   },
   {

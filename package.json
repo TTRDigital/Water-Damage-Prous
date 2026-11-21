@@ -7,7 +7,8 @@
     "build": "next build",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "seed": "node --experimental-strip-types --no-warnings scripts/seed.ts"
+    "seed": "node --experimental-strip-types --no-warnings scripts/seed.ts",
+    "stage-seo": "node --experimental-strip-types --no-warnings scripts/stage-seo.ts"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
