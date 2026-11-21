@@ -33,7 +33,16 @@ export function SiteScripts() {
       cleanups.push(() => toggle.removeEventListener("click", onToggle));
     }
 
-    /* Hero slideshow. */
+    /* Hero slideshow. Its 2nd and 3rd photos wait in data-later (components/sections/HeroSlides.tsx) until the page has loaded. */
+    const later = () =>
+      document.querySelectorAll<HTMLElement>(".wdp-hero__slide[data-later]").forEach((el) => {
+        if (!el.firstChild) el.innerHTML = el.dataset.later ?? "";
+      });
+    if (document.readyState === "complete") later();
+    else {
+      window.addEventListener("load", later, { once: true });
+      cleanups.push(() => window.removeEventListener("load", later));
+    }
     const hero = document.querySelector<HTMLElement>(".wdp-hero");
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (hero) {

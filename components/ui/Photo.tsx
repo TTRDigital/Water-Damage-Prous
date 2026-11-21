@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element -- the old site's own <picture> markup, files served as they are */
 import Image from "next/image";
-import { preload } from "react-dom";
+import { preconnect, preload } from "react-dom";
 import type { Img } from "@/lib/types";
 
 /**
  * A content photo. Built-in photos print the old site's markup exactly (a WebP <source> and the
  * JPG <img> with its srcset, sizes and loading hints, files in /images/uploads). A photo replaced
  * in Sanity has no such markup and goes through next/image (Sanity's CDN sizes it); the page's
- * first large photo (the hero) is then loaded eagerly with high fetch priority.
+ * first large photo (the hero) is then preloaded from <head> with high fetch priority, and the
+ * connection to Sanity's CDN is opened early.
  */
 export function Photo({ img, sizes, hero = false, className }: { img: Img; sizes: string; hero?: boolean; className?: string }) {
   const p = img.picture;
@@ -45,6 +46,7 @@ export function Photo({ img, sizes, hero = false, className }: { img: Img; sizes
       </picture>
     );
   }
+  if (hero && img.src.startsWith("https://cdn.sanity.io/")) preconnect("https://cdn.sanity.io");
   return (
     <Image
       src={img.src}
@@ -53,7 +55,8 @@ export function Photo({ img, sizes, hero = false, className }: { img: Img; sizes
       height={img.height}
       sizes={sizes}
       className={className}
-      loading={hero ? "eager" : "lazy"}
+      preload={hero}
+      loading={hero ? undefined : "lazy"}
       fetchPriority={hero ? "high" : undefined}
       decoding="async"
     />

@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "add-missing: only create what is not in Sanity yet. overwrite: replace everything with the built-in content. dry-run: check only, write nothing."
+        description: "add-missing: only create what is not in Sanity yet. overwrite: replace everything with the built-in content. dry-run: check only, write nothing. stage-seo-check / stage-seo-drafts: the Nov 21 title, description and link fixes, listed / written as drafts (never published; scripts/stage-seo.ts)."
         type: choice
-        options: [add-missing, overwrite, dry-run]
+        options: [add-missing, overwrite, dry-run, stage-seo-check, stage-seo-drafts]
         default: add-missing
       only:
         description: "Optional: only documents whose ID starts with these, comma-separated (e.g. page-vienna,post-). Empty = everything."
@@ -45,11 +45,14 @@ jobs:
           ONLY: ${{ inputs.only }}
         run: |
           if [ -z "$SANITY_WRITE_TOKEN" ] && [ "$MODE" != "dry-run" ]; then
+            # stage-seo-check reads the published documents, so it needs the token too.
             echo "::error::Add the SANITY_WRITE_TOKEN secret first (Settings > Secrets and variables > Actions)."
             exit 1
           fi
           case "$MODE" in
             overwrite) npm run seed -- --force ${ONLY:+--only=$ONLY} ;;
             dry-run) npm run seed -- --dry-run ${ONLY:+--only=$ONLY} ;;
+            stage-seo-check) npm run stage-seo ;;
+            stage-seo-drafts) npm run stage-seo -- --write ;;
             *) npm run seed -- ${ONLY:+--only=$ONLY} ;;
           esac

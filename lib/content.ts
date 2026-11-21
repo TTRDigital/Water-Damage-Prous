@@ -2,6 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { sanityFetch } from "@/lib/sanity/fetch";
 import { merge } from "@/lib/merge";
+import { withFinalHrefs } from "@/lib/links";
 import { fallbackSettings } from "@/lib/data/site";
 import { fallbackPages } from "@/lib/data/pages";
 import { fallbackCategories, fallbackPosts, fallbackTextPages } from "@/lib/data/posts";
@@ -106,7 +107,7 @@ export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
     {},
     ["siteSettings"],
   );
-  return merge(fallbackSettings, localize(cms, fallbackSettings));
+  return withFinalHrefs(merge(fallbackSettings, localize(cms, fallbackSettings)));
 });
 
 /* ---------- Section pages (home, about, contact, services, service areas) ---------- */
@@ -116,7 +117,7 @@ const blankPage: Page = { slug: "", kind: "company", name: "", order: 99, sectio
 export const getPages = cache(async (): Promise<Page[]> => {
   const cms = await sanityFetch<Partial<Page>[]>(`*[_type == "page"] | order(order asc) ${PAGE}`, {}, ["page"]);
   const pages = mergeBySlug(fallbackPages, localizeAll(cms, fallbackPages), blankPage, (p) => ({ ...p, sections: p.sections.map(normalizeSection).filter((s): s is Section => !!s) }));
-  return pages.sort((a, b) => a.order - b.order);
+  return withFinalHrefs(pages.sort((a, b) => a.order - b.order));
 });
 
 export async function getPage(slug: string): Promise<Page | undefined> {
@@ -138,7 +139,7 @@ export const getPosts = cache(async (): Promise<Post[]> => {
     const i = fallbackPosts.findIndex((f) => f.slug === slug);
     return i < 0 ? fallbackPosts.length : i;
   };
-  return mergeBySlug(fallbackPosts, localizeAll(cms, fallbackPosts), blankPost).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : rank(a.slug) - rank(b.slug)));
+  return withFinalHrefs(mergeBySlug(fallbackPosts, localizeAll(cms, fallbackPosts), blankPost)).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : rank(a.slug) - rank(b.slug)));
 });
 
 export const getCategories = cache(async (): Promise<Category[]> => {
@@ -152,5 +153,5 @@ const blankText: TextPage = { slug: "", title: "", body: [], seo: { title: "", d
 
 export const getTextPages = cache(async (): Promise<TextPage[]> => {
   const cms = await sanityFetch<Partial<TextPage>[]>(`*[_type == "textPage" && defined(slug)]{ "slug": slug.current, title, ${BODY}, wpId, ${SEO} }`, {}, ["textPage"]);
-  return mergeBySlug(fallbackTextPages, cms, blankText);
+  return withFinalHrefs(mergeBySlug(fallbackTextPages, cms, blankText));
 });
