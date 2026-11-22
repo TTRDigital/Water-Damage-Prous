@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { movedPages } from "./lib/legacy-redirects";
+import { footerLinks, movedPages } from "./lib/legacy-redirects";
 
 /*
  * Served by Vercel (a Node server, no static export). What the old SiteGround files did:
@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
     return [{ source: "/api/lead.php", destination: "/api/lead" }];
   },
   async redirects() {
-    return movedPages.map(([from, to]) => ({ source: `/${from}`, destination: to, statusCode: 301 }));
+    return [...movedPages, ...footerLinks].map(([from, to]) => ({ source: `/${from}`, destination: to, statusCode: 301 }));
   },
   async headers() {
     return [
