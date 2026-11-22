@@ -15,7 +15,10 @@ import { JsonLd } from "@/components/ui/JsonLd";
  * site's other template (components/legacy), as they did there.
  */
 
-export const dynamicParams = false;
+// A slug that was not built ahead is rendered on request: in draft preview (lib/preview.ts) that is how an
+// unpublished post (e.g. TTR OS's scratch draft) shows. For visitors nothing changes: published content has no
+// such slug, so resolve() finds nothing and it is the same 404 as before.
+export const dynamicParams = true;
 
 type Resolved =
   | { kind: "page"; page: Awaited<ReturnType<typeof getPages>>[number] }
