@@ -37,7 +37,8 @@ const arr = <T,>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
 /*
  * The seed uploads the old site's own files. While a Sanity photo is still the file the built-in
  * page has in the same place (same file name), the page keeps the old markup for it (the local
- * file with its WebP <source>, srcset and sizes, lib/data); the alt text from Sanity is used.
+ * file with its WebP <source>, srcset and sizes, lib/data); the alt text from Sanity is used,
+ * or the built-in one when Sanity's is empty.
  * A photo replaced in Sanity is served from Sanity.
  */
 type Slot = string;
@@ -62,7 +63,7 @@ function localize<T>(cms: T, fallback: unknown): T {
     if (typeof o.src === "string" && "file" in o) {
       const { file, src, width, height, ...rest } = o;
       const local = slots.get(`${path}|${file}`);
-      return local ? { ...local, ...rest, alt: typeof rest.alt === "string" ? rest.alt : local.alt } : { src, width, height, ...rest };
+      return local ? { ...local, ...rest, alt: typeof rest.alt === "string" && rest.alt.trim() ? rest.alt : local.alt } : { src, width, height, ...rest };
     }
     return Object.fromEntries(Object.entries(o).map(([k, x]) => [k, walk(x, field(o, path, k))]));
   };
