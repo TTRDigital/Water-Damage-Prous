@@ -451,7 +451,7 @@ export const fallbackPages: Page[] = [
         "variant": "default",
         "image": {
           "src": "/images/uploads/2026/07/phero-about-1448.jpg",
-          "alt": "",
+          "alt": "The Water Damage Pro crew with drying equipment outside the office, next to a company truck",
           "width": 1448,
           "height": 966,
           "picture": {
