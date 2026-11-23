@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getCategories, getPages, getPosts, getTextPages } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
-import { breadcrumbSchema, faqSchema, postFaqs } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqSchema, postFaqs } from "@/lib/schema";
 import { SectionPage, pageImage } from "@/components/pages/SectionPage";
 import { LegacyShell } from "@/components/legacy/LegacyShell";
 import { CommentForm } from "@/components/legacy/CommentForm";
@@ -75,6 +75,7 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
             { name: post.title, path: `/${post.slug}/` },
           ])}
         />
+        <JsonLd data={articleSchema(post)} />
         {faqs.length ? <JsonLd data={faqSchema(faqs)} /> : null}
         <main id="content" className={`site-main ${id}post type-post status-publish format-standard${post.image ? " has-post-thumbnail" : ""} hentry category-${post.category}`}>
           <div className="page-header">

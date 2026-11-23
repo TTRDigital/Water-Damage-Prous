@@ -1,4 +1,4 @@
-import type { Page, PtBlock, SiteSettings } from "@/lib/types";
+import type { Page, Post, PtBlock, SiteSettings } from "@/lib/types";
 import { absoluteUrl, siteUrl } from "@/lib/site";
 import { plainRich } from "@/lib/text";
 
@@ -27,6 +27,28 @@ export function businessSchema(s: SiteSettings) {
       { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "00:00", closes: "23:59" },
     ],
     areaServed: s.areaServed.map((name) => ({ "@type": "Place", name })),
+  };
+}
+
+/**
+ * BlogPosting for a blog post, from what the post already shows: its title, date, photo and the
+ * SEO description. Author and publisher are the business itself (the one LocalBusiness entity
+ * above); no person, rating or claim is added.
+ */
+export function articleSchema(post: Post) {
+  const url = absoluteUrl(`/${post.slug}/`);
+  const image = post.image?.src ? (post.image.src.startsWith("http") ? post.image.src : absoluteUrl(post.image.src)) : undefined;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    ...(post.seo.description ? { description: post.seo.description } : {}),
+    ...(post.date ? { datePublished: post.date } : {}),
+    ...(image ? { image } : {}),
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: { "@id": BUSINESS_ID },
+    publisher: { "@id": BUSINESS_ID },
   };
 }
 
