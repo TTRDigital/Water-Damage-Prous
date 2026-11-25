@@ -36,6 +36,8 @@
   --wdp-red-ink: #a80000;
 
   --wdp-font-display: var(--font-serif), "Times New Roman", Georgia, serif;
+  /* The italic is its own (lazily loaded) font file: italic text sets this family with font-style: italic. */
+  --wdp-font-italic: var(--font-serif-italic), var(--font-serif), "Times New Roman", Georgia, serif;
   --wdp-font-body: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --wdp-container: 1240px;
@@ -85,6 +87,7 @@ body {
 /* Italic accent words: `*word*` in a heading (Rich). Base rules above have zero specificity (:where), so section rules win. */
 :where(#main) :is(h1, h2) span {
   font-style: italic;
+  font-family: var(--wdp-font-italic);
 }
 :focus-visible {
   outline: 3px solid var(--wdp-gold-ink);
@@ -1384,6 +1387,7 @@ textarea.wdp-field {
   right: 32px;
   font-family: var(--wdp-font-display);
   font-style: italic;
+  font-family: var(--wdp-font-italic);
   font-size: 22px;
   color: var(--wdp-gold-ink);
 }
@@ -1643,6 +1647,7 @@ textarea.wdp-field {
 .wdp-step__n {
   font-family: var(--wdp-font-display);
   font-style: italic;
+  font-family: var(--wdp-font-italic);
   font-size: 44px;
   line-height: 1;
   color: var(--wdp-gold-ink);
@@ -2000,6 +2005,7 @@ textarea.wdp-field {
   margin: 18px 0 26px;
   font-family: var(--wdp-font-display);
   font-style: italic;
+  font-family: var(--wdp-font-italic);
   font-size: 24px;
   line-height: 1.3;
   color: #fff;

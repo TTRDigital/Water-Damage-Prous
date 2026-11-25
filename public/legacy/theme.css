@@ -20,6 +20,7 @@
   --wdp-red: #d10000;
   --wdp-red-ink: #a80000;
   --wdp-serif: var(--font-serif), "Times New Roman", Georgia, serif;
+  --wdp-serif-italic: var(--font-serif-italic), var(--font-serif), "Times New Roman", Georgia, serif;
   --wdp-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --wdp-gutter: clamp(20px, 4vw, 48px);
 
@@ -233,6 +234,7 @@ body:has(.wdp-legacy) {
 }
 .wdp-legacy .site-main .page-header .entry-title span {
   font-style: italic;
+  font-family: var(--wdp-serif-italic) !important;
   color: var(--wdp-gold-ink);
 }
 .wdp-legacy .site-main .page-content p,
@@ -297,6 +299,7 @@ body:has(.wdp-legacy) {
 .wdp-legacy .site-main .wp-block-quote p {
   font-family: var(--wdp-serif) !important;
   font-style: italic;
+  font-family: var(--wdp-serif-italic) !important;
   font-size: 23px !important;
   line-height: 1.4 !important;
   margin: 0 !important;

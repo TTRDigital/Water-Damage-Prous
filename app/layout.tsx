@@ -10,7 +10,10 @@ import { siteUrl } from "@/lib/site";
  * buttons), only the weights the design uses.
  */
 
-const serif = Instrument_Serif({ subsets: ["latin"], display: "swap", variable: "--font-serif", weight: "400", style: ["normal", "italic"] });
+const serif = Instrument_Serif({ subsets: ["latin"], display: "swap", variable: "--font-serif", weight: "400", style: "normal" });
+// The italic only sets a few accent words: not preloaded (it never competes with the hero photo), and
+// "optional" so a late file is never swapped in under the reader (no layout shift); it is used once cached.
+const serifItalic = Instrument_Serif({ subsets: ["latin"], display: "optional", variable: "--font-serif-italic", weight: "400", style: "italic", preload: false });
 const sans = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-sans", weight: ["400", "600", "700"] });
 
 export const metadata: Metadata = {
@@ -32,7 +35,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, view
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-US" className={`${serif.variable} ${sans.variable}`} suppressHydrationWarning>
+    <html lang="en-US" className={`${serif.variable} ${serifItalic.variable} ${sans.variable}`} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
