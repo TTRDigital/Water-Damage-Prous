@@ -1,0 +1,552 @@
+/*
+ * The redesign over the old template (blog posts, category pages, the Alexandria page, the 404 page).
+ * Loaded after legacy.css, on the old template's own markup (components/legacy, lib/data/legacy.ts),
+ * so every link and word stays as it is: only how it looks changes. Same tokens as app/styles/design.css.
+ * The 404 page does not load the site stylesheet, so the call bar's styles are repeated at the end.
+ */
+.wdp-legacy {
+  --wdp-navy: #0a1826;
+  --wdp-navy-2: #0e2a3b;
+  --wdp-ink: #0a1826;
+  --wdp-muted: #55606b;
+  --wdp-on-dark-muted: #b8c4cf;
+  --wdp-paper: #f7f3ec;
+  --wdp-sand: #efe7da;
+  --wdp-card: #fffdfa;
+  --wdp-line: rgba(10, 24, 38, 0.13);
+  --wdp-line-dark: rgba(255, 255, 255, 0.16);
+  --wdp-gold: #f5a524;
+  --wdp-gold-ink: #8a5300;
+  --wdp-red: #d10000;
+  --wdp-red-ink: #a80000;
+  --wdp-serif: var(--font-serif), "Times New Roman", Georgia, serif;
+  --wdp-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --wdp-gutter: clamp(20px, 4vw, 48px);
+
+  background: var(--wdp-paper);
+  color: var(--wdp-ink);
+  font-family: var(--wdp-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0;
+  text-transform: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.wdp-legacy *:not(i):not([class*="icon"]) {
+  text-transform: none;
+}
+body:has(.wdp-legacy) {
+  background: var(--wdp-paper);
+}
+.wdp-legacy :focus-visible {
+  outline: 3px solid var(--wdp-gold-ink);
+  outline-offset: 3px;
+}
+
+/* =====================================================================
+   HEADER: thin navy info bar, warm sticky bar with the menu and a red "Book Now" call pill
+   ===================================================================== */
+.wdp-legacy .ekit-template-content-header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: var(--wdp-paper);
+  border-bottom: 1px solid var(--wdp-line);
+}
+.wdp-legacy .elementor-35 .elementor-element.elementor-element-1dea4308 {
+  background: var(--wdp-navy) !important;
+  padding: 8px var(--wdp-gutter) !important;
+}
+.wdp-legacy .elementor-element-1dea4308 .elementor-icon-list-text,
+.wdp-legacy .elementor-element-1dea4308 a {
+  color: #fff !important;
+  font-family: var(--wdp-sans) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+.wdp-legacy .elementor-element-1dea4308 .elementor-icon-list-icon i {
+  color: var(--wdp-gold) !important;
+}
+.wdp-legacy .elementor-35 .elementor-element.elementor-element-42061098 {
+  background: transparent !important;
+  padding: 12px var(--wdp-gutter) !important;
+}
+.wdp-legacy .elementor-element-4441054e img {
+  width: auto !important;
+  height: 64px !important;
+  border-radius: 0 !important;
+}
+/* Desktop menu: tiny tracked uppercase links with a hairline underline. */
+.wdp-legacy .elementor-35 .elementor-element.elementor-element-3dcd426a .elementskit-menu-container {
+  background: transparent !important;
+}
+.wdp-legacy .elementor-element-3dcd426a .elementskit-navbar-nav > li > a {
+  font-family: var(--wdp-sans) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--wdp-ink) !important;
+}
+.wdp-legacy .elementor-element-3dcd426a .elementskit-navbar-nav > li > a:hover {
+  color: var(--wdp-gold-ink) !important;
+}
+.wdp-legacy .elementor-element-3dcd426a .elementskit-navbar-nav .elementskit-submenu-panel {
+  background: var(--wdp-card) !important;
+  border: 1px solid var(--wdp-line) !important;
+  border-radius: 18px !important;
+  padding: 10px 0 !important;
+  box-shadow: 0 30px 60px -30px rgba(10, 24, 38, 0.45) !important;
+}
+.wdp-legacy .elementor-element-3dcd426a .elementskit-submenu-panel > li > a {
+  font-family: var(--wdp-sans) !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  color: var(--wdp-ink) !important;
+  background: transparent !important;
+  padding: 10px 22px !important;
+}
+.wdp-legacy .elementor-element-3dcd426a .elementskit-submenu-panel > li > a:hover {
+  color: var(--wdp-gold-ink) !important;
+  background: var(--wdp-paper) !important;
+}
+/* Keyboard: a submenu opens while focus is inside it (the old menu opened on mouse hover only). */
+@media (min-width: 1025px) {
+  .wdp-legacy .ekit-nav-dropdown-hover .elementskit-dropdown-has:focus-within > .elementskit-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+/* "Book Now" calls the business: the red emergency pill. */
+.wdp-legacy .elementor-element-a8196bb .jeg-elementor-kit.jkit-button .jkit-button-wrapper {
+  display: inline-flex !important;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--wdp-red) !important;
+  color: #fff !important;
+  font-family: var(--wdp-sans) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+}
+.wdp-legacy .elementor-element-a8196bb .jeg-elementor-kit.jkit-button .jkit-button-wrapper:hover {
+  background: var(--wdp-red-ink) !important;
+}
+/* Phone menu (off-canvas). */
+.wdp-legacy .elementor-element-3dcd426a button.elementskit-menu-hamburger {
+  border: 1px solid var(--wdp-ink) !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: var(--wdp-ink) !important;
+  width: 46px;
+  height: 46px;
+  padding: 0 !important;
+}
+/* The icon font has no glyph for this icon (the live button showed an empty box): three lines drawn in CSS instead. */
+.wdp-legacy .elementor-element-3dcd426a button.elementskit-menu-hamburger i {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 12px;
+  margin: 0 auto;
+  font-size: 0 !important;
+  border-top: 1.8px solid var(--wdp-ink);
+  border-bottom: 1.8px solid var(--wdp-ink);
+}
+.wdp-legacy .elementor-element-3dcd426a button.elementskit-menu-hamburger i::before {
+  content: "" !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1.8px solid var(--wdp-ink);
+  transform: translateY(-50%);
+}
+@media (max-width: 1024px) {
+  .wdp-legacy .elementor-element-3dcd426a .elementskit-menu-offcanvas-elements.elementskit-menu-container {
+    background: var(--wdp-paper) !important;
+  }
+  .wdp-legacy .elementor-element-3dcd426a .elementskit-navbar-nav > li > a {
+    font-family: var(--wdp-serif) !important;
+    font-size: 28px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    border-bottom: 1px solid var(--wdp-line);
+    padding: 14px 22px !important;
+  }
+  .wdp-legacy .elementor-element-3dcd426a .elementskit-navbar-nav .elementskit-submenu-panel {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  .wdp-legacy .elementor-element-3dcd426a button.elementskit-menu-close {
+    border: 1px solid var(--wdp-ink) !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: var(--wdp-ink) !important;
+  }
+  .wdp-legacy .elementor-element-4441054e img {
+    height: 52px !important;
+  }
+}
+
+/* =====================================================================
+   CONTENT: an editorial reading column
+   ===================================================================== */
+.wdp-legacy .site-main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: calc(780px + 2 * var(--wdp-gutter)) !important;
+  margin: 0 auto !important;
+  padding: clamp(56px, 8vw, 104px) var(--wdp-gutter) clamp(64px, 8vw, 112px) !important;
+  font-family: var(--wdp-sans) !important;
+  color: var(--wdp-ink);
+}
+.wdp-legacy .site-main .page-header {
+  margin-bottom: clamp(30px, 4vw, 48px);
+  padding-bottom: clamp(26px, 3vw, 36px);
+  border-bottom: 1px solid var(--wdp-ink);
+}
+.wdp-legacy .site-main .page-header .entry-title,
+.wdp-legacy .site-main h1 {
+  margin: 0 !important;
+  max-width: none !important;
+  font-family: var(--wdp-serif) !important;
+  font-weight: 400 !important;
+  font-size: clamp(42px, 5.6vw, 76px) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.015em !important;
+  color: var(--wdp-ink) !important;
+  padding: 0 !important;
+}
+.wdp-legacy .site-main .page-header .entry-title span {
+  font-style: italic;
+  color: var(--wdp-gold-ink);
+}
+.wdp-legacy .site-main .page-content p,
+.wdp-legacy .site-main .page-content li {
+  font-family: var(--wdp-sans) !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0 !important;
+  color: #26323d !important;
+}
+.wdp-legacy .site-main .page-content p {
+  margin: 0 0 1.2em !important;
+}
+.wdp-legacy .site-main .page-content h2,
+.wdp-legacy .site-main .page-content h3 {
+  font-family: var(--wdp-serif) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.005em !important;
+  color: var(--wdp-ink) !important;
+  margin: 1.6em 0 0.5em !important;
+}
+.wdp-legacy .site-main .page-content h2 {
+  font-size: clamp(30px, 3.2vw, 40px) !important;
+  line-height: 1.1 !important;
+}
+.wdp-legacy .site-main .page-content h3 {
+  font-size: clamp(24px, 2.4vw, 30px) !important;
+  line-height: 1.15 !important;
+}
+.wdp-legacy .site-main .page-content strong {
+  font-weight: 700;
+  color: var(--wdp-ink);
+}
+.wdp-legacy .site-main .page-content a,
+.wdp-legacy .site-main .comment-notes a {
+  color: var(--wdp-gold-ink) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  font-weight: 600;
+}
+.wdp-legacy .site-main .page-content a[href^="tel:"] {
+  color: var(--wdp-red-ink) !important;
+}
+.wdp-legacy .site-main .page-content ul,
+.wdp-legacy .site-main .page-content ol {
+  margin: 0 0 1.4em !important;
+  padding-left: 1.3em !important;
+}
+.wdp-legacy .site-main .page-content li::marker {
+  color: var(--wdp-gold-ink);
+}
+.wdp-legacy .site-main .wp-block-quote {
+  margin: 2em 0 !important;
+  padding: 26px 30px !important;
+  border: 0 !important;
+  border-left: 3px solid var(--wdp-gold) !important;
+  border-radius: 0 22px 22px 0 !important;
+  background: var(--wdp-card) !important;
+}
+.wdp-legacy .site-main .wp-block-quote p {
+  font-family: var(--wdp-serif) !important;
+  font-style: italic;
+  font-size: 23px !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+
+/* ---- Category pages: posts as editorial cards ---------------------------------- */
+.wdp-legacy .site-main article.post {
+  margin: 0 0 clamp(40px, 5vw, 64px) !important;
+  padding: 0 0 clamp(36px, 4vw, 52px) !important;
+  border-bottom: 1px solid var(--wdp-line);
+}
+.wdp-legacy .site-main article.post .entry-title {
+  margin: 0 0 22px !important;
+  font-family: var(--wdp-serif) !important;
+  font-weight: 400 !important;
+  font-size: clamp(30px, 3.4vw, 44px) !important;
+  line-height: 1.05 !important;
+}
+.wdp-legacy .site-main article.post .entry-title a {
+  color: var(--wdp-ink) !important;
+  text-decoration: none !important;
+  font-weight: 400;
+}
+.wdp-legacy .site-main article.post .entry-title a:hover {
+  color: var(--wdp-gold-ink) !important;
+}
+.wdp-legacy .site-main article.post .wp-post-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none !important;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 28px;
+  margin: 0 0 22px !important;
+}
+.wdp-legacy .site-main article.post p {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  color: var(--wdp-muted) !important;
+}
+
+/* ---- "Leave a Reply" -------------------------------------------------------- */
+.wdp-legacy .comments-area {
+  margin-top: clamp(48px, 6vw, 80px) !important;
+  padding: clamp(26px, 4vw, 44px) !important;
+  border-radius: 28px;
+  background: var(--wdp-card);
+  border: 1px solid var(--wdp-line);
+}
+.wdp-legacy .comments-area .comment-reply-title {
+  margin: 0 0 8px !important;
+  font-family: var(--wdp-serif) !important;
+  font-weight: 400 !important;
+  font-size: clamp(32px, 3.4vw, 42px) !important;
+  line-height: 1.05 !important;
+  color: var(--wdp-ink) !important;
+}
+.wdp-legacy .comments-area .comment-notes,
+.wdp-legacy .comments-area .comment-form-cookies-consent label {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--wdp-muted) !important;
+}
+.wdp-legacy .comments-area label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--wdp-sans) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: var(--wdp-ink) !important;
+}
+.wdp-legacy .comments-area .comment-form-cookies-consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.wdp-legacy .comments-area .comment-form-cookies-consent label {
+  display: inline;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+.wdp-legacy .comments-area input[type="text"],
+.wdp-legacy .comments-area input[type="email"],
+.wdp-legacy .comments-area input[type="url"],
+.wdp-legacy .comments-area textarea {
+  width: 100%;
+  padding: 14px 18px !important;
+  border: 1px solid var(--wdp-line) !important;
+  border-radius: 14px !important;
+  background: var(--wdp-paper) !important;
+  font-family: var(--wdp-sans) !important;
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+  color: var(--wdp-ink) !important;
+}
+.wdp-legacy .comments-area input:focus,
+.wdp-legacy .comments-area textarea:focus {
+  border-color: var(--wdp-gold-ink) !important;
+  background: #fff !important;
+  outline: 3px solid rgba(138, 83, 0, 0.28);
+}
+.wdp-legacy .comments-area .form-submit input[type="submit"] {
+  min-height: 52px;
+  padding: 0 30px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--wdp-gold) !important;
+  color: var(--wdp-navy) !important;
+  font-family: var(--wdp-sans) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+}
+.wdp-legacy .comments-area .form-submit input[type="submit"]:hover {
+  background: #ffb84a !important;
+}
+.wdp-legacy .comment-awaiting-moderation,
+.wdp-legacy .comment-error {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* =====================================================================
+   FOOTER: navy, tracked gold column labels
+   ===================================================================== */
+.wdp-legacy footer.elementor-location-footer {
+  background: var(--wdp-navy);
+}
+.wdp-legacy .elementor-10 .elementor-element.elementor-element-485a6999 {
+  background: var(--wdp-navy) !important;
+  padding: clamp(56px, 7vw, 88px) var(--wdp-gutter) 24px !important;
+}
+/* The logo file has a white background: shown as a white tile. */
+.wdp-legacy .elementor-10 .elementor-element-1945d387 img {
+  width: auto !important;
+  height: 84px !important;
+  padding: 8px;
+  background: #fff;
+  border-radius: 16px !important;
+}
+.wdp-legacy footer.elementor-location-footer,
+.wdp-legacy footer.elementor-location-footer p,
+.wdp-legacy footer.elementor-location-footer .elementor-icon-list-text {
+  font-family: var(--wdp-sans) !important;
+  font-size: 14.5px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0 !important;
+  color: var(--wdp-on-dark-muted) !important;
+}
+.wdp-legacy footer.elementor-location-footer .elementor-icon-list-text,
+.wdp-legacy .site-main .page-content .elementor-icon-list-text {
+  text-transform: none !important;
+}
+.wdp-legacy footer.elementor-location-footer .elementor-heading-title {
+  font-family: var(--wdp-sans) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  line-height: 1.4 !important;
+  color: var(--wdp-gold) !important;
+}
+.wdp-legacy footer.elementor-location-footer .elementor-divider-separator {
+  border-color: var(--wdp-line-dark) !important;
+  width: 36px !important;
+}
+.wdp-legacy footer.elementor-location-footer a:hover .elementor-icon-list-text {
+  color: #fff !important;
+}
+.wdp-legacy footer.elementor-location-footer .elementor-icon-list-icon i {
+  color: var(--wdp-gold) !important;
+}
+.wdp-legacy .elementor-10 .elementor-element.elementor-element-6fa87ccd {
+  background: var(--wdp-navy) !important;
+  border-top: 1px solid var(--wdp-line-dark);
+  padding: 20px var(--wdp-gutter) !important;
+}
+.wdp-legacy .elementor-10 .elementor-element-626b9f8 .elementor-heading-title {
+  font-size: 13px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: var(--wdp-on-dark-muted) !important;
+}
+
+/* =====================================================================
+   STICKY CALL BAR (phones), as in app/styles/design.css
+   ===================================================================== */
+.wdp-legacy .wdp-callbar {
+  display: none;
+}
+@media (max-width: 900px) {
+  .wdp-legacy .wdp-callbar {
+    position: fixed;
+    z-index: 110;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: var(--wdp-navy);
+    border-top: 1px solid var(--wdp-line-dark);
+    box-shadow: 0 -12px 30px -18px rgba(0, 0, 0, 0.6);
+  }
+  .wdp-legacy .wdp-callbar__label {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: #fff;
+    font-family: var(--wdp-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.35;
+  }
+  .wdp-legacy .wdp-callbar__label b {
+    font-family: var(--wdp-serif);
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--wdp-gold);
+  }
+  .wdp-legacy .wdp-callbar__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    min-height: 48px;
+    padding: 0 20px;
+    border-radius: 999px;
+    background: var(--wdp-red);
+    color: #fff !important;
+    font-family: var(--wdp-sans);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .wdp-legacy .wdp-callbar__btn .wdp-btn__ico {
+    width: 18px;
+    height: 18px;
+  }
+  body:has(.wdp-legacy .wdp-callbar) {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom));
+  }
+}

@@ -3,10 +3,9 @@
 import { useEffect } from "react";
 
 /*
- * The old site's page behavior (its "Phase 1/4/5" scripts, same steps), run after React has
- * hydrated: header turns solid on scroll, phone menu toggle, hero slideshow (3 s crossfade), FAQ
- * accordion and the scroll-reveal animation. Everything degrades to visible, working content
- * without JS. (The city map is components/sections/AreaMap.tsx.)
+ * Page behavior, run after React has hydrated: header turns solid on scroll, phone menu toggle,
+ * hero slideshow (3 s crossfade), FAQ accordion and the scroll-reveal animation. Everything
+ * degrades to visible, working content without JS. (The city map is components/sections/AreaMap.tsx.)
  */
 export function SiteScripts() {
   useEffect(() => {
@@ -94,10 +93,17 @@ export function SiteScripts() {
     });
     cleanups.push(() => faqHandlers.forEach((h) => h()));
 
-    /* Scroll-reveal (adds the classes in JS, so without JS everything shows). */
+    /*
+     * Scroll-reveal: photos, headings and cards that start below the first screen fade in.
+     * Never anything a visitor needs to act on: a form, a button, a phone link or any link
+     * (so a panicking visitor never waits for a call action). Without JS everything shows.
+     */
     if (!reduce && "IntersectionObserver" in window) {
-      const selectors = [".wdp-section-head", ".wdp-benefit", ".wdp-help__grid > *", ".wdp-svc", ".wdp-project", ".wdp-rev", ".wdp-istep", ".wdp-insurance__lead", ".wdp-qa", ".wdp-area__grid > *"];
-      const targets = Array.from(document.querySelectorAll<HTMLElement>(selectors.join(",")));
+      const selectors = [".wdp-section-head", ".wdp-benefit", ".wdp-project__img", ".wdp-rev", ".wdp-istep", ".wdp-step", ".wdp-cause", ".wdp-split__img", ".wdp-capacity__media", ".wdp-insurance__lead"];
+      const fold = window.innerHeight;
+      const targets = Array.from(document.querySelectorAll<HTMLElement>(selectors.join(","))).filter(
+        (el) => el.getBoundingClientRect().top > fold && !el.querySelector("a, button, form, input, iframe") && !el.closest("form, .wdp-help"),
+      );
       const io = new IntersectionObserver(
         (entries) => {
           for (const e of entries) {
@@ -107,11 +113,11 @@ export function SiteScripts() {
             }
           }
         },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        { threshold: 0.08, rootMargin: "0px 0px -30px 0px" },
       );
       targets.forEach((el, idx) => {
         el.classList.add("wdp-reveal");
-        el.style.transitionDelay = `${Math.min(idx % 4, 3) * 0.06}s`;
+        el.style.transitionDelay = `${Math.min(idx % 3, 2) * 0.07}s`;
         io.observe(el);
       });
       cleanups.push(() => io.disconnect());

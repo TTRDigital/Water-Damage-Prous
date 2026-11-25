@@ -5,6 +5,7 @@ import { businessSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CallBar } from "@/components/layout/CallBar";
 import { SiteScripts } from "@/components/layout/SiteScripts";
 import { ChatWidget } from "@/components/layout/ChatWidget";
 import { Analytics } from "@/components/layout/Analytics";
@@ -27,6 +28,7 @@ export async function SiteShell({ children, onHome = false, footerLinkLabels }: 
         {children}
       </main>
       <Footer settings={settings} linkLabels={footerLinkLabels} />
+      <CallBar phone={settings.phone} phoneHref={settings.phoneHref} />
       <SiteScripts />
       <ChatWidget />
       <AttributionCapture />

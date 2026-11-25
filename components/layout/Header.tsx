@@ -2,7 +2,10 @@ import Link from "next/link";
 import type { SiteSettings } from "@/lib/types";
 import { CallIcon } from "@/components/ui/Icon";
 
-/** The old site's header: transparent over the photo hero, solid once the page scrolls (components/layout/SiteScripts.tsx). */
+/**
+ * The header: transparent over the photo heroes, warm and solid once the page scrolls
+ * (components/layout/SiteScripts.tsx). The call button stays in it on desktop; phones get the call bar.
+ */
 export function Header({ settings, onHome }: { settings: SiteSettings; onHome: boolean }) {
   // On the home page the menu's /#section links stay on the page (#section), as before.
   const href = (h: string) => (onHome && h.startsWith("/#") ? h.slice(1) : h);
@@ -34,6 +37,9 @@ export function Header({ settings, onHome }: { settings: SiteSettings; onHome: b
         <a className="wdp-btn wdp-btn--primary wdp-header__call wdp-header__call--desktop" href={settings.phoneHref} data-track="click_to_call">
           <CallIcon />
           {settings.phone}
+          <span className="wdp-callbadge" aria-hidden="true" data-design="header-247">
+            24/7
+          </span>
         </a>
         <button className="wdp-navtoggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="wdpNav">
           <svg viewBox="0 0 24 24" aria-hidden="true">

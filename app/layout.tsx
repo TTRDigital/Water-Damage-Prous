@@ -1,16 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Instrument_Serif, Manrope } from "next/font/google";
 import { siteUrl } from "@/lib/site";
 
 /*
  * Root layout is intentionally bare: the website's styles and chrome live in app/(site) so the
- * embedded Sanity Studio at /cms loads without them. `kit` on <body> carries the old site's
- * global typography (app/styles/kit.css).
+ * embedded Sanity Studio at /cms loads without them.
+ *
+ * Type: Instrument Serif (display; the italic carries the accent words) and Manrope (text, labels,
+ * buttons), only the weights the design uses.
  */
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap", variable: "--font-jakarta", weight: ["600", "700", "800"] });
-// Inter (body text of forms, chips and footer) is mostly below the fold: not preloaded, so it never delays the hero photo.
-const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter", weight: ["400", "500", "600"], preload: false });
+const serif = Instrument_Serif({ subsets: ["latin"], display: "swap", variable: "--font-serif", weight: "400", style: ["normal", "italic"] });
+const sans = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-sans", weight: ["400", "600", "700"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -27,12 +28,12 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0A1826" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#0A1826" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-US" className={`${jakarta.variable} ${inter.variable}`} suppressHydrationWarning>
-      <body className="kit">{children}</body>
+    <html lang="en-US" className={`${serif.variable} ${sans.variable}`} suppressHydrationWarning>
+      <body>{children}</body>
     </html>
   );
 }

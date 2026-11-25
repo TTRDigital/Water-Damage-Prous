@@ -31,21 +31,26 @@ import { LeadForm } from "@/components/forms/LeadForm";
 import { AreaMap } from "@/components/sections/AreaMap";
 import { HeroSlides } from "@/components/sections/HeroSlides";
 import { mapEmbedUrl } from "@/lib/maps";
+import { statement } from "@/lib/text";
 
 /*
- * The old site's sections, with the same markup and class names, so its stylesheet
- * (app/styles/wdp.css) draws them exactly as before. Behavior (slideshow, FAQ, reveal,
- * header) is in components/layout/SiteScripts.tsx, as on the old site.
+ * The page sections, each a CMS section type (lib/types.ts), drawn by the design system
+ * (app/styles/design.css). Behavior (slideshow, FAQ, reveal, header) is in
+ * components/layout/SiteScripts.tsx.
  */
+
 
 type Ctx = { index: number; settings: SiteSettings; trackPage: string };
 
 const paper = (s: { background?: "paper" }): CSSProperties | undefined => (s.background === "paper" ? { background: "var(--wdp-paper)" } : undefined);
 
-function Btn({ b, style }: { b: Button; style?: CSSProperties }) {
-  const cls = ["wdp-btn", b.style === "ghost" ? "wdp-btn--ghost" : "wdp-btn--primary", b.pulse ? "wdp-pulse" : ""].filter(Boolean).join(" ");
+/** A CMS button. Call links are the emergency cue (red); `variant` "outline" is the light-background pill. */
+function Btn({ b, style, variant }: { b: Button; style?: CSSProperties; variant?: "outline" }) {
+  const call = b.href.startsWith("tel:");
+  const look = variant === "outline" ? "wdp-btn--outline" : b.style === "ghost" ? "wdp-btn--ghost" : call ? "wdp-btn--call" : "wdp-btn--primary";
+  const cls = ["wdp-btn", look, b.pulse ? "wdp-pulse" : ""].filter(Boolean).join(" ");
   return (
-    <a className={cls} href={b.href} style={style} data-track={b.href.startsWith("tel:") ? "click_to_call" : undefined}>
+    <a className={cls} href={b.href} style={style} data-track={call ? "click_to_call" : undefined}>
       {b.phoneIcon ? <CallIcon /> : null}
       {b.label}
     </a>
@@ -63,7 +68,7 @@ function Head({ s, id }: { s: { kicker?: string; heading?: string; intro?: strin
     <div className="wdp-section-head">
       {s.kicker ? <p className="wdp-kicker">{s.kicker}</p> : null}
       {s.heading ? (
-        <h2 id={id}>
+        <h2 id={id} className={statement(s.heading)}>
           <Rich text={s.heading} />
         </h2>
       ) : null}
@@ -301,7 +306,7 @@ function Help({ s, ctx }: { s: HelpSection; ctx: Ctx }) {
       <div className="wdp-container wdp-help__grid">
         <div>
           {s.kicker ? <p className="wdp-kicker">{s.kicker}</p> : null}
-          <h2 id="wdp-help-heading">
+          <h2 id="wdp-help-heading" className={statement(s.heading)}>
             <Rich text={s.heading} />
           </h2>
           {s.lead ? (
@@ -369,11 +374,13 @@ function Projects({ s, ctx }: { s: ProjectsSection; ctx: Ctx }) {
           {s.items.map((it, i) => (
             <article key={i} className="wdp-project">
               <div className="wdp-project__img">
-                <Photo img={it.image} sizes="(max-width:820px) 100vw, 33vw" />
-                <span className="wdp-project__badge">{it.badge}</span>
-                <span className="wdp-project__loc">
-                  <PinIcon /> {it.location}
-                </span>
+                <Photo img={it.image} sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" />
+                <div className="wdp-project__glass">
+                  <span className="wdp-project__badge">{it.badge}</span>
+                  <span className="wdp-project__loc">
+                    <PinIcon /> {it.location}
+                  </span>
+                </div>
               </div>
               <div className="wdp-project__body">
                 <h3>{it.title}</h3>
@@ -389,7 +396,7 @@ function Projects({ s, ctx }: { s: ProjectsSection; ctx: Ctx }) {
         </div>
         {s.button ? (
           <div className="wdp-center">
-            <Btn b={{ ...s.button, style: "ghost" }} style={{ color: "var(--wdp-ink)", borderColor: "var(--wdp-line)", background: "#fff" }} />
+            <Btn b={s.button} variant="outline" />
           </div>
         ) : null}
       </div>
@@ -509,7 +516,7 @@ function Insurance({ s, ctx }: { s: InsuranceSection; ctx: Ctx }) {
   return (
     <section className="wdp-insurance" id={s.anchor} aria-labelledby={id}>
       <div className="wdp-container wdp-insurance__in">
-        <h2 id={id}>
+        <h2 id={id} className={statement(s.heading)}>
           <Rich text={s.heading} />
         </h2>
         <p className="wdp-insurance__lead">

@@ -5,6 +5,7 @@ import type { AreaMapSection } from "@/lib/types";
 import { Rich } from "@/components/ui/Rich";
 import { PinIcon } from "@/components/ui/Icon";
 import { mapEmbedUrl } from "@/lib/maps";
+import { statement } from "@/lib/text";
 
 /*
  * As the old page's script did it: every city is labelled ", VA" except Washington DC (", DC"),
@@ -25,7 +26,7 @@ export function AreaMap({ s }: { s: AreaMapSection }) {
       <div className="wdp-container wdp-area__grid">
         <div>
           {s.kicker ? <p className="wdp-kicker">{s.kicker}</p> : null}
-          <h2 id="wdp-area-heading">
+          <h2 id="wdp-area-heading" className={statement(s.heading)}>
             <Rich text={s.heading} />
           </h2>
           {s.lead ? (
