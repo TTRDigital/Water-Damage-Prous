@@ -7,15 +7,15 @@ import { siteUrl } from "@/lib/site";
  * embedded Sanity Studio at /cms loads without them.
  *
  * Type: Instrument Serif (display; the italic carries the accent words) and Manrope (text, labels,
- * buttons), only the weights the design uses.
+ * buttons), only the weights the design uses. All three files are preloaded with font-display: optional:
+ * the browser waits a moment for them before the first render and never swaps a late font in afterwards,
+ * so nothing moves under a visitor (CLS 0); on a very slow first visit the page simply keeps its fallback.
  */
 
-const serif = Instrument_Serif({ subsets: ["latin"], display: "swap", variable: "--font-serif", weight: "400", style: "normal" });
-// The italic sets the accent words, often in the first-screen headline: preloaded with the other two, so it is
-// there before the first render and never swaps in under the reader (no layout shift).
-const serifItalic = Instrument_Serif({ subsets: ["latin"], display: "swap", variable: "--font-serif-italic", weight: "400", style: "italic" });
-// Preloaded with the display face: both arrive before the first render, so nothing in the bottom-aligned hero shifts.
-const sans = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-sans", weight: ["400", "600", "700"] });
+const serif = Instrument_Serif({ subsets: ["latin"], display: "optional", variable: "--font-serif", weight: "400", style: "normal" });
+// The italic sets the accent words, often in the first-screen headline.
+const serifItalic = Instrument_Serif({ subsets: ["latin"], display: "optional", variable: "--font-serif-italic", weight: "400", style: "italic" });
+const sans = Manrope({ subsets: ["latin"], display: "optional", variable: "--font-sans", weight: ["400", "600", "700"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
