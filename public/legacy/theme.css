@@ -39,9 +39,6 @@
 .wdp-legacy *:not(i):not([class*="icon"]) {
   text-transform: none;
 }
-body:has(.wdp-legacy) {
-  background: var(--wdp-paper);
-}
 .wdp-legacy :focus-visible {
   outline: 3px solid var(--wdp-gold-ink);
   outline-offset: 3px;
@@ -549,7 +546,8 @@ body:has(.wdp-legacy) {
     width: 18px;
     height: 18px;
   }
-  body:has(.wdp-legacy .wdp-callbar) {
+  /* Room under the footer for the call bar. */
+  .wdp-legacy footer.elementor-location-footer {
     padding-bottom: calc(70px + env(safe-area-inset-bottom));
   }
 }

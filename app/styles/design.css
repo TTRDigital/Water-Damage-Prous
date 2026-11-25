@@ -455,7 +455,7 @@ a.wdp-btn[href^="tel:"]:hover {
   .wdp-nav.is-open .wdp-nav__link::after {
     display: none;
   }
-  .wdp-header:has(.wdp-nav.is-open) {
+  .wdp-header.is-menu-open {
     background: var(--wdp-paper);
     color: var(--wdp-ink);
   }
@@ -506,7 +506,8 @@ a.wdp-btn[href^="tel:"]:hover {
     padding: 0 20px;
     font-size: 15px;
   }
-  body:has(.wdp-callbar) {
+  /* Room under the footer for the call bar. */
+  .wdp-footer {
     padding-bottom: calc(70px + env(safe-area-inset-bottom));
   }
 }

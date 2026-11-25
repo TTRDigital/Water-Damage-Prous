@@ -14,6 +14,7 @@ const serif = Instrument_Serif({ subsets: ["latin"], display: "swap", variable: 
 // The italic only sets a few accent words: not preloaded (it never competes with the hero photo), and
 // "optional" so a late file is never swapped in under the reader (no layout shift); it is used once cached.
 const serifItalic = Instrument_Serif({ subsets: ["latin"], display: "optional", variable: "--font-serif-italic", weight: "400", style: "italic", preload: false });
+// Preloaded with the display face: both arrive before the first render, so nothing in the bottom-aligned hero shifts.
 const sans = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-sans", weight: ["400", "600", "700"] });
 
 export const metadata: Metadata = {

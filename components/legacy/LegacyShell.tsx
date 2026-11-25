@@ -11,7 +11,7 @@ import { AttributionCapture } from "@/components/forms/AttributionCapture";
 import { CallBar } from "@/components/layout/CallBar";
 
 /** The redesign over this template (public/legacy/theme.css). Change the version when the file changes: /legacy/ is cached for a year. */
-const themeStylesheet = "/legacy/theme.css?v=20261125b";
+const themeStylesheet = "/legacy/theme.css?v=20261125c";
 
 /** The theme classes the old site put on <body> of every page in this template. */
 const THEME = "wp-custom-logo wp-embed-responsive wp-theme-hello-elementor jkit-color-scheme hello-elementor-default elementor-default elementor-kit-8";

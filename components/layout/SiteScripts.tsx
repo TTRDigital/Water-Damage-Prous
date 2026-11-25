@@ -26,6 +26,7 @@ export function SiteScripts() {
     if (toggle && nav) {
       const onToggle = () => {
         const open = nav.classList.toggle("is-open");
+        header?.classList.toggle("is-menu-open", open);
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
       };
       toggle.addEventListener("click", onToggle);
