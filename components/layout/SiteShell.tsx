@@ -20,7 +20,7 @@ export async function SiteShell({ children, onHome = false, footerLinkLabels }: 
   return (
     <>
       <JsonLd data={businessSchema(settings)} />
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:rounded focus:bg-white focus:px-4 focus:py-2">
+      <a href="#main" className="wdp-skip">
         Skip to content
       </a>
       <Header settings={settings} onHome={onHome} />

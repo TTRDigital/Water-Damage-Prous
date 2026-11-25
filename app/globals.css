@@ -1,10 +1,7 @@
 /*
- * Site styles. Tailwind v4 (theme + utilities, no preflight), the Hello theme's base reset, then the
- * design system (app/styles/design.css).
+ * Site styles: the Hello theme's base reset, then the design system (app/styles/design.css).
+ * (Tailwind is no longer imported: its universal custom-property rule cost style time on every page,
+ * and the site used it for the skip link only.)
  */
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities);
-
 @import "./styles/reset.css";
 @import "./styles/design.css";
