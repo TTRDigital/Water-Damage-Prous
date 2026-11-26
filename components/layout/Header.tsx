@@ -37,9 +37,6 @@ export function Header({ settings, onHome }: { settings: SiteSettings; onHome: b
         <a className="wdp-btn wdp-btn--primary wdp-header__call wdp-header__call--desktop" href={settings.phoneHref} data-track="click_to_call">
           <CallIcon />
           {settings.phone}
-          <span className="wdp-callbadge" aria-hidden="true" data-design="header-247">
-            24/7
-          </span>
         </a>
         <button className="wdp-navtoggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="wdpNav">
           <svg viewBox="0 0 24 24" aria-hidden="true">
