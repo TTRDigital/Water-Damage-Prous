@@ -60,7 +60,7 @@ export function AreaMap({ s }: { s: AreaMapSection }) {
           <iframe className="wdp-mapframe" id="wdpMap" title={s.mapTitle} loading="lazy" referrerPolicy="no-referrer-when-downgrade" src={src} />
           <div className="wdp-mapdetail">
             <p className="wdp-mapdetail__city">
-              <PinIcon /> <span id="wdpCityName">{label(city)}</span>
+              <PinIcon /> <span id="wdpCityName" key={city}>{label(city)}</span>
             </p>
             <div className="wdp-mapdetail__stats">
               {s.stats.map((st, i) => (

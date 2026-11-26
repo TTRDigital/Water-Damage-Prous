@@ -69,6 +69,8 @@ export function Footer({ settings: s, linkLabels = [] }: { settings: SiteSetting
           </div>
         </div>
       </div>
+      {/* Design only: the name set large and faded, drawn by CSS from data-name (no text in the page). */}
+      <div className="wdp-footer__wordmark" aria-hidden="true" data-design="footer-wordmark" data-name={s.name} />
       <div className="wdp-footer__bar">
         <div className="wdp-container wdp-footer__bar-in">
           <span>{f.copyright}</span>

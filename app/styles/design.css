@@ -4,9 +4,10 @@
  * screen, "24/7", fast response and insurance billing stay above the fold, and nothing that can be
  * clicked or filled in is ever hidden by an animation.
  *
- * Calm by rule: one heading, one short intro and one idea per section; hairline lists instead of
- * boxed cards and icon tiles; photos are the only framed elements; red appears on call actions only;
- * navy only for the inquiry band and the footer.
+ * Lively but not busy (after Ora World and Yardvida): one heading, one short intro and one idea per
+ * section; cards with soft icons; photo panels that stack as you scroll; swipe strips on phones;
+ * motion that tells the story (headings wipe up, icons draw, timelines fill, numbers count up,
+ * glows drift on the navy bands). Red stays on call actions only.
  *
  * Same class names as before (wdp-*), so every section and CMS field renders through it unchanged.
  *
@@ -41,18 +42,25 @@
 
   --wdp-font-display: var(--font-serif), "Times New Roman", Georgia, serif;
   /* The italic is its own (lazily loaded) font file: italic text sets this family with font-style: italic. */
-  --wdp-font-italic: var(--font-serif-italic), var(--font-serif), "Times New Roman", Georgia, serif;
-  --wdp-font-body: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --wdp-font-italic:
+    var(--font-serif-italic), var(--font-serif), "Times New Roman", Georgia,
+    serif;
+  --wdp-font-body:
+    var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 
   --wdp-container: 1240px;
   --wdp-container-wide: 1400px;
   --wdp-gutter: clamp(20px, 4vw, 48px);
-  --wdp-section: clamp(88px, 11vw, 148px);
+  --wdp-section: clamp(72px, 10vw, 136px);
   --wdp-radius-panel: 28px;
   --wdp-radius-card: 22px;
   --wdp-radius-field: 14px;
   --wdp-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-  --wdp-shadow: 0 1px 2px rgba(10, 24, 38, 0.04), 0 24px 48px -32px rgba(10, 24, 38, 0.35);
+  --wdp-shadow:
+    0 1px 2px rgba(10, 24, 38, 0.04), 0 24px 48px -32px rgba(10, 24, 38, 0.35);
+  --wdp-shadow-lift:
+    0 2px 4px rgba(10, 24, 38, 0.04), 0 34px 64px -36px rgba(10, 24, 38, 0.5);
   --wdp-header-h: 78px;
 }
 
@@ -181,7 +189,11 @@ body {
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  transition: background 0.2s var(--wdp-ease), color 0.2s var(--wdp-ease), border-color 0.2s var(--wdp-ease), transform 0.2s var(--wdp-ease);
+  transition:
+    background 0.2s var(--wdp-ease),
+    color 0.2s var(--wdp-ease),
+    border-color 0.2s var(--wdp-ease),
+    transform 0.2s var(--wdp-ease);
 }
 .wdp-btn:hover {
   transform: translateY(-1px);
@@ -263,7 +275,10 @@ a.wdp-btn[href^="tel:"]:hover {
   display: flex;
   align-items: center;
   color: #fff;
-  transition: background 0.3s var(--wdp-ease), color 0.3s var(--wdp-ease), box-shadow 0.3s var(--wdp-ease);
+  transition:
+    background 0.3s var(--wdp-ease),
+    color 0.3s var(--wdp-ease),
+    box-shadow 0.3s var(--wdp-ease);
 }
 .wdp-header::after {
   content: "";
@@ -275,7 +290,11 @@ a.wdp-btn[href^="tel:"]:hover {
 }
 /* A soft navy fade keeps the white logo and links legible over bright hero photos. */
 .wdp-header:not(.is-scrolled) {
-  background: linear-gradient(180deg, rgba(10, 24, 38, 0.5) 0%, rgba(10, 24, 38, 0) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 24, 38, 0.5) 0%,
+    rgba(10, 24, 38, 0) 100%
+  );
 }
 .wdp-header.is-scrolled {
   background: rgba(247, 243, 236, 0.94);
@@ -550,7 +569,12 @@ a.wdp-btn[href^="tel:"]:hover {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(10, 24, 38, 0.72) 0%, rgba(10, 24, 38, 0.32) 55%, rgba(10, 24, 38, 0.12) 100%),
+    linear-gradient(
+      90deg,
+      rgba(10, 24, 38, 0.72) 0%,
+      rgba(10, 24, 38, 0.32) 55%,
+      rgba(10, 24, 38, 0.12) 100%
+    ),
     linear-gradient(0deg, rgba(10, 24, 38, 0.8) 0%, rgba(10, 24, 38, 0) 50%),
     linear-gradient(180deg, rgba(10, 24, 38, 0.5) 0%, rgba(10, 24, 38, 0) 20%);
 }
@@ -731,7 +755,12 @@ a.wdp-btn[href^="tel:"]:hover {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(10, 24, 38, 0.78) 0%, rgba(10, 24, 38, 0.36) 60%, rgba(10, 24, 38, 0.14) 100%),
+    linear-gradient(
+      90deg,
+      rgba(10, 24, 38, 0.78) 0%,
+      rgba(10, 24, 38, 0.36) 60%,
+      rgba(10, 24, 38, 0.14) 100%
+    ),
     linear-gradient(0deg, rgba(10, 24, 38, 0.76) 0%, rgba(10, 24, 38, 0) 55%),
     linear-gradient(180deg, rgba(10, 24, 38, 0.5) 0%, rgba(10, 24, 38, 0) 22%);
 }
@@ -816,7 +845,11 @@ a.wdp-btn[href^="tel:"]:hover {
 }
 .wdp-phero--contact {
   min-height: clamp(480px, 64svh, 620px);
-  background: linear-gradient(170deg, var(--wdp-navy-2) 0%, var(--wdp-navy) 75%);
+  background: linear-gradient(
+    170deg,
+    var(--wdp-navy-2) 0%,
+    var(--wdp-navy) 75%
+  );
 }
 .wdp-phero--contact .wdp-phero__scrim {
   display: none;
@@ -835,23 +868,292 @@ a.wdp-btn[href^="tel:"]:hover {
 }
 
 /* =====================================================================
-   SECTIONS: one rhythm. Eyebrow, heading, a short intro under it, then the content.
+   FIRST-SCREEN MOTION (CSS only, on load). The photo settles from a slow zoom, the words rise in,
+   the accent word types itself. The call buttons and links never animate: they are there at once.
+   ===================================================================== */
+@keyframes wdp-kb {
+  from {
+    transform: scale(1.09);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes wdp-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes wdp-type {
+  from {
+    clip-path: inset(-20% 100% -20% -6%);
+  }
+  to {
+    clip-path: inset(-20% -14% -20% -6%);
+  }
+}
+@keyframes wdp-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes wdp-live {
+  from {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3.4);
+  }
+}
+@keyframes wdp-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes wdp-cue {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  40% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(60%);
+  }
+}
+.wdp-hero__slide[data-active="true"] img {
+  animation: wdp-kb 4.2s var(--wdp-ease) both;
+}
+.wdp-phero__img img {
+  animation: wdp-kb 2.8s var(--wdp-ease) both;
+}
+.wdp-hero__eyebrow {
+  animation: wdp-in 0.9s var(--wdp-ease) 0.1s both;
+}
+/* The red dot's ring (transform and opacity only, so it costs nothing on the main thread). */
+.wdp-hero__eyebrow {
+  position: relative;
+}
+.wdp-hero__eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: var(--wdp-red);
+  animation: wdp-live 1.8s ease-out infinite;
+  pointer-events: none;
+}
+#main .wdp-hero__title {
+  animation: wdp-in 1.1s var(--wdp-ease) 0.18s both;
+}
+#main .wdp-hero__title span {
+  position: relative;
+  display: inline-block;
+  animation: wdp-type 0.75s steps(5, end) 1.05s both;
+}
+#main .wdp-hero__title span::after {
+  content: "";
+  position: absolute;
+  top: 0.14em;
+  bottom: 0.08em;
+  right: -0.1em;
+  width: 3px;
+  background: var(--wdp-gold);
+  opacity: 0;
+  animation: wdp-caret 0.8s 1.85s 4;
+}
+.wdp-hero__lead {
+  animation: wdp-in 1s var(--wdp-ease) 0.42s both;
+}
+.wdp-hero__cards .wdp-stat {
+  animation: wdp-in 0.9s var(--wdp-ease) 0.6s both;
+}
+.wdp-hero__cards .wdp-stat:nth-child(2) {
+  animation-delay: 0.72s;
+}
+.wdp-hero__cards .wdp-stat:nth-child(3) {
+  animation-delay: 0.84s;
+}
+/* The active slide's line fills over its 3 seconds. */
+.wdp-hero__dot::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 0.5px);
+  height: 2px;
+  background: var(--wdp-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.wdp-hero__dot[aria-current="true"]::after {
+  animation: wdp-fill 3s linear both;
+}
+/* A light runs down a thin line at the bottom: there is more below. */
+@media (min-width: 1001px) {
+  .wdp-hero::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    bottom: 0;
+    width: 1px;
+    height: 64px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0),
+      #fff 55%,
+      rgba(255, 255, 255, 0)
+    );
+    animation: wdp-cue 2.4s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+#main .wdp-phero h1 {
+  animation: wdp-in 1.1s var(--wdp-ease) 0.12s both;
+}
+.wdp-phero__sub {
+  animation: wdp-in 1s var(--wdp-ease) 0.34s both;
+}
+.wdp-phero__ticks span {
+  animation: wdp-in 0.8s var(--wdp-ease) 0.5s both;
+}
+.wdp-phero__ticks span:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.wdp-phero__ticks span:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.wdp-phero__ticks span:nth-child(4) {
+  animation-delay: 0.8s;
+}
+/* The contact hero (no photo) gets the drifting glow. */
+.wdp-phero--contact::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: -20vmax;
+  top: -30vmax;
+  width: 70vmax;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    closest-side,
+    rgba(245, 165, 36, 0.2),
+    rgba(245, 165, 36, 0)
+  );
+  animation: wdp-drift 16s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+/* Photo heroes drift slower than the page as it scrolls away. */
+@supports (animation-timeline: scroll()) {
+  .wdp-hero__media,
+  .wdp-phero__img {
+    animation: wdp-hero-par linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+  }
+  @keyframes wdp-hero-par {
+    to {
+      transform: translateY(22%);
+    }
+  }
+  /* Reading progress: a gold line under the header. */
+  .wdp-header::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--wdp-gold);
+    transform-origin: left;
+    animation: wdp-fill linear both;
+    animation-timeline: scroll(root);
+  }
+}
+/* The header's call button and the phone call bar get the soft ring. */
+.wdp-header__call::before,
+.wdp-callbar__btn::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid var(--wdp-red);
+  opacity: 0;
+  animation: wdp-ring 2.4s var(--wdp-ease) infinite;
+  pointer-events: none;
+}
+.wdp-btn:hover .wdp-btn__ico {
+  animation: wdp-wiggle 0.6s ease-in-out;
+}
+@keyframes wdp-wiggle {
+  0%,
+  100% {
+    transform: none;
+  }
+  20%,
+  60% {
+    transform: rotate(-14deg);
+  }
+  40%,
+  80% {
+    transform: rotate(12deg);
+  }
+}
+
+/* =====================================================================
+   SECTIONS: one rhythm. Eyebrow (its hairline draws in), heading (wipes up), a short intro, then content.
    ===================================================================== */
 .wdp-section {
   padding-block: var(--wdp-section);
 }
 .wdp-section-head {
-  max-width: 760px;
-  margin-bottom: clamp(48px, 6vw, 80px);
+  max-width: 780px;
+  margin-bottom: clamp(40px, 5.5vw, 72px);
 }
 #main .wdp-section-head h2 {
-  margin-top: 24px;
-  font-size: clamp(36px, 3.8vw, 56px);
+  margin-top: 22px;
+  font-size: clamp(38px, 4.2vw, 62px);
   line-height: 1.02;
 }
+/* Italic accent words in section headings carry the gold. */
+#main
+  :is(
+    .wdp-section-head,
+    .wdp-split__body,
+    .wdp-capacity__body,
+    .wdp-area,
+    .wdp-insurance
+  )
+  h2
+  span {
+  color: var(--wdp-gold-ink);
+}
 .wdp-section-head > p:not(.wdp-kicker) {
-  max-width: 540px;
-  margin-top: 22px;
+  max-width: 560px;
+  margin-top: 20px;
   font-size: 17px;
   line-height: 1.7;
   color: var(--wdp-muted);
@@ -864,36 +1166,165 @@ a.wdp-btn[href^="tel:"]:hover {
 }
 #main .wdp-section-head h2.is-statement,
 #main h2.is-statement {
-  font-size: clamp(34px, 3.4vw, 50px);
+  font-size: clamp(34px, 3.6vw, 54px);
 }
 .wdp-center {
-  margin-top: 56px;
+  margin-top: 48px;
+}
+
+/* Shared: an icon in a soft circle (benefits, services, causes, contact methods). */
+:is(.wdp-benefit__ico, .wdp-svc__ico, .wdp-cause__ico, .wdp-cmethod__ico) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--wdp-gold-soft);
+  color: var(--wdp-gold-ink);
+  transition:
+    background 0.4s var(--wdp-ease),
+    color 0.4s var(--wdp-ease),
+    transform 0.5s var(--wdp-ease);
+}
+:is(.wdp-benefit__ico, .wdp-svc__ico, .wdp-cause__ico, .wdp-cmethod__ico) svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* A card that lifts on hover. */
+:is(.wdp-svc, .wdp-cause, .wdp-cmethod, .wdp-cover2__card) {
+  transition:
+    transform 0.5s var(--wdp-ease),
+    box-shadow 0.5s var(--wdp-ease),
+    border-color 0.3s;
+}
+@media (hover: hover) {
+  :is(.wdp-svc, .wdp-cause, .wdp-cmethod):hover {
+    transform: translateY(-6px);
+    box-shadow: var(--wdp-shadow-lift);
+    border-color: transparent;
+  }
+  :is(.wdp-benefit, .wdp-svc, .wdp-cause, .wdp-cmethod):hover
+    :is(.wdp-benefit__ico, .wdp-svc__ico, .wdp-cause__ico, .wdp-cmethod__ico) {
+    background: var(--wdp-navy);
+    color: var(--wdp-gold);
+    transform: rotate(-8deg) scale(1.04);
+  }
+}
+
+/* Phones: rows of cards become a swipeable strip with a progress line (benefits, services, reviews). */
+@media (max-width: 760px) {
+  .wdp-benefits__grid,
+  .wdp-svc-grid,
+  .wdp-rev-grid {
+    display: flex !important;
+    gap: 12px !important;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--wdp-gutter);
+    scrollbar-width: none;
+    scroll-timeline: --wdp-x inline;
+  }
+  .wdp-svc-grid,
+  .wdp-rev-grid {
+    margin-inline: calc(-1 * var(--wdp-gutter));
+    padding: 4px var(--wdp-gutter) 8px;
+  }
+  .wdp-benefits__grid::-webkit-scrollbar,
+  .wdp-svc-grid::-webkit-scrollbar,
+  .wdp-rev-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .wdp-benefits__grid > *,
+  .wdp-svc-grid > *,
+  .wdp-rev-grid > * {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+  @supports (animation-timeline: scroll()) {
+    .wdp-benefits,
+    .wdp-services,
+    .wdp-reviews {
+      timeline-scope: --wdp-x;
+    }
+    .wdp-benefits::after,
+    .wdp-services > .wdp-container::after,
+    .wdp-reviews > .wdp-container::after {
+      content: "";
+      display: block;
+      height: 2px;
+      margin-top: 22px;
+      border-radius: 2px;
+      background:
+        linear-gradient(var(--wdp-gold-ink), var(--wdp-gold-ink)) 0 0 / 20% 100%
+          no-repeat,
+        var(--wdp-line);
+      animation: wdp-swipebar linear both;
+      animation-timeline: --wdp-x;
+    }
+    .wdp-benefits::after {
+      margin: -18px var(--wdp-gutter) 34px;
+    }
+    .wdp-reviews > .wdp-container::after {
+      background:
+        linear-gradient(var(--wdp-gold), var(--wdp-gold)) 0 0 / 20% 100%
+          no-repeat,
+        rgba(255, 255, 255, 0.16);
+    }
+  }
+}
+@keyframes wdp-swipebar {
+  to {
+    background-size:
+      100% 100%,
+      auto;
+  }
 }
 
 /* =====================================================================
-   STRIPS UNDER THE HERO: numbers, then the "trusted on" line. No dividers, no icons, no colour.
+   STRIPS UNDER THE HERO
    ===================================================================== */
+/* Numbers (service and city pages): a white panel, the numbers count up. */
 .wdp-proof {
   background: var(--wdp-paper);
 }
 .wdp-proof__row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
-  padding-block: clamp(48px, 6vw, 72px) 28px;
+  margin-top: clamp(28px, 4vw, 48px);
+  padding-block: clamp(28px, 3.4vw, 40px);
+  background: var(--wdp-white);
+  border: 1px solid var(--wdp-line);
+  border-radius: var(--wdp-radius-panel);
+  box-shadow: var(--wdp-shadow);
+}
+.wdp-proof__item {
+  padding-inline: clamp(18px, 2.4vw, 34px);
+  border-left: 1px solid var(--wdp-line);
+}
+.wdp-proof__item:first-child {
+  border-left: 0;
 }
 .wdp-proof__num {
   display: flex;
   align-items: baseline;
   gap: 8px;
   font-family: var(--wdp-font-display);
-  font-size: clamp(34px, 3.2vw, 46px);
+  font-size: clamp(34px, 3.2vw, 48px);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 .wdp-proof__num .accent,
 .wdp-proof__num .star {
   font-family: var(--wdp-font-body);
-  font-size: 0.36em;
+  font-size: 0.4em;
   color: var(--wdp-gold-ink);
 }
 .wdp-proof__lab {
@@ -907,15 +1338,25 @@ a.wdp-btn[href^="tel:"]:hover {
 @media (max-width: 900px) {
   .wdp-proof__row {
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px 20px;
+    row-gap: 28px;
+  }
+  .wdp-proof__item:nth-child(3n + 1) {
+    border-left: 0;
   }
 }
 @media (max-width: 520px) {
   .wdp-proof__row {
     grid-template-columns: 1fr 1fr;
   }
+  .wdp-proof__item:nth-child(n) {
+    border-left: 1px solid var(--wdp-line);
+  }
+  .wdp-proof__item:nth-child(2n + 1) {
+    border-left: 0;
+  }
 }
 
+/* "As trusted & reviewed on": the badges glide past (SiteScripts doubles them, the copy is aria-hidden). */
 .wdp-trust {
   background: var(--wdp-paper);
 }
@@ -923,70 +1364,119 @@ a.wdp-btn[href^="tel:"]:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 30px;
-  padding-block: 22px;
-  border-top: 1px solid var(--wdp-line);
+  gap: 10px 34px;
+  padding-block: 26px;
   border-bottom: 1px solid var(--wdp-line);
 }
 .wdp-trust__label {
-  margin-right: 8px;
+  flex: 0 0 auto;
   color: var(--wdp-muted);
 }
 .wdp-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13.5px;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 14px;
   font-weight: 600;
   color: #3b4651;
 }
 .wdp-badge svg {
-  display: none;
+  width: 15px;
+  height: 15px;
+  stroke: var(--wdp-gold-ink);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
-.wdp-badge .g,
-.wdp-badge .star,
+.wdp-badge .g {
+  font-weight: 800;
+  color: var(--wdp-ink);
+}
+.wdp-badge .star {
+  color: var(--wdp-gold-ink);
+}
 .wdp-badge .yelp {
-  color: inherit;
+  font-weight: 800;
+  color: var(--wdp-red-ink);
 }
-/* Home: the strip sits between two bands; give it room. */
-.wdp-help + .wdp-trust .wdp-trust__row,
-.wdp-benefits + .wdp-trust .wdp-trust__row {
-  border-top: 0;
+.wdp-trust__row.is-marquee {
+  flex-wrap: nowrap;
+}
+.wdp-trust__track {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 7%,
+    #000 93%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 7%,
+    #000 93%,
+    transparent
+  );
+}
+.wdp-trust__set {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 46px;
+  padding-right: 46px;
+  animation: wdp-marquee 38s linear infinite;
+}
+.wdp-trust__track:hover .wdp-trust__set {
+  animation-play-state: paused;
+}
+@keyframes wdp-marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@media (max-width: 700px) {
+  .wdp-trust__row.is-marquee {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .wdp-trust__row.is-marquee .wdp-trust__track {
+    width: 100%;
+  }
 }
 
-/* ---- Benefits (home): five quiet columns, numbered ---------------------- */
+/* ---- Benefits (home): five columns, each icon draws itself in ----------- */
 .wdp-benefits {
+  position: relative;
   background: var(--wdp-paper);
 }
 .wdp-benefits__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 32px;
-  padding-block: clamp(52px, 6vw, 76px);
-  counter-reset: wdp-benefit;
+  padding-block: clamp(52px, 6vw, 84px);
 }
 .wdp-benefit {
-  counter-increment: wdp-benefit;
+  padding: 4px clamp(16px, 2vw, 30px);
+  border-left: 1px solid var(--wdp-line);
 }
-.wdp-benefit::before {
-  content: counter(wdp-benefit, decimal-leading-zero);
-  content: counter(wdp-benefit, decimal-leading-zero) / "";
-  display: block;
-  margin-bottom: 18px;
-  font-family: var(--wdp-font-italic);
-  font-style: italic;
-  font-size: 20px;
-  color: var(--wdp-gold-ink);
+.wdp-benefit:first-child {
+  padding-left: 0;
+  border-left: 0;
 }
 .wdp-benefit__ico {
-  display: none;
+  margin-bottom: 24px;
+  background: var(--wdp-white);
+  box-shadow: inset 0 0 0 1px var(--wdp-line);
 }
 #main .wdp-benefit h3 {
-  font-family: var(--wdp-font-body);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  line-height: 1.45;
+  font-size: 23px;
+  line-height: 1.15;
 }
 .wdp-benefit p {
   margin-top: 10px;
@@ -994,64 +1484,155 @@ a.wdp-btn[href^="tel:"]:hover {
   line-height: 1.6;
   color: var(--wdp-muted);
 }
-@media (max-width: 1000px) {
+@media (max-width: 1000px) and (min-width: 761px) {
   .wdp-benefits__grid {
     grid-template-columns: repeat(3, 1fr);
+    row-gap: 36px;
+  }
+  .wdp-benefit:nth-child(4) {
+    padding-left: 0;
+    border-left: 0;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 760px) {
   .wdp-benefits__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 22px;
+    padding-block: 40px 44px;
+  }
+  .wdp-benefit,
+  .wdp-benefit:first-child {
+    flex-basis: 74% !important;
+    padding: 26px 24px;
+    border: 1px solid var(--wdp-line);
+    border-radius: var(--wdp-radius-card);
+    background: var(--wdp-white);
+  }
+  .wdp-benefit__ico {
+    background: var(--wdp-gold-soft);
+    box-shadow: none;
   }
 }
 
-/* ---- Numbers band (About): large serif numbers on the light page ---------- */
+/* ---- Numbers band (About): a navy panel, the numbers count up ------------ */
 .wdp-abstats {
   background: var(--wdp-paper);
+  padding-block: clamp(20px, 3vw, 40px);
 }
 .wdp-abstats__grid {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  padding-block: clamp(56px, 7vw, 88px);
-  border-top: 1px solid var(--wdp-line);
-  border-bottom: 1px solid var(--wdp-line);
+  padding: clamp(40px, 5vw, 72px) clamp(28px, 4vw, 64px);
+  border-radius: var(--wdp-radius-panel);
+  background: var(--wdp-navy);
+  color: #fff;
+}
+.wdp-abstats__grid::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -40% auto auto -10%;
+  width: 60%;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    closest-side,
+    rgba(245, 165, 36, 0.2),
+    rgba(245, 165, 36, 0)
+  );
+  animation: wdp-drift 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.wdp-abstat {
+  padding-inline: clamp(16px, 2.4vw, 36px);
+  border-left: 1px solid var(--wdp-line-dark);
+}
+.wdp-abstat:first-child {
+  padding-left: 0;
+  border-left: 0;
 }
 .wdp-abstat b {
   display: block;
   font-family: var(--wdp-font-display);
   font-weight: 400;
-  font-size: clamp(46px, 5vw, 72px);
+  font-size: clamp(48px, 5.2vw, 80px);
   line-height: 1;
-  color: var(--wdp-ink);
+  font-variant-numeric: tabular-nums;
 }
 .wdp-abstat b .accent,
 .wdp-abstat b .star {
-  color: var(--wdp-gold-ink);
+  color: var(--wdp-gold);
 }
-.wdp-abstat span {
+.wdp-abstat b .star {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1;
+}
+.wdp-abstat > span {
   display: block;
   margin-top: 14px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--wdp-muted);
+  color: var(--wdp-on-dark-muted);
 }
 @media (max-width: 720px) {
   .wdp-abstats__grid {
     grid-template-columns: 1fr 1fr;
-    gap: 36px 20px;
+    row-gap: 36px;
+  }
+  .wdp-abstat:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
   }
 }
 
 /* =====================================================================
-   INQUIRY BAND: the one navy band. The form is a white card.
+   INQUIRY BAND: navy with a slow drifting glow. The ticks are a checklist; the form is a white card.
    ===================================================================== */
 .wdp-help {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: var(--wdp-navy-2);
   color: #fff;
+}
+.wdp-help::before,
+.wdp-help::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 70vmax;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.wdp-help::before {
+  left: -30vmax;
+  top: -38vmax;
+  background: radial-gradient(
+    closest-side,
+    rgba(245, 165, 36, 0.2),
+    rgba(245, 165, 36, 0)
+  );
+  animation: wdp-drift 16s ease-in-out infinite alternate;
+}
+.wdp-help::after {
+  right: -34vmax;
+  bottom: -40vmax;
+  background: radial-gradient(
+    closest-side,
+    rgba(110, 170, 210, 0.16),
+    rgba(110, 170, 210, 0)
+  );
+  animation: wdp-drift 19s ease-in-out -6s infinite alternate-reverse;
+}
+@keyframes wdp-drift {
+  to {
+    transform: translate(12%, 10%) scale(1.15);
+  }
 }
 .wdp-help__grid {
   display: grid;
@@ -1064,14 +1645,17 @@ a.wdp-btn[href^="tel:"]:hover {
   color: var(--wdp-gold);
 }
 #main .wdp-help h2 {
-  margin-top: 24px;
-  font-size: clamp(40px, 4.6vw, 66px);
+  margin-top: 22px;
+  font-size: clamp(40px, 4.8vw, 70px);
+}
+#main .wdp-help h2 span {
+  color: var(--wdp-gold);
 }
 #main .wdp-help h2.is-statement {
-  font-size: clamp(38px, 4.2vw, 60px);
+  font-size: clamp(38px, 4.4vw, 62px);
 }
 .wdp-help__lead {
-  max-width: 460px;
+  max-width: 470px;
   margin-top: 22px;
   font-size: 17px;
   line-height: 1.7;
@@ -1081,8 +1665,8 @@ a.wdp-btn[href^="tel:"]:hover {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  max-width: 460px;
+  gap: 10px;
+  max-width: 470px;
   margin: 34px 0 0;
   padding: 0;
 }
@@ -1090,15 +1674,22 @@ a.wdp-btn[href^="tel:"]:hover {
   display: flex;
   align-items: center;
   gap: 14px;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
   font-size: 15px;
   color: #fff;
 }
 .wdp-help__ticks svg {
-  width: 15px;
-  height: 15px;
-  flex: 0 0 15px;
-  stroke: var(--wdp-gold);
-  stroke-width: 2.4;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  padding: 6px;
+  border-radius: 50%;
+  background: var(--wdp-gold);
+  stroke: var(--wdp-navy);
+  stroke-width: 3;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -1157,7 +1748,9 @@ a.wdp-btn[href^="tel:"]:hover {
   font-size: 16px;
   line-height: 1.4;
   color: var(--wdp-ink);
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
 .wdp-field::placeholder {
   color: #6b7480;
@@ -1268,68 +1861,85 @@ textarea.wdp-field {
 }
 
 /* =====================================================================
-   SERVICES: an editorial index. Two columns of hairline rows, a small number, a serif title.
+   SERVICES: cards with an icon, a number and a gold line that grows on hover. Phones: a swipe strip.
    ===================================================================== */
 .wdp-svc-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: clamp(40px, 6vw, 96px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
   counter-reset: wdp-svc;
-  border-bottom: 1px solid var(--wdp-line);
 }
 .wdp-svc {
   position: relative;
-  display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
-  grid-template-rows: auto auto auto;
-  align-content: start;
-  padding: 30px 0 32px;
-  border-top: 1px solid var(--wdp-line);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 300px;
+  padding: 30px 30px 28px;
+  overflow: hidden;
+  background: var(--wdp-white);
+  border: 1px solid var(--wdp-line);
+  border-radius: var(--wdp-radius-card);
   counter-increment: wdp-svc;
 }
 .wdp-svc::before {
   content: counter(wdp-svc, decimal-leading-zero);
   content: counter(wdp-svc, decimal-leading-zero) / "";
-  grid-row: 1;
-  grid-column: 1;
-  padding-top: 6px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
   font-family: var(--wdp-font-italic);
   font-style: italic;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 1;
   color: var(--wdp-gold-ink);
 }
+.wdp-svc::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--wdp-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--wdp-ease);
+}
+.wdp-svc:hover::after {
+  transform: scaleX(1);
+}
 .wdp-svc__ico {
-  display: none;
+  margin-bottom: 44px;
 }
 #main .wdp-svc h3 {
-  grid-column: 2;
-  font-size: clamp(26px, 2.2vw, 32px);
+  font-size: clamp(25px, 2.1vw, 31px);
   line-height: 1.08;
-  transition: color 0.2s;
 }
 .wdp-svc p {
-  grid-column: 2;
-  max-width: 440px;
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 15px;
   line-height: 1.65;
   color: var(--wdp-muted);
 }
 .wdp-svc__more {
-  grid-column: 2;
-  margin-top: 16px;
+  margin-top: auto;
+  padding-top: 24px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--wdp-gold-ink);
+  transition: transform 0.35s var(--wdp-ease);
 }
-.wdp-svc:hover h3 {
-  color: var(--wdp-gold-ink);
+.wdp-svc:hover .wdp-svc__more {
+  transform: translateX(6px);
 }
 .wdp-svc__link {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  border-radius: inherit;
 }
 .wdp-svc__link span {
   position: absolute;
@@ -1338,131 +1948,273 @@ textarea.wdp-field {
   overflow: hidden;
   clip: rect(0 0 0 0);
 }
-@media (max-width: 760px) {
+@media (max-width: 1000px) {
   .wdp-svc-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
+}
+@media (max-width: 760px) {
   .wdp-svc {
-    grid-template-columns: 44px minmax(0, 1fr);
-    padding: 26px 0 28px;
+    min-height: 0;
+    padding: 26px 24px 24px;
+  }
+  .wdp-svc__ico {
+    margin-bottom: 30px;
   }
 }
 
 /* =====================================================================
-   RECENT PROJECTS: three photo panels with tiny captions (no overlays, no badges).
+   RECENT PROJECTS: navy panels that stack as you scroll (sticky); the earlier one settles back as the
+   next slides over it. Text on the left, the photo on the right (on top on phones). The photo column
+   stays near the width the old markup's files are made for (480/800 px), so it stays sharp.
    ===================================================================== */
 .wdp-proj-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 2.4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 .wdp-project {
-  display: flex;
-  flex-direction: column;
+  position: sticky;
+  top: calc(var(--wdp-header-h) + 24px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  padding: 14px;
+  border-radius: var(--wdp-radius-panel);
+  background: var(--wdp-navy);
+  color: #fff;
+  box-shadow: 0 -24px 60px -36px rgba(10, 24, 38, 0.55);
+  transform: scale(calc(1 - var(--stack, 0) * 0.05));
+  transform-origin: 50% 0;
+}
+.wdp-project:nth-child(2) {
+  top: calc(var(--wdp-header-h) + 40px);
+}
+.wdp-project:nth-child(3) {
+  top: calc(var(--wdp-header-h) + 56px);
+}
+.wdp-project:nth-child(n + 4) {
+  top: calc(var(--wdp-header-h) + 72px);
+}
+/* Dims as the next panel slides over it (--stack is set by SiteScripts). */
+.wdp-project::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  background: var(--wdp-navy);
+  opacity: calc(var(--stack, 0) * 0.6);
+  pointer-events: none;
 }
 .wdp-project__img {
-  display: flex;
-  flex-direction: column;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: calc(var(--wdp-radius-panel) - 10px);
+  background: var(--wdp-navy-2);
 }
 .wdp-project__img picture,
-.wdp-project__img > img {
-  display: block;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--wdp-radius-card);
-  overflow: hidden;
-  background: var(--wdp-sand);
-}
 .wdp-project__img img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+}
+.wdp-project__img img {
   object-fit: cover;
-  transition: transform 0.9s var(--wdp-ease);
+  transition: scale 1.2s var(--wdp-ease);
 }
 .wdp-project:hover .wdp-project__img img {
-  transform: scale(1.025);
+  scale: 1.05;
 }
-/* Caption under the photo: location left, job type right, as small tracked labels. */
+.wdp-project__img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 24, 38, 0.5) 0%,
+    rgba(10, 24, 38, 0) 34%
+  );
+}
+/* Location and job type as two pills over the photo. */
 .wdp-project__glass {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 16px;
+  right: 16px;
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 16px 0 0;
+  gap: 8px;
 }
 .wdp-project__loc,
 .wdp-project__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 999px;
   font-size: 10.5px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 .wdp-project__loc {
   order: -1;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--wdp-ink);
+  background: rgba(10, 24, 38, 0.78);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
 }
 .wdp-project__loc svg {
-  display: none;
+  width: 13px;
+  height: 13px;
+  stroke: var(--wdp-gold);
+  stroke-width: 2;
+  fill: none;
 }
 .wdp-project__badge {
-  color: var(--wdp-muted);
-  text-align: right;
+  background: var(--wdp-gold);
+  color: var(--wdp-navy);
 }
 .wdp-project__body {
-  padding-top: 18px;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  max-width: 600px;
+  padding: clamp(22px, 3.4vw, 48px);
 }
 #main .wdp-project__body h3 {
-  font-size: 26px;
-  line-height: 1.1;
+  font-size: clamp(32px, 3.4vw, 54px);
+  line-height: 1.02;
 }
 .wdp-project__body p {
-  margin-top: 10px;
-  font-size: 15px;
+  max-width: 520px;
+  margin-top: 16px;
+  font-size: 16px;
   line-height: 1.65;
-  color: var(--wdp-muted);
+  color: var(--wdp-on-dark-muted);
 }
 .wdp-project__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 18px;
-  margin-top: 14px;
+  gap: 8px;
+  margin-top: 22px;
+}
+.wdp-project__meta span {
+  padding: 7px 13px;
+  border-radius: 999px;
   font-size: 12.5px;
-  color: var(--wdp-gold-ink);
+  line-height: 1.3;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
 }
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .wdp-proj-grid {
-    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
-}
-@media (max-width: 600px) {
-  .wdp-proj-grid {
+  .wdp-project {
     grid-template-columns: 1fr;
-    gap: 44px;
+    min-height: 0;
+    padding: 10px;
+    border-radius: var(--wdp-radius-card);
+  }
+  .wdp-project:nth-child(n) {
+    top: calc(var(--wdp-header-h) + 12px);
+  }
+  .wdp-project__img {
+    grid-column: 1;
+    border-radius: 16px;
+  }
+  .wdp-project__body {
+    grid-row: 2;
+    padding: 22px 12px 14px;
+  }
+  .wdp-project__body p {
+    font-size: 15px;
   }
 }
 
 /* =====================================================================
-   STEPS, CAUSES, CONTACT METHODS, COVERAGE: lists with hairlines, no boxes.
+   STEPS: a numbered timeline. The circles fill one after another and the line between them draws.
+   Phones: the same timeline, vertical.
    ===================================================================== */
 .wdp-steps {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 0 28px;
+  gap: 0 24px;
 }
 .wdp-step {
-  padding-top: 22px;
-  border-top: 1px solid var(--wdp-line);
+  position: relative;
+}
+.wdp-step:nth-child(2) {
+  --i: 1;
+}
+.wdp-step:nth-child(3) {
+  --i: 2;
+}
+.wdp-step:nth-child(4) {
+  --i: 3;
+}
+.wdp-step:nth-child(5) {
+  --i: 4;
+}
+.wdp-step:nth-child(6) {
+  --i: 5;
+}
+.wdp-step:not(:last-child)::before,
+.wdp-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 66px;
+  right: -14px;
+  height: 1px;
+  background: var(--wdp-line);
+}
+.wdp-step:not(:last-child)::after {
+  height: 2px;
+  margin-top: -0.5px;
+  background: var(--wdp-gold);
+  transform-origin: left;
+  transition: transform 0.6s var(--wdp-ease) calc(var(--i, 0) * 0.32s + 0.25s);
 }
 .wdp-step__n {
-  margin-bottom: 22px;
-  font-family: var(--wdp-font-italic);
-  font-style: italic;
-  font-size: 22px;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--wdp-navy);
+  background: var(--wdp-navy);
+  color: #fff;
+  font-family: var(--wdp-font-display);
+  font-size: 24px;
   line-height: 1;
-  color: var(--wdp-gold-ink);
+  transition:
+    background 0.5s var(--wdp-ease),
+    color 0.5s var(--wdp-ease),
+    border-color 0.5s var(--wdp-ease),
+    transform 0.5s var(--wdp-ease);
+  transition-delay: calc(var(--i, 0) * 0.32s);
+}
+.wdp-stage:not(.is-in) .wdp-step__n {
+  border-color: var(--wdp-line);
+  background: var(--wdp-paper);
+  color: var(--wdp-ink);
+  transform: scale(0.86);
+}
+.wdp-stage:not(.is-in) .wdp-step::after {
+  transform: scaleX(0);
 }
 #main .wdp-step h3 {
   font-size: 24px;
@@ -1477,38 +2229,69 @@ textarea.wdp-field {
 @media (max-width: 1000px) {
   .wdp-steps,
   .wdp-steps[style] {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 36px 28px;
-  }
-}
-@media (max-width: 560px) {
-  .wdp-steps,
-  .wdp-steps[style] {
     grid-template-columns: 1fr !important;
-    gap: 28px;
+    gap: 0;
+    max-width: 640px;
+  }
+  .wdp-step {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    column-gap: 20px;
+    padding-bottom: 34px;
   }
   .wdp-step__n {
-    margin-bottom: 12px;
+    grid-row: 1 / span 2;
+    margin: 0;
+  }
+  #main .wdp-step h3 {
+    padding-top: 14px;
+  }
+  .wdp-step:not(:last-child)::before,
+  .wdp-step:not(:last-child)::after {
+    top: 62px;
+    bottom: 6px;
+    left: 28px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+  .wdp-step:not(:last-child)::after {
+    width: 2px;
+    margin: 0 0 0 -0.5px;
+    transform-origin: top;
+  }
+  .wdp-stage:not(.is-in) .wdp-step::after {
+    transform: scaleY(0);
   }
 }
 
+/* ---- Causes: icon cards ---------------------------------------------------- */
 .wdp-causes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: clamp(28px, 4vw, 64px);
-  border-bottom: 1px solid var(--wdp-line);
+  gap: 14px;
 }
 .wdp-cause {
-  padding: 22px 0;
-  border-top: 1px solid var(--wdp-line);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 22px;
+  background: var(--wdp-white);
+  border: 1px solid var(--wdp-line);
+  border-radius: 20px;
 }
 .wdp-cause__ico {
-  display: none;
+  width: 48px;
+  height: 48px;
+}
+.wdp-cause__ico svg {
+  width: 22px;
+  height: 22px;
 }
 .wdp-cause b {
   font-family: var(--wdp-font-display);
   font-weight: 400;
-  font-size: 23px;
+  font-size: 22px;
   line-height: 1.2;
 }
 @media (max-width: 820px) {
@@ -1519,23 +2302,28 @@ textarea.wdp-field {
 @media (max-width: 520px) {
   .wdp-causes {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
 
+/* ---- Contact methods: four cards ------------------------------------------- */
 .wdp-cmethods {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 16px;
 }
 .wdp-cmethod {
-  padding-top: 24px;
-  border-top: 1px solid var(--wdp-line);
+  position: relative;
+  padding: 30px 28px;
+  background: var(--wdp-white);
+  border: 1px solid var(--wdp-line);
+  border-radius: var(--wdp-radius-card);
 }
 .wdp-cmethod__ico {
-  display: none;
+  margin-bottom: 28px;
 }
 #main .wdp-cmethod h3 {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   font-family: var(--wdp-font-body);
   font-size: 11px;
   font-weight: 700;
@@ -1568,29 +2356,44 @@ textarea.wdp-field {
 @media (max-width: 1000px) {
   .wdp-cmethods {
     grid-template-columns: 1fr 1fr;
-    gap: 36px 28px;
   }
 }
 @media (max-width: 520px) {
   .wdp-cmethods {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
+/* ---- Coverage: covered (white) and not covered (sand), the rows tick in ---- */
 .wdp-cover2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(32px, 5vw, 80px);
+  gap: 18px;
+}
+.wdp-cover2__card {
+  padding: clamp(28px, 3.4vw, 44px);
+  border-radius: var(--wdp-radius-panel);
+  background: var(--wdp-white);
+  border: 1px solid var(--wdp-line);
+}
+.wdp-cover2__card--no {
+  background: var(--wdp-sand);
+  border-color: transparent;
 }
 .wdp-cover2__head {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding-bottom: 18px;
+  gap: 14px;
+  padding-bottom: 22px;
 }
 .wdp-cover2__ico {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
 }
 .wdp-cover2__ico svg,
 .wdp-cover2__list li svg {
@@ -1604,11 +2407,17 @@ textarea.wdp-field {
   width: 20px;
   height: 20px;
 }
-.wdp-cover2__card--yes .wdp-cover2__ico,
+.wdp-cover2__card--yes .wdp-cover2__ico {
+  background: var(--wdp-navy);
+  color: var(--wdp-gold);
+}
+.wdp-cover2__card--no .wdp-cover2__ico {
+  background: var(--wdp-white);
+  color: var(--wdp-muted);
+}
 .wdp-cover2__card--yes li svg {
   color: var(--wdp-gold-ink);
 }
-.wdp-cover2__card--no .wdp-cover2__ico,
 .wdp-cover2__card--no li svg {
   color: var(--wdp-muted);
 }
@@ -1619,13 +2428,12 @@ textarea.wdp-field {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid var(--wdp-line);
 }
 .wdp-cover2__list li {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 15px 0;
+  padding: 14px 0;
   border-top: 1px solid var(--wdp-line);
   font-size: 15.5px;
   line-height: 1.5;
@@ -1638,7 +2446,7 @@ textarea.wdp-field {
 }
 .wdp-cover2__note {
   max-width: 640px;
-  margin-top: 30px;
+  margin-top: 28px;
   font-size: 14px;
   line-height: 1.65;
   color: var(--wdp-muted);
@@ -1650,13 +2458,18 @@ textarea.wdp-field {
 }
 
 /* =====================================================================
-   INSURANCE: the one sand band. Heading and lead left, three steps as a list right.
+   INSURANCE: a sand panel with a drifting glow. The three steps are a live tracker:
+   the checks fill one after another and the line between them draws.
    ===================================================================== */
 .wdp-insurance {
-  background: var(--wdp-sand);
+  background: var(--wdp-paper);
   color: var(--wdp-ink);
+  padding-block: clamp(24px, 4vw, 56px);
 }
 .wdp-insurance__in {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas:
@@ -1664,12 +2477,30 @@ textarea.wdp-field {
     "lead steps"
     "carriers steps";
   grid-template-rows: auto auto 1fr;
-  gap: 0 clamp(40px, 7vw, 112px);
-  padding-block: var(--wdp-section);
+  gap: 0 clamp(40px, 6vw, 96px);
+  padding: clamp(48px, 7vw, 104px) clamp(28px, 6vw, 88px);
+  border-radius: 36px;
+  background: var(--wdp-sand);
+}
+.wdp-insurance__in::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -20%;
+  top: -40%;
+  width: 70%;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    closest-side,
+    rgba(245, 165, 36, 0.24),
+    rgba(245, 165, 36, 0)
+  );
+  animation: wdp-drift 15s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 #main .wdp-insurance h2 {
   grid-area: head;
-  font-size: clamp(36px, 3.8vw, 56px);
+  font-size: clamp(38px, 4vw, 60px);
 }
 .wdp-insurance__lead {
   grid-area: lead;
@@ -1681,26 +2512,70 @@ textarea.wdp-field {
 }
 .wdp-insurance__steps {
   grid-area: steps;
-  border-bottom: 1px solid var(--wdp-line);
+  align-self: center;
+  padding: 10px clamp(22px, 2.6vw, 34px);
+  border-radius: 28px;
+  background: var(--wdp-white);
+  box-shadow: 0 40px 80px -50px rgba(10, 24, 38, 0.45);
 }
 .wdp-istep {
+  position: relative;
   display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
-  gap: 6px 20px;
-  padding: 26px 0;
+  grid-template-columns: 42px minmax(0, 1fr);
+  column-gap: 18px;
+  padding: 24px 0;
+}
+.wdp-istep + .wdp-istep {
   border-top: 1px solid var(--wdp-line);
 }
+.wdp-istep:nth-child(2) {
+  --i: 1;
+}
+.wdp-istep:nth-child(3) {
+  --i: 2;
+}
+.wdp-istep:nth-child(4) {
+  --i: 3;
+}
+/* The check: a navy disc with a gold tick (decorative). */
+.wdp-istep::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--wdp-navy)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f5a524' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E")
+    center / 18px no-repeat;
+  transition:
+    background-color 0.5s var(--wdp-ease),
+    transform 0.5s var(--wdp-ease),
+    box-shadow 0.5s var(--wdp-ease);
+  transition-delay: calc(var(--i, 0) * 0.45s + 0.2s);
+}
+.wdp-stage:not(.is-in) .wdp-istep::before {
+  background-color: var(--wdp-paper);
+  background-size: 0;
+  box-shadow: inset 0 0 0 1px var(--wdp-line);
+  transform: scale(0.8);
+}
 .wdp-istep__n {
-  grid-row: 1 / span 2;
-  margin-top: 9px;
+  grid-column: 2;
+  margin: 2px 0 6px;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
 }
 .wdp-istep__n::before {
   display: none;
 }
 #main .wdp-istep h3 {
+  grid-column: 2;
   font-size: 28px;
 }
 .wdp-istep p:not(.wdp-istep__n) {
+  grid-column: 2;
+  margin-top: 6px;
   font-size: 15px;
   line-height: 1.6;
   color: var(--wdp-muted);
@@ -1730,74 +2605,138 @@ textarea.wdp-field {
     grid-template-rows: none;
   }
   .wdp-insurance__steps {
-    margin-top: 40px;
+    margin-top: 36px;
   }
 }
-@media (max-width: 520px) {
-  .wdp-istep {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .wdp-insurance .wdp-container {
+    margin-inline: 12px;
+    padding-inline: 22px;
+    border-radius: var(--wdp-radius-card);
   }
-  .wdp-istep__n {
-    grid-row: auto;
-    margin: 0 0 4px;
+  .wdp-insurance__steps {
+    padding-inline: 18px;
+  }
+  .wdp-istep {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+  .wdp-istep::before {
+    width: 36px;
+    height: 36px;
+  }
+  #main .wdp-istep h3 {
+    font-size: 24px;
   }
 }
 
 /* =====================================================================
-   REVIEWS: on the light page. The rating, then three quotes as columns.
+   REVIEWS: a navy band with a glow. The rating counts up; the quotes are cards (a swipe strip on phones).
    ===================================================================== */
 .wdp-reviews {
-  background: var(--wdp-paper);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--wdp-navy);
+  color: #fff;
+}
+.wdp-reviews::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: -45%;
+  width: 80vmax;
+  aspect-ratio: 1;
+  margin-left: -40vmax;
+  background: radial-gradient(
+    closest-side,
+    rgba(245, 165, 36, 0.16),
+    rgba(245, 165, 36, 0)
+  );
+  animation: wdp-drift 17s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 .wdp-reviews__head {
   display: flex;
   align-items: flex-end;
-  gap: 24px;
+  gap: 26px;
   flex-wrap: wrap;
-  margin-bottom: clamp(48px, 6vw, 80px);
+  margin-bottom: clamp(40px, 5vw, 72px);
 }
 .wdp-reviews__big {
+  display: inline-block;
   font-family: var(--wdp-font-display);
-  font-size: clamp(88px, 10vw, 144px);
+  font-size: clamp(96px, 11vw, 168px);
   line-height: 0.8;
+  color: var(--wdp-gold);
+  font-variant-numeric: tabular-nums;
 }
 .wdp-reviews__stars {
   display: block;
-  font-size: 15px;
-  letter-spacing: 4px;
-  color: var(--wdp-gold-ink);
+  font-size: 17px;
+  letter-spacing: 5px;
+  color: var(--wdp-gold);
 }
 .wdp-reviews__sub {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--wdp-muted);
+  color: var(--wdp-on-dark-muted);
 }
 .wdp-rev-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(28px, 4vw, 64px);
+  gap: 18px;
 }
 .wdp-rev {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding-top: 26px;
-  border-top: 1px solid var(--wdp-line);
+  padding: 34px 32px 30px;
+  border-radius: var(--wdp-radius-card);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+.wdp-rev::before {
+  content: "\201C";
+  content: "\201C" / "";
+  position: absolute;
+  top: 10px;
+  right: 26px;
+  font-family: var(--wdp-font-display);
+  font-size: 120px;
+  line-height: 1;
+  color: var(--wdp-gold);
+  opacity: 0.3;
+}
+@media (hover: hover) {
+  .wdp-rev-grid .wdp-rev {
+    transition:
+      transform 0.5s var(--wdp-ease),
+      background 0.4s,
+      box-shadow 0.4s;
+  }
+  .wdp-rev-grid .wdp-rev:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(245, 165, 36, 0.5);
+  }
 }
 .wdp-rev__stars {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 3px;
-  color: var(--wdp-gold-ink);
+  color: var(--wdp-gold);
 }
 .wdp-rev p {
-  margin: 18px 0 28px;
+  margin: 20px 0 30px;
   font-family: var(--wdp-font-italic);
   font-style: italic;
   font-size: clamp(22px, 1.9vw, 26px);
   line-height: 1.3;
-  color: var(--wdp-ink);
+  color: #fff;
 }
 .wdp-rev__who {
   display: flex;
@@ -1806,17 +2745,17 @@ textarea.wdp-field {
   margin-top: auto;
 }
 .wdp-rev__av {
-  width: 36px;
-  height: 36px;
-  flex: 0 0 36px;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--wdp-sand);
-  color: var(--wdp-ink);
+  background: var(--wdp-gold);
+  color: var(--wdp-navy);
   font-family: var(--wdp-font-display);
-  font-size: 18px;
+  font-size: 19px;
 }
 .wdp-rev__who b {
   display: block;
@@ -1825,16 +2764,15 @@ textarea.wdp-field {
 }
 .wdp-rev__who span span {
   font-size: 13px;
-  color: var(--wdp-muted);
+  color: var(--wdp-on-dark-muted);
 }
-@media (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 761px) {
   .wdp-rev-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
 }
 
-/* ---- Capacity (commercial): photo and text on the light page ------------- */
+/* ---- Capacity (commercial): photo and text, the figures as small cards ----- */
 .wdp-capacity {
   background: var(--wdp-paper);
   padding-block: var(--wdp-section);
@@ -1849,6 +2787,7 @@ textarea.wdp-field {
   aspect-ratio: 4 / 3;
   border-radius: var(--wdp-radius-panel);
   overflow: hidden;
+  box-shadow: 22px 22px 0 0 var(--wdp-gold-soft);
 }
 .wdp-capacity__media img {
   width: 100%;
@@ -1856,8 +2795,8 @@ textarea.wdp-field {
   object-fit: cover;
 }
 #main .wdp-capacity__body h2 {
-  margin: 24px 0 22px;
-  font-size: clamp(34px, 3.6vw, 52px);
+  margin: 22px 0 22px;
+  font-size: clamp(36px, 3.8vw, 56px);
 }
 .wdp-capacity__body p {
   max-width: 520px;
@@ -1869,11 +2808,13 @@ textarea.wdp-field {
 .wdp-capacity__stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 32px;
+  gap: 12px;
 }
 .wdp-cstat {
-  padding: 20px 0;
-  border-top: 1px solid var(--wdp-line);
+  padding: 20px 22px;
+  border-radius: 18px;
+  background: var(--wdp-white);
+  border: 1px solid var(--wdp-line);
 }
 .wdp-cstat b {
   display: block;
@@ -1882,6 +2823,7 @@ textarea.wdp-field {
   font-weight: 400;
   font-size: clamp(30px, 2.8vw, 40px);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 .wdp-cstat span {
   font-size: 14px;
@@ -1895,15 +2837,13 @@ textarea.wdp-field {
   .wdp-capacity__grid {
     grid-template-columns: 1fr;
   }
-}
-@media (max-width: 520px) {
-  .wdp-capacity__stats {
-    grid-template-columns: 1fr;
+  .wdp-capacity__media {
+    margin-right: 22px;
   }
 }
 
 /* =====================================================================
-   SPLIT: text and one large photo.
+   SPLIT: text and one large photo with an offset gold block behind it (the photo drifts on scroll).
    ===================================================================== */
 .wdp-split__grid {
   display: grid;
@@ -1912,8 +2852,8 @@ textarea.wdp-field {
   align-items: center;
 }
 #main .wdp-split__body h2 {
-  margin: 24px 0 26px;
-  font-size: clamp(34px, 3.6vw, 52px);
+  margin: 22px 0 26px;
+  font-size: clamp(36px, 3.8vw, 56px);
 }
 .wdp-split__body p:not(.wdp-kicker) {
   max-width: 520px;
@@ -1933,6 +2873,7 @@ textarea.wdp-field {
   aspect-ratio: 4 / 3;
   border-radius: var(--wdp-radius-panel);
   overflow: hidden;
+  box-shadow: 22px 22px 0 0 var(--wdp-gold-soft);
 }
 .wdp-split__img img {
   width: 100%;
@@ -1949,13 +2890,16 @@ textarea.wdp-field {
   .wdp-split__grid {
     grid-template-columns: 1fr;
   }
+  .wdp-split__img {
+    margin-right: 22px;
+  }
   .wdp-about-team .wdp-split__img {
     justify-self: start;
   }
 }
 
 /* =====================================================================
-   SERVICE AREA (home): the city names as plain text buttons, the map, one line about the city.
+   SERVICE AREA (home): city pills, the map in a panel, the city card under it.
    ===================================================================== */
 .wdp-area__grid {
   display: grid;
@@ -1964,51 +2908,56 @@ textarea.wdp-field {
   align-items: start;
 }
 #main .wdp-area h2 {
-  margin-top: 24px;
-  font-size: clamp(36px, 3.8vw, 56px);
+  margin-top: 22px;
+  font-size: clamp(38px, 4.2vw, 62px);
 }
 .wdp-area__lead {
   max-width: 460px;
-  margin: 22px 0 8px;
+  margin: 20px 0 8px;
   font-size: 17px;
   line-height: 1.7;
   color: var(--wdp-muted);
 }
 .wdp-reggrp .wdp-rl {
   display: block;
-  margin: 34px 0 10px;
+  margin: 30px 0 12px;
   color: var(--wdp-muted);
 }
 .wdp-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 22px;
+  gap: 8px;
 }
 .wdp-chip,
 .wdp-chip:hover,
 .wdp-chip:focus {
-  padding: 6px 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  padding: 9px 16px;
+  border: 1px solid var(--wdp-line);
+  border-radius: 999px;
+  background: var(--wdp-white);
   color: var(--wdp-ink);
   font-family: var(--wdp-font-body);
-  font-size: 15.5px;
+  font-size: 14px;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.3;
   cursor: pointer;
 }
 .wdp-chip {
-  border-bottom: 1px solid transparent;
-  transition: color 0.18s, border-color 0.18s;
+  transition:
+    background 0.25s var(--wdp-ease),
+    color 0.25s var(--wdp-ease),
+    border-color 0.25s var(--wdp-ease),
+    transform 0.25s var(--wdp-ease);
 }
 .wdp-chip:hover {
-  color: var(--wdp-gold-ink);
+  border-color: var(--wdp-gold-ink);
+  transform: translateY(-2px);
 }
 .wdp-chip[aria-pressed="true"],
 .wdp-chip[aria-pressed="true"]:hover {
-  color: var(--wdp-gold-ink);
-  border-bottom: 1px solid var(--wdp-gold-ink);
+  background: var(--wdp-navy);
+  border-color: var(--wdp-navy);
+  color: #fff;
 }
 .wdp-mapframe {
   display: block;
@@ -2017,24 +2966,38 @@ textarea.wdp-field {
   border: 0;
   border-radius: var(--wdp-radius-panel);
   background: var(--wdp-sand);
+  box-shadow: var(--wdp-shadow);
 }
 .wdp-mapdetail {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: 14px 32px;
-  padding-top: 22px;
+  align-items: center;
+  gap: 14px 30px;
+  margin-top: 14px;
+  padding: 22px 26px;
+  border-radius: var(--wdp-radius-card);
+  background: var(--wdp-white);
+  border: 1px solid var(--wdp-line);
 }
 .wdp-mapdetail__city {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: var(--wdp-font-display);
   font-size: 28px;
   line-height: 1.1;
 }
 .wdp-mapdetail__city svg {
-  display: none;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  stroke: var(--wdp-red);
+  stroke-width: 2;
+  fill: none;
+}
+#wdpCityName {
+  display: inline-block;
+  animation: wdp-rise 0.55s var(--wdp-ease) both;
 }
 .wdp-mapdetail__stats {
   display: flex;
@@ -2087,6 +3050,7 @@ textarea.wdp-field {
   border-radius: var(--wdp-radius-panel) !important;
   overflow: hidden;
   background: var(--wdp-sand);
+  box-shadow: var(--wdp-shadow);
 }
 .wdp-cmap iframe {
   display: block;
@@ -2101,39 +3065,71 @@ textarea.wdp-field {
   }
 }
 
-/* ---- City links: a quiet three-column directory -------------------------- */
+/* ---- City links: rows that fill with navy on hover -------------------------- */
 .wdp-cities__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: clamp(28px, 4vw, 64px);
-  border-bottom: 1px solid var(--wdp-line);
+  gap: 10px;
 }
 .wdp-cities__grid a {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 16px 0;
-  border-top: 1px solid var(--wdp-line);
-  font-size: 15px;
-  line-height: 1.45;
+  gap: 10px;
+  padding: 16px 20px;
+  border: 1px solid var(--wdp-line);
+  border-radius: 16px;
+  background: var(--wdp-white);
+  font-size: 14.5px;
+  line-height: 1.4;
   color: var(--wdp-ink);
-  transition: color 0.18s;
+  transition:
+    color 0.35s var(--wdp-ease),
+    border-color 0.35s var(--wdp-ease);
+}
+.wdp-cities__grid a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--wdp-navy);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--wdp-ease);
 }
 .wdp-cities__grid a::after {
   content: "→";
   content: "→" / "";
+  margin-left: auto;
   color: var(--wdp-gold-ink);
-  transition: transform 0.2s var(--wdp-ease);
+  transition:
+    transform 0.3s var(--wdp-ease),
+    color 0.3s;
 }
 .wdp-cities__grid a:hover {
-  color: var(--wdp-gold-ink);
+  color: #fff;
+  border-color: var(--wdp-navy);
+}
+.wdp-cities__grid a:hover::before {
+  transform: scaleX(1);
 }
 .wdp-cities__grid a:hover::after {
-  transform: translateX(3px);
+  color: var(--wdp-gold);
+  transform: translateX(4px);
 }
 .wdp-cities__grid svg {
-  display: none;
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  stroke: var(--wdp-gold-ink);
+  stroke-width: 2;
+  fill: none;
+  transition: stroke 0.3s;
+}
+.wdp-cities__grid a:hover svg {
+  stroke: var(--wdp-gold);
 }
 @media (max-width: 860px) {
   .wdp-cities__grid {
@@ -2147,7 +3143,7 @@ textarea.wdp-field {
 }
 
 /* =====================================================================
-   FAQ: heading on the left, the questions as a hairline list.
+   FAQ: heading on the left (sticky), the questions as cards that open smoothly.
    ===================================================================== */
 .wdp-faqwrap > .wdp-container {
   display: grid;
@@ -2161,10 +3157,24 @@ textarea.wdp-field {
   margin-bottom: 40px;
 }
 .wdp-faq {
-  border-bottom: 1px solid var(--wdp-line);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .wdp-qa {
-  border-top: 1px solid var(--wdp-line);
+  border: 1px solid var(--wdp-line);
+  border-radius: 20px;
+  background: var(--wdp-white);
+  transition:
+    border-color 0.3s,
+    box-shadow 0.4s var(--wdp-ease);
+}
+.wdp-qa:hover {
+  border-color: rgba(10, 24, 38, 0.28);
+}
+.wdp-qa.is-open {
+  border-color: rgba(138, 83, 0, 0.45);
+  box-shadow: 0 28px 56px -40px rgba(10, 24, 38, 0.45);
 }
 .wdp-qa__q,
 .wdp-qa__q:hover,
@@ -2173,39 +3183,53 @@ textarea.wdp-field {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 26px 0;
+  gap: 20px;
+  padding: 20px 22px 20px 26px;
   border: 0;
-  border-radius: 0;
+  border-radius: 20px;
   background: transparent;
   color: var(--wdp-ink);
   font-family: var(--wdp-font-display);
-  font-size: clamp(21px, 1.9vw, 26px);
+  font-size: clamp(20px, 1.8vw, 24px);
   line-height: 1.25;
   text-align: left;
   white-space: normal;
   cursor: pointer;
 }
 .wdp-qa__q .pl {
-  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--wdp-line);
   font-family: var(--wdp-font-body);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1;
   color: var(--wdp-gold-ink);
-  transition: transform 0.25s var(--wdp-ease);
+  transition:
+    transform 0.4s var(--wdp-ease),
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
 .wdp-qa.is-open .wdp-qa__q .pl {
-  transform: rotate(45deg);
+  transform: rotate(135deg);
+  background: var(--wdp-navy);
+  border-color: var(--wdp-navy);
+  color: #fff;
 }
 .wdp-qa__a {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s var(--wdp-ease);
+  transition: max-height 0.45s var(--wdp-ease);
 }
 .wdp-qa__a > div {
-  max-width: 620px;
-  padding: 0 0 28px;
+  max-width: 640px;
+  padding: 0 26px 26px;
   font-size: 16px;
   line-height: 1.75;
   color: var(--wdp-muted);
@@ -2220,18 +3244,124 @@ textarea.wdp-field {
 }
 
 /* =====================================================================
-   SCROLL REVEAL (components/layout/SiteScripts.tsx)
-   Only photos, headings and items without links that start below the first screen;
-   never a form, a button or a phone link.
+   MOTION (components/layout/SiteScripts.tsx adds the classes; without JS or with reduced motion
+   everything is simply there). Only text, photos and decoration move. Never a form, a button,
+   a phone link or any link: those are on screen from the first frame.
    ===================================================================== */
+@keyframes wdp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* Rise in, one after another (--d is the stagger). */
 .wdp-reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.8s var(--wdp-ease), transform 0.8s var(--wdp-ease);
+  transform: translateY(32px);
+  transition:
+    opacity 0.9s var(--wdp-ease) var(--d, 0s),
+    transform 1s var(--wdp-ease) var(--d, 0s);
 }
 .wdp-reveal.is-in {
   opacity: 1;
   transform: none;
+}
+/* Section heads: the hairline draws, the heading wipes up, the intro follows. */
+.wdp-reveal--head {
+  opacity: 1;
+  transform: none;
+}
+.wdp-reveal--head > * {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s var(--wdp-ease),
+    transform 1s var(--wdp-ease),
+    clip-path 1.1s var(--wdp-ease);
+}
+.wdp-reveal--head > h2 {
+  opacity: 1;
+  clip-path: inset(0 0 100% 0);
+  transform: translateY(48px);
+  transition-delay: 0.08s;
+}
+.wdp-reveal--head > p:not(.wdp-kicker) {
+  transition-delay: 0.22s;
+}
+.wdp-reveal--head.is-in > * {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(-20% -6% -20% -6%);
+}
+.wdp-reveal--head .wdp-kicker::before {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s var(--wdp-ease) 0.25s;
+}
+.wdp-reveal--head.is-in .wdp-kicker::before {
+  transform: none;
+}
+/* Photos: uncovered from the bottom while the picture settles from a slight zoom. */
+.wdp-reveal--photo {
+  opacity: 1;
+  transform: none;
+}
+.wdp-reveal--photo img {
+  clip-path: inset(100% 0 0 0);
+  transform: scale(1.18);
+  transition:
+    clip-path 1.3s var(--wdp-ease),
+    transform 1.8s var(--wdp-ease);
+}
+.wdp-reveal--photo.is-in img {
+  clip-path: inset(0);
+  transform: none;
+}
+/* Icons draw their strokes (decorative). */
+:is(.wdp-benefit__ico, .wdp-svc__ico, .wdp-cause__ico, .wdp-cmethod__ico)
+  > svg
+  > :is(path, circle, rect, line, polyline, polygon, ellipse) {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.6s var(--wdp-ease) 0.2s;
+}
+.wdp-stage:not(.is-in)
+  :is(.wdp-benefit__ico, .wdp-svc__ico, .wdp-cause__ico, .wdp-cmethod__ico)
+  > svg
+  > :is(path, circle, rect, line, polyline, polygon, ellipse) {
+  stroke-dashoffset: 200;
+}
+.wdp-stage
+  :is(.wdp-benefit__ico, .wdp-svc__ico, .wdp-cause__ico, .wdp-cmethod__ico) {
+  transition:
+    background 0.4s var(--wdp-ease),
+    color 0.4s var(--wdp-ease),
+    transform 0.7s var(--wdp-ease);
+}
+.wdp-stage:not(.is-in)
+  :is(.wdp-benefit__ico, .wdp-svc__ico, .wdp-cause__ico, .wdp-cmethod__ico) {
+  transform: scale(0.6) rotate(-25deg);
+}
+/* Photos drift a little against the scroll (where the browser supports scroll timelines). */
+@supports (animation-timeline: view()) {
+  .wdp-split__img img,
+  .wdp-capacity__media img {
+    scale: 1.14;
+    animation: wdp-parallax linear both;
+    animation-timeline: view();
+  }
+  @keyframes wdp-parallax {
+    from {
+      translate: 0 -6%;
+    }
+    to {
+      translate: 0 6%;
+    }
+  }
 }
 
 /* =====================================================================
@@ -2393,7 +3523,83 @@ textarea.wdp-field {
     grid-column: 1 / -1;
   }
 }
-/* ---- Reduced motion ---------------------------------------------------- */
+/* Footer: a glow behind the call line, link underlines that slide in, the name set large and faded. */
+.wdp-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.wdp-footer::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: -50vmax;
+  width: 90vmax;
+  aspect-ratio: 1;
+  margin-left: -45vmax;
+  background: radial-gradient(
+    closest-side,
+    rgba(245, 165, 36, 0.13),
+    rgba(245, 165, 36, 0)
+  );
+  animation: wdp-drift 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+#main ~ .wdp-footer .wdp-footer__top h2,
+.wdp-footer__top h2 {
+  font-size: clamp(38px, 4.6vw, 68px);
+}
+.wdp-footer__col a {
+  width: fit-content;
+  background: linear-gradient(currentColor, currentColor) 0 calc(100% - 4px) / 0
+    1px no-repeat;
+  transition:
+    color 0.2s,
+    background-size 0.35s var(--wdp-ease);
+}
+.wdp-footer__col a:hover {
+  background-size: 100% 1px;
+}
+.wdp-footer__wordmark {
+  overflow: hidden;
+  padding-top: 8px;
+  font-family: var(--wdp-font-display);
+  font-size: clamp(54px, 11.5vw, 176px);
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+  text-align: center;
+  white-space: nowrap;
+  color: transparent;
+  pointer-events: none;
+  user-select: none;
+}
+.wdp-footer__wordmark::before {
+  content: attr(data-name);
+  content: attr(data-name) / "";
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.17) 10%,
+    rgba(255, 255, 255, 0) 92%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@supports (animation-timeline: view()) {
+  .wdp-footer__wordmark::before {
+    animation: wdp-wordmark linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 45%;
+  }
+  @keyframes wdp-wordmark {
+    from {
+      opacity: 0;
+      transform: translateY(45%);
+    }
+  }
+}
+/* ---- Reduced motion: everything in place, nothing moves ----------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -2401,8 +3607,11 @@ textarea.wdp-field {
     animation: none !important;
     transition: none !important;
   }
-  .wdp-reveal {
+  .wdp-reveal,
+  .wdp-reveal > *,
+  .wdp-reveal img {
     opacity: 1 !important;
     transform: none !important;
+    clip-path: none !important;
   }
 }
