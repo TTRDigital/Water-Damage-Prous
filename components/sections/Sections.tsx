@@ -1,6 +1,5 @@
 import type { CSSProperties, ReactNode } from "react";
 import type {
-  AreaMapSection,
   BenefitsSection,
   Button,
   CapacitySection,
@@ -28,7 +27,6 @@ import { Rich } from "@/components/ui/Rich";
 import { Photo } from "@/components/ui/Photo";
 import { CallIcon, CheckIcon, Icon, LockIcon, PinIcon, ShieldIcon, XIcon } from "@/components/ui/Icon";
 import { LeadForm } from "@/components/forms/LeadForm";
-import { AreaMap } from "@/components/sections/AreaMap";
 import { HeroSlides } from "@/components/sections/HeroSlides";
 import { mapEmbedUrl } from "@/lib/maps";
 import { statement } from "@/lib/text";
@@ -377,9 +375,6 @@ function Projects({ s, ctx }: { s: ProjectsSection; ctx: Ctx }) {
                 <Photo img={it.image} sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, 400px" />
                 <div className="wdp-project__glass">
                   <span className="wdp-project__badge">{it.badge}</span>
-                  <span className="wdp-project__loc">
-                    <PinIcon /> {it.location}
-                  </span>
                 </div>
               </div>
               <div className="wdp-project__body">
@@ -705,9 +700,6 @@ function Faq({ s, ctx }: { s: FaqSection; ctx: Ctx }) {
   );
 }
 
-function AreaMapBlock({ s }: { s: AreaMapSection }) {
-  return <AreaMap s={s} />;
-}
 
 /* ---------- Renderer ---------- */
 
@@ -739,7 +731,9 @@ export function Sections({ sections, settings, trackPage }: { sections: Section[
           case "reviews":
             return <Reviews key={key} s={s} />;
           case "areaMap":
-            return <AreaMapBlock key={key} s={s} />;
+            // "Click your city" was removed at the client's request (Nov 2026): the city lists in the
+            // footer carry the #locations anchor instead. The CMS type stays so existing content validates.
+            return null;
           case "map":
             return <MapBlock key={key} s={s} ctx={ctx} />;
           case "cities":

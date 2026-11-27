@@ -234,7 +234,7 @@ export const projects = defineType({
           fields: [
             defineField({ name: "image", type: "altImage" }),
             defineField({ name: "badge", type: "string" }),
-            defineField({ name: "location", type: "string" }),
+            defineField({ name: "location", type: "string", description: "Not shown on the site (kept for the Studio list only)." }),
             defineField({ name: "title", type: "string" }),
             defineField({ name: "text", type: "text", rows: 2 }),
             strings("meta", "Red notes"),
@@ -301,6 +301,7 @@ export const reviews = defineType({
 export const areaMap = defineType({
   name: "areaMap",
   title: "City map (chips)",
+  description: "Not shown on the site any more (removed at the client's request); the footer's city lists are the #locations target.",
   type: "object",
   fields: [
     defineField({ name: "kicker", type: "string" }),

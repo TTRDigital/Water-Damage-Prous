@@ -23,7 +23,7 @@ export function Footer({ settings: s, linkLabels = [] }: { settings: SiteSetting
           </a>
         </div>
       </div>
-      <div className="wdp-container wdp-footer__cols">
+      <div className="wdp-container wdp-footer__cols" id="locations">
         <div className="wdp-footer__brandcol">
           <div className="wdp-footer__brand">
             {/* eslint-disable-next-line @next/next/no-img-element -- small PNG logo */}

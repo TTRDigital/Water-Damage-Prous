@@ -5,7 +5,7 @@ import { useEffect } from "react";
 /*
  * Page behavior, run after React has hydrated: header turns solid on scroll, phone menu toggle,
  * hero slideshow (3 s crossfade), FAQ accordion and the motion below the first screen. Everything
- * degrades to visible, working content without JS. (The city map is components/sections/AreaMap.tsx.)
+ * degrades to visible, working content without JS.
  */
 export function SiteScripts() {
   useEffect(() => {
@@ -188,7 +188,7 @@ export function SiteScripts() {
           ".wdp-benefit, .wdp-rev, .wdp-istep, .wdp-step, .wdp-cause, .wdp-cstat, .wdp-abstat, .wdp-proof__item",
           ".wdp-cover2__head, .wdp-cover2__list li, .wdp-help__ticks li, .wdp-help .wdp-kicker, .wdp-help h2, .wdp-help__lead",
           ".wdp-project__body, .wdp-insurance h2, .wdp-insurance__lead, .wdp-insurance__carriers, .wdp-reviews__head",
-          ".wdp-split__body > *, .wdp-capacity__body > :not(.wdp-capacity__stats), .wdp-area .wdp-kicker, .wdp-area h2, .wdp-area__lead, .wdp-footer__top h2",
+          ".wdp-split__body > *, .wdp-capacity__body > :not(.wdp-capacity__stats), .wdp-footer__top h2",
         ].join(", "),
         ["wdp-reveal"],
         true,
